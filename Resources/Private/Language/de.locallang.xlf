@@ -1,0 +1,352 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-07-31T17:45:59Z" product-name="bootstrap_core">
+		<header/>
+		<body>
+
+			<trans-unit id="browselinks.linkType.I.0" approved="yes">
+				<source>Modal Box</source> <target state="translated">Modal Box</target></trans-unit>
+			<trans-unit id="browselinks.linkType.I.1" approved="yes">
+				<source>Popover</source> <target state="translated">Sprechblase</target></trans-unit>
+			<trans-unit id="browselinks.linkType.I.2" approved="yes">
+				<source>Button</source> <target state="translated">Schaltfläche</target></trans-unit>
+
+			<trans-unit id="browselinks.style.I.0" approved="yes">
+				<source>Normal</source> <target state="translated">Standard</target></trans-unit>
+			<trans-unit id="browselinks.style.I.1" approved="yes">
+				<source>Button Primary</source> <target state="translated">Primäre Schaltfläche</target></trans-unit>
+			<trans-unit id="browselinks.style.I.2" approved="yes">
+				<source>Button Info</source> <target state="translated">Info Schaltfläche</target></trans-unit>
+			<trans-unit id="browselinks.style.I.3" approved="yes">
+				<source>Button Inverse</source> <target state="translated">Inverse Schaltfläche</target></trans-unit>
+			<trans-unit id="browselinks.style.I.4" approved="yes">
+				<source>Button Warning</source> <target state="translated">Warnungs Schaltfläche</target></trans-unit>
+			<trans-unit id="browselinks.style.I.5" approved="yes">
+				<source>Button Alert</source> <target state="translated">Alarm Schaltfläche</target></trans-unit>
+			<trans-unit id="browselinks.style.I.6" approved="yes">
+				<source>Button Grey</source> <target state="translated">Graue Schaltfläche</target></trans-unit>
+
+			<trans-unit id="browselinks.btnsize.I.0" approved="yes">
+				<source>Normal</source> <target state="translated">Standard</target></trans-unit>
+			<trans-unit id="browselinks.btnsize.I.1" approved="yes">
+				<source>Large</source> <target state="translated">Gross</target></trans-unit>
+			<trans-unit id="browselinks.btnsize.I.2" approved="yes">
+				<source>Small</source> <target state="translated">Klein</target></trans-unit>
+			<trans-unit id="browselinks.btnsize.I.3" approved="yes">
+				<source>Mini</source> <target state="translated">Mini</target></trans-unit>
+
+			<trans-unit id="browselinks.modalid" approved="yes">
+				<source>Modal ID</source> <target state="translated">ID der Modal-Seite</target></trans-unit>
+
+			<trans-unit id="browselinks.desc" approved="yes">
+				<source>Description</source> <target state="translated">Beschreibung</target></trans-unit>
+			<trans-unit id="browselinks.position" approved="yes">
+				<source>Position</source> <target state="translated">Position</target></trans-unit>
+			<trans-unit id="browselinks.trigger" approved="yes">
+				<source>Trigger</source> <target state="translated">Auslöser</target></trans-unit>
+
+			<trans-unit id="browselinks.urloruid" approved="yes">
+				<source>Page Uid or URL</source> <target state="translated">Seiten ID oder URL</target></trans-unit>
+
+			<trans-unit id="browselinks.linkstyle" approved="yes">
+				<source>Link style</source> <target state="translated">Link Stil</target></trans-unit>
+			<trans-unit id="browselinks.title" approved="yes">
+				<source>Title</source> <target state="translated">Titel</target></trans-unit>
+			<trans-unit id="browselinks.style" approved="yes">
+				<source>Style</source> <target state="translated">Stil</target></trans-unit>
+			<trans-unit id="browselinks.size" approved="yes">
+				<source>Size</source> <target state="translated">Grösse</target></trans-unit>
+
+
+
+			<trans-unit id="tceform.pages.layout.0" xml:space="preserve" approved="yes">
+				<source>Standard Layout</source>
+			<target state="translated">Standard Layout</target></trans-unit>
+			<trans-unit id="tceform.pages.belayout.0" xml:space="preserve" approved="yes">
+				<source>(inherit from parent page)</source>
+			<target state="translated">(von übergeordneter Seite übernehmen)</target></trans-unit>
+			<trans-unit id="tceform.pages.belayoutnext.0" xml:space="preserve" approved="yes">
+				<source>(inherit from parent page)</source>
+			<target state="translated">(von übergeordneter Seite übernehmen)</target></trans-unit>
+			<trans-unit id="tceform.tt_content.header_layout.0" xml:space="preserve" approved="yes">
+				<source>Heading 1</source>
+			<target state="translated">Überschrift 1</target></trans-unit>
+			<trans-unit id="tceform.tt_content.header_layout.1" xml:space="preserve" approved="yes">
+				<source>Heading 1</source>
+			<target state="translated">Überschrift 1</target></trans-unit>
+			<trans-unit id="tceform.tt_content.header_layout.2" xml:space="preserve" approved="yes">
+				<source>Heading 2</source>
+			<target state="translated">Überschrift 2</target></trans-unit>
+			<trans-unit id="tceform.tt_content.header_layout.3" xml:space="preserve" approved="yes">
+				<source>Heading 3</source>
+			<target state="translated">Überschrift 3</target></trans-unit>
+			<trans-unit id="tceform.tt_content.header_layout.4" xml:space="preserve" approved="yes">
+				<source>Heading 4</source>
+			<target state="translated">Überschrift 4</target></trans-unit>
+			<trans-unit id="tceform.tt_content.header_layout.5" xml:space="preserve" approved="yes">
+				<source>Heading 5</source>
+			<target state="translated">Überschrift 5</target></trans-unit>
+			<trans-unit id="tceform.tt_content.layout.images.0" xml:space="preserve" approved="yes">
+				<source>Normal</source>
+			<target state="translated">Standard</target></trans-unit>
+			<trans-unit id="tceform.tt_content.layout.images.1" xml:space="preserve" approved="yes">
+				<source>Image corners rounded</source>
+			<target state="translated">Bildecken abgerundet</target></trans-unit>
+			<trans-unit id="tceform.tt_content.layout.images.2" xml:space="preserve" approved="yes">
+				<source>Image round/oval</source>
+			<target state="translated">Bild rund/oval</target></trans-unit>
+			<trans-unit id="tceform.tt_content.layout.images.3" xml:space="preserve" approved="yes">
+				<source>Image with border</source>
+			<target state="translated">Bild mit Rahmen</target></trans-unit>
+			<trans-unit id="tceform.tt_content.layout.images.4" xml:space="preserve" approved="yes">
+				<source>Slider</source>
+			<target state="translated">Slider</target></trans-unit>
+			<trans-unit id="tceform.tt_content.layout.menu.0" xml:space="preserve" approved="yes">
+				<source>Normal</source>
+			<target state="translated">Standard</target></trans-unit>
+			<trans-unit id="tceform.tt_content.layout.menu.1" xml:space="preserve" approved="yes">
+				<source>Nav Pills</source>
+			<target state="translated">Nav Pillen</target></trans-unit>
+			<trans-unit id="tceform.tt_content.layout.menu.2" xml:space="preserve" approved="yes">
+				<source>Nav Pills Stacked</source>
+			<target state="translated">NAv Pillen Stacked</target></trans-unit>
+			<trans-unit id="tceform.tt_content.layout.menu.3" xml:space="preserve" approved="yes">
+				<source>Nav Lists</source>
+			<target state="translated">Nav Listen</target></trans-unit>
+			<trans-unit id="tceform.tt_content.layout.menu.4" xml:space="preserve" approved="yes">
+				<source>Dropdown</source>
+			<target state="translated">Dropdown</target></trans-unit>
+			<trans-unit id="tceform.tt_content.layout.menu.5" xml:space="preserve" approved="yes">
+				<source>Button Dropdown</source>
+			<target state="translated">Schaltfläche Dropdown</target></trans-unit>
+			<trans-unit id="tceform.tt_content.layout.uploads.1" xml:space="preserve" approved="yes">
+				<source>Show icon</source>
+			<target state="translated">Symbol anzeigen</target></trans-unit>
+			<trans-unit id="tceform.tt_content.layout.uploads.2" xml:space="preserve" approved="yes">
+				<source>Show Thumbnail (PDF)</source>
+			<target state="translated">Vorschaubild anzeigen (PDF)</target></trans-unit>
+
+
+
+			<trans-unit id="rte.classes.internal-link" xml:space="preserve" approved="yes">
+				<source>Internal</source>
+			<target state="translated">Intern</target></trans-unit>
+			<trans-unit id="rte.classes.internal-link-new-window" xml:space="preserve" approved="yes">
+				<source>Internal new window</source>
+			<target state="translated">Intern neues Fenster</target></trans-unit>
+			<trans-unit id="rte.classes.external-link" xml:space="preserve" approved="yes">
+				<source>External</source>
+			<target state="translated">Extern</target></trans-unit>
+			<trans-unit id="rte.classes.external-link-new-window" xml:space="preserve" approved="yes">
+				<source>External new window</source>
+			<target state="translated">Extern neues Fenster</target></trans-unit>
+			<trans-unit id="rte.classes.justifyleft" xml:space="preserve" approved="yes">
+				<source>Align left</source>
+			<target state="translated">Linksbündig</target></trans-unit>
+			<trans-unit id="rte.classes.justifyright" xml:space="preserve" approved="yes">
+				<source>Align right</source>
+			<target state="translated">Rechtsbündig</target></trans-unit>
+			<trans-unit id="rte.classes.justifycenter" xml:space="preserve" approved="yes">
+				<source>Align center</source>
+			<target state="translated">Zentriert</target></trans-unit>
+			<trans-unit id="rte.classes.lead" xml:space="preserve" approved="yes">
+				<source>Lead</source>
+			<target state="translated">Lead</target></trans-unit>
+			<trans-unit id="rte.classes.muted" xml:space="preserve" approved="yes">
+				<source>Marker: Muted</source>
+			<target state="translated">Marker: Gedämpft</target></trans-unit>
+			<trans-unit id="rte.classes.warning" xml:space="preserve" approved="yes">
+				<source>Marker: Attention</source>
+			<target state="translated">Marker: Achtung</target></trans-unit>
+			<trans-unit id="rte.classes.error" xml:space="preserve" approved="yes">
+				<source>Marker: Alert</source>
+			<target state="translated">Marker: Alarm</target></trans-unit>
+			<trans-unit id="rte.classes.info" xml:space="preserve" approved="yes">
+				<source>Marker: Info</source>
+			<target state="translated">Marker: Info</target></trans-unit>
+			<trans-unit id="rte.classes.success" xml:space="preserve" approved="yes">
+				<source>Marker: Success</source>
+			<target state="translated">Marker: Erfolg</target></trans-unit>
+			<trans-unit id="rte.classes.floatleft" xml:space="preserve" approved="yes">
+				<source>Float left</source>
+			<target state="translated">Schwimmend links</target></trans-unit>
+			<trans-unit id="rte.classes.floatright" xml:space="preserve" approved="yes">
+				<source>Float right</source>
+			<target state="translated">Schwimmend rechts</target></trans-unit>
+			<trans-unit id="rte.classes.label" xml:space="preserve" approved="yes">
+				<source>Label</source>
+			<target state="translated">Beschriftung</target></trans-unit>
+			<trans-unit id="rte.classes.badge" xml:space="preserve" approved="yes">
+				<source>Badge</source>
+			<target state="translated">Badge</target></trans-unit>
+			<trans-unit id="rte.classes.table" xml:space="preserve" approved="yes">
+				<source>Default</source>
+			<target state="translated">Standard</target></trans-unit>
+			<trans-unit id="rte.classes.table-striped" xml:space="preserve" approved="yes">
+				<source>Zebra striped</source>
+			<target state="translated">Gestreift</target></trans-unit>
+			<trans-unit id="rte.classes.table-bordered" xml:space="preserve" approved="yes">
+				<source>Borders and rounded corners</source>
+			<target state="translated">Rahmen und abgerundete Ecken</target></trans-unit>
+			<trans-unit id="rte.classes.table-hover" xml:space="preserve" approved="yes">
+				<source>Hover state on table rows</source>
+			<target state="translated">Hover-Status bei Tabellen Zeilen</target></trans-unit>
+			<trans-unit id="rte.classes.table-condensed" xml:space="preserve" approved="yes">
+				<source>More compact by reduced cell padding</source>
+			<target state="translated">Kompakter durch reduzierte Zellenränder</target></trans-unit>
+			<trans-unit id="rte.classes.button" xml:space="preserve" approved="yes">
+				<source>Button</source>
+			<target state="translated">Schaltfläche</target></trans-unit>
+			<trans-unit id="rte.classes.lightbox" xml:space="preserve" approved="yes">
+				<source>Open in lightbox</source>
+			<target state="translated">In Lightbox öffnen</target></trans-unit>
+			<trans-unit id="rte.classes.iconhome" xml:space="preserve" approved="yes">
+				<source>Icon Home</source>
+			<target state="translated">Symbol Home</target></trans-unit>
+			<trans-unit id="rte.classes.iconphone" xml:space="preserve" approved="yes">
+				<source>Icon Phone</source>
+			<target state="translated">Symbol Phone</target></trans-unit>
+			<trans-unit id="rte.classes.iconemail" xml:space="preserve" approved="yes">
+				<source>Icon Email</source>
+			<target state="translated">Symbol Email</target></trans-unit>
+			<trans-unit id="rte.classes.iconloc" xml:space="preserve" approved="yes">
+				<source>Icon Location</source>
+			<target state="translated">Symbol Ort</target></trans-unit>
+
+
+
+			<trans-unit id="grid.sheet.config" xml:space="preserve" approved="yes">
+				<source>Configuration</source>
+			<target state="translated">Konfiguration</target></trans-unit>
+			<trans-unit id="grid.sheet.layout" xml:space="preserve" approved="yes">
+				<source>Layout</source>
+			<target state="translated">Layout</target></trans-unit>
+			<trans-unit id="grid.sheet.animation" xml:space="preserve" approved="yes">
+				<source>Animation</source>
+			<target state="translated">Animation</target></trans-unit>
+			<trans-unit id="grid.sheet.controls" xml:space="preserve" approved="yes">
+				<source>Controls</source>
+			<target state="translated">Steuerungen</target></trans-unit>
+			<trans-unit id="grid.sheet.options" xml:space="preserve" approved="yes">
+				<source>Options</source>
+			<target state="translated">Optionen</target></trans-unit>
+			<trans-unit id="grid.sheet.columns" xml:space="preserve" approved="yes">
+				<source>Columns</source>
+			<target state="translated">Spalten</target></trans-unit>
+			<trans-unit id="grid.sheet.section" xml:space="preserve" approved="yes">
+				<source>Section</source>
+			<target state="translated">Abschnitt</target></trans-unit>
+			<trans-unit id="grid.label.collayout" xml:space="preserve" approved="yes">
+				<source>Columns width</source>
+			<target state="translated">Spaltenbreite</target></trans-unit>
+			<trans-unit id="grid.label.rowclass" xml:space="preserve" approved="yes">
+				<source>Row style</source>
+			<target state="translated">Zeilen Stil</target></trans-unit>
+			<trans-unit id="grid.label.column1style" xml:space="preserve" approved="yes">
+				<source>Column 1 Style</source>
+			<target state="translated">Stil Spalte 1</target></trans-unit>
+			<trans-unit id="grid.label.column2style" xml:space="preserve" approved="yes">
+				<source>Column 2 Style</source>
+			<target state="translated">Stil Spalte 2</target></trans-unit>
+			<trans-unit id="grid.label.column3style" xml:space="preserve" approved="yes">
+				<source>Column 3 Style</source>
+			<target state="translated">Stil Spalte 3</target></trans-unit>
+			<trans-unit id="grid.label.column4style" xml:space="preserve" approved="yes">
+				<source>Column 4 Style</source>
+			<target state="translated">Stil Spalte 4</target></trans-unit>
+			<trans-unit id="grid.label.wrapclass" xml:space="preserve" approved="yes">
+				<source>Wrapping container</source>
+			<target state="translated">Umhüllender Container</target></trans-unit>
+			<trans-unit id="grid.label.activeelement" xml:space="preserve" approved="yes">
+				<source>Active element</source>
+			<target state="translated">Aktives Element</target></trans-unit>
+			<trans-unit id="grid.label.default" xml:space="preserve" approved="yes">
+				<source>Default</source>
+			<target state="translated">Standard</target></trans-unit>
+			<trans-unit id="grid.label.none" xml:space="preserve" approved="yes">
+				<source>none</source>
+			<target state="translated">keine</target></trans-unit>
+			<trans-unit id="grid.label.yes" xml:space="preserve" approved="yes">
+				<source>yes</source>
+			<target state="translated">Ja</target></trans-unit>
+			<trans-unit id="grid.label.no" xml:space="preserve" approved="yes">
+				<source>no</source>
+			<target state="translated">Nein</target></trans-unit>
+			<trans-unit id="grid.label.icon" xml:space="preserve" approved="yes">
+				<source>Icon</source>
+			<target state="translated">Symbol</target></trans-unit>
+			<trans-unit id="grid.slider.direction" xml:space="preserve" approved="yes">
+				<source>Direction</source>
+			<target state="translated">Richtung</target></trans-unit>
+			<trans-unit id="grid.slider.direction.1" xml:space="preserve" approved="yes">
+				<source>vertical</source>
+			<target state="translated">vertikal</target></trans-unit>
+			<trans-unit id="grid.slider.direction.2" xml:space="preserve" approved="yes">
+				<source>horizontal</source>
+			<target state="translated">horizontal</target></trans-unit>
+			<trans-unit id="grid.slider.speed" xml:space="preserve" approved="yes">
+				<source>Slideshow speed</source>
+			<target state="translated">Diashow Geschwindigkeit</target></trans-unit>
+			<trans-unit id="grid.slider.animation" xml:space="preserve" approved="yes">
+				<source>Animation</source>
+			<target state="translated">Animation</target></trans-unit>
+			<trans-unit id="grid.slider.animation.1" xml:space="preserve" approved="yes">
+				<source>fade</source>
+			<target state="translated">überblenden</target></trans-unit>
+			<trans-unit id="grid.slider.animation.2" xml:space="preserve" approved="yes">
+				<source>slide</source>
+			<target state="translated">gleiten</target></trans-unit>
+			<trans-unit id="grid.slider.animationspeed" xml:space="preserve" approved="yes">
+				<source>Animation speed</source>
+			<target state="translated">Animationsgeschwindigkeit</target></trans-unit>
+			<trans-unit id="grid.slider.easing" xml:space="preserve" approved="yes">
+				<source>Easing</source>
+			<target state="translated">übergang</target></trans-unit>
+			<trans-unit id="grid.slider.easing.I.0" xml:space="preserve" approved="yes">
+				<source>swing</source>
+			<target state="translated">schwenken</target></trans-unit>
+			<trans-unit id="grid.slider.easing.I.1" xml:space="preserve" approved="yes">
+				<source>linear</source>
+			<target state="translated">linear</target></trans-unit>
+			<trans-unit id="grid.slider.showcontrolnav" xml:space="preserve" approved="yes">
+				<source>Show control navigation</source>
+			<target state="translated">Steuerungsnavigation anzeigen</target></trans-unit>
+			<trans-unit id="grid.slider.showdirnav" xml:space="preserve" approved="yes">
+				<source>Show direction navigation</source>
+			<target state="translated">Richtungsnavigation anzeigen</target></trans-unit>
+			<trans-unit id="grid.slider.showpause" xml:space="preserve" approved="yes">
+				<source>Show pause button</source>
+			<target state="translated">Pause Schaltfläche anzeigen</target></trans-unit>
+			<trans-unit id="grid.slider.pauseonhover" xml:space="preserve" approved="yes">
+				<source>Pause on hover</source>
+			<target state="translated">Pause bei Mouse-Over</target></trans-unit>
+			<trans-unit id="grid.slider.startat" xml:space="preserve" approved="yes">
+				<source>Start at (0 = first)</source>
+			<target state="translated">Starten bei (0 = first)</target></trans-unit>
+			<trans-unit id="grid.slider.initdelay" xml:space="preserve" approved="yes">
+				<source>Init delay</source>
+			<target state="translated">Start Verzögerung</target></trans-unit>
+			<trans-unit id="grid.slider.randomize" xml:space="preserve" approved="yes">
+				<source>Randomize</source>
+			<target state="translated">Zufällig</target></trans-unit>
+			<trans-unit id="grid.slider.animationloop" xml:space="preserve" approved="yes">
+				<source>Loop</source>
+			<target state="translated">Wiederholen</target></trans-unit>
+			<trans-unit id="grid.slider.reverse" xml:space="preserve" approved="yes">
+				<source>Reverse order</source>
+			<target state="translated">Umgekehrte Reihenfolge</target></trans-unit>
+			<trans-unit id="grid.modal.uniqueid" xml:space="preserve" approved="yes">
+				<source>Modal Id</source>
+			<target state="translated">ID der Modal-Seite</target></trans-unit>
+			<trans-unit id="grid.modal.buttontype" xml:space="preserve" approved="yes">
+				<source>Button type</source>
+			<target state="translated">Art der Schaltfläche</target></trans-unit>
+			<trans-unit id="grid.modal.buttonok" xml:space="preserve" approved="yes">
+				<source>Ok</source>
+			<target state="translated">Ok</target></trans-unit>
+			<trans-unit id="grid.modal.buttonclose" xml:space="preserve" approved="yes">
+				<source>Close</source>
+			<target state="translated">Schliessen</target></trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,5 @@
+
+styles.content.loginform {
+    templateFile = EXT:bootstrap_core/Resources/Private/Templates/felogin/felogin.html
+    pid = 5
+}

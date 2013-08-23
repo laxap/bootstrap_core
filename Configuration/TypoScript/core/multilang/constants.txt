@@ -1,0 +1,36 @@
+
+plugin.tx_bootstrapcore {
+    website {
+        # enable multi lang
+        multilang {
+            enabled = 1
+            # cat=tx_bootstrapcore.multilang/language/024; type=string; label=Overlay:Setting for config.sys_language_overlay. Default: 1
+            overlay = 1
+            # cat=tx_bootstrapcore.multilang/language/025; type=string; label=Mode:Setting for config.sys_language_mode. Default: content_fallback;1,0
+            mode = content_fallback;1,0
+
+            # alt language 1
+            1 {
+                # cat=tx_bootstrapcore.multilang/language/031; type=string; label=Language 2 - locale: Locale for the 2nd language. Default: en_EN
+                locale = en_EN
+                # cat=tx_bootstrapcore.multilang/language/032; type=string; label=Language 2 - locale short: 2-letter local for the 2nd language. Default: en
+                localeShort = en
+            }
+            # alt language 2
+            2 {
+                # cat=tx_bootstrapcore.multilang/language/041; type=string; label=Language 3 - locale: Locale for the 3rd language. Default: fr_FR
+                locale = fr_FR
+                # cat=tx_bootstrapcore.multilang/language/042; type=string; label=Language 3 - locale short: 2-letter local for the 3rd language. Default: fr
+                localeShort = fr
+            }
+            # alt language 3
+            3 {
+                # cat=tx_bootstrapcore.multilang/language/051; type=string; label=Language 4 - locale: Locale for the 4th language. Default: it_IT
+                locale = it_IT
+                # cat=tx_bootstrapcore.multilang/language/052; type=string; label=Language 4 - locale short: 2-letter local for the 4th language. Default: it
+                localeShort = it
+            }
+        }
+    }
+}
+

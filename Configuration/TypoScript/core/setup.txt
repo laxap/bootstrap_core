@@ -1,0 +1,239 @@
+
+# -----------------------------------------------------------------------------
+# Core config setup
+# -----------------------------------------------------------------------------
+#
+config {
+  # HTML5
+  doctype = html5
+  #  Character sets
+  renderCharset = utf-8
+  metaCharset = utf-8
+  # Cache settings
+  cache_period = 43200
+  sendCacheHeaders = 1
+  #sendCacheHeaders_onlyWhenLoginDeniedInBranch = 1
+
+  # Page title before Website title  (<title> tag)
+  pageTitleFirst = 1
+
+  # Link settings
+  absRefPrefix = {$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain}/
+  prefixLocalAnchors = all
+  extTarget =
+
+  # URL Settings
+  tx_realurl_enable = {$plugin.tx_bootstrapcore.website.ext.realurl.enabled}
+  #simulateStaticDocuments = 0
+  # Indexed Search
+  index_enable = {$plugin.tx_bootstrapcore.website.ext.indexed_search.enabled}
+  index_externals = {$plugin.tx_bootstrapcore.website.ext.indexed_search.enabled}
+  index_metatags = 0
+
+  # Code cleaning
+  disablePrefixComment = 1
+  # Move default CSS and JS to external file
+  removeDefaultJS = external
+  inlineStyle2TempFile = 1
+  # combine & compress css
+  concatenateCss = {$plugin.tx_bootstrapcore.config.concatenateCss}
+  compressCss = {$plugin.tx_bootstrapcore.config.compressCss}
+  # combine & compress js
+  concatenateJs = {$plugin.tx_bootstrapcore.config.concatenateJs}
+  compressJs = {$plugin.tx_bootstrapcore.config.compressJs}
+
+  # Protect mail addresses from spamming
+  spamProtectEmailAddresses = 1
+  #spamProtectEmailAddresses = -3
+  #spamProtectEmailAddresses_atSubst = @<span style="display:none;">ohne-mich</span>
+
+  # Enable jumpurl
+  #jumpurl_enable = 1
+  #jumpurl_mailto_disable = 1
+
+  # Comment in the <head> tag
+  #headerComment (
+  #   -->
+  #   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  #   <!--
+  #)
+
+  # Administrator settings
+  admPanel = 0
+
+
+  # -----------------------------------------
+  # Language setup
+  #
+  # Default language settings
+  sys_language_uid = 0
+  locale_all = {$plugin.tx_bootstrapcore.website.lang.locale}
+  language = {$plugin.tx_bootstrapcore.website.lang.localeShort}
+  htmlTag_langKey < config.language
+
+
+}
+
+# -----------------------------------------
+# SSL
+#
+/*
+[globalString = _SERVER|HTTPS=on]
+  config {
+    # Link settings
+    absRefPrefix = https://{$plugin.tx_bootstrapcore.website.domain}/
+  }
+[global]
+*/
+
+# -----------------------------------------
+# Dev & Preview Domains
+#
+[globalString = IENV:HTTP_HOST = {$plugin.tx_bootstrapcore.website.domain.preview}]
+  config {
+    # Link settings
+    absRefPrefix = {$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain.preview}/
+  }
+[global]
+[globalString = IENV:HTTP_HOST = {$plugin.tx_bootstrapcore.website.domain.dev}]
+  config {
+    # Link settings
+    absRefPrefix = {$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain.dev}/
+  }
+[global]
+
+
+
+# -----------------------------------------------------------------------------
+# Core page setup
+# -----------------------------------------------------------------------------
+#
+page = PAGE
+page {
+    typeNum = 0
+
+    10 = FLUIDTEMPLATE
+    10 {
+        # Layouts and partials directory
+        layoutRootPath = {$plugin.tx_bootstrapcore.theme.baseDir}/tmpl/backend_layout/layouts/
+        partialRootPath = {$plugin.tx_bootstrapcore.theme.baseDir}/tmpl/backend_layout/partials/
+    }
+
+    # --- CSS ----
+    #
+    includeCSS {
+        # second
+        bootstrap   = {$plugin.tx_bootstrapcore.website.protocol}:{$plugin.tx_bootstrapcore.theme.css.bootstrap}
+        bootstrap.excludeFromConcatenation = 1
+        bootstrap.external = 1
+        bootstrap.forceOnTop = 1
+
+        # will be first (forced on top as last)
+        webfont     = {$plugin.tx_bootstrapcore.website.protocol}:{$plugin.tx_bootstrapcore.theme.css.webfont}
+        webfont.excludeFromConcatenation = 1
+        webfont.external = 1
+        webfont.forceOnTop = 1
+
+        # --- will be merged (if activated)
+        # prettyPhoto (for image/video/content lightbox)
+        lightbox = {$plugin.tx_bootstrapcore.theme.css.lightbox}
+        # flexslider2 (for slider grid, textpic/image, news)
+        flexslider = {$plugin.tx_bootstrapcore.theme.css.flexslider}
+        # Default bootstrap core css
+        bootstrapCore = {$plugin.tx_bootstrapcore.theme.css.bootstrapCore}
+    }
+
+    # --- JS ----
+    #
+    includeJSlibs {
+        # second js
+        bootstrap    = {$plugin.tx_bootstrapcore.website.protocol}:{$plugin.tx_bootstrapcore.theme.js.bootstrap}
+        bootstrap.excludeFromConcatenation = 1
+        bootstrap.external = 1
+        bootstrap.forceOnTop = 1
+        # first js
+        jquery       = {$plugin.tx_bootstrapcore.website.protocol}:{$plugin.tx_bootstrapcore.theme.js.jquery}
+        jquery.excludeFromConcatenation = 1
+        jquery.external = 1
+        jquery.forceOnTop = 1
+
+        # --- will be merged (if activated)
+        ligthbox = {$plugin.tx_bootstrapcore.theme.js.lightbox}
+        flexslider   = {$plugin.tx_bootstrapcore.theme.js.flexslider}
+        jQueryEasing = {$plugin.tx_bootstrapcore.theme.js.jQueryEasing}
+        bootstrapCore  = {$plugin.tx_bootstrapcore.theme.js.bootstrapCore}
+    }
+
+    # --- Meta tags ----
+    #
+    meta {
+        X-UA-Compatible = {$plugin.tx_bootstrapcore.website.meta.X-UA-Compatible}
+        X-UA-Compatible.httpEquivalent = 1
+
+        author   = {$plugin.tx_bootstrapcore.website.meta.author}
+        viewport = {$plugin.tx_bootstrapcore.website.meta.viewport}
+        robots   = {$plugin.tx_bootstrapcore.website.meta.robots}
+
+        keywords = TEXT
+        keywords.data = levelfield:-1, keywords, slide
+        description = TEXT
+        description.data = field:description // field:abstract // levelfield :-1, description, slide // levelfield :-1, abstract, slide
+    }
+}
+
+
+
+# -----------------------------------------------------------------------------
+# HTML5 Support for IE <9 -->
+# -----------------------------------------------------------------------------
+#
+page.headerData.10 = TEXT
+page.headerData.10.value (
+<!--[if lt IE 9]>
+  <script src="{$plugin.tx_bootstrapcore.resourceDir}/Public/JavaScript/html5shiv/html5shiv.js"></script>
+<![endif]-->
+)
+
+
+# -----------------------------------------------------------------------------
+# page.headerData.50 for favicon and apple-touch-icons
+# -----------------------------------------------------------------------------
+#
+page.headerData.50 = TEXT
+page.headerData.50.value (
+  <link rel="shortcut icon" href="/fileadmin/favicons/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/fileadmin/favicons/apple-touch-icon-144x144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/fileadmin/favicons/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/fileadmin/favicons/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="/fileadmin/favicons/apple-touch-icon-precomposed.png">
+)
+
+
+
+# -----------------------------------------------------------------------------
+# pages
+# -----------------------------------------------------------------------------
+#
+# none (only TSconfig)
+
+# -----------------------------------------------------------------------------
+# tt_content
+# -----------------------------------------------------------------------------
+#
+# tt_content
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_core/Configuration/TypoScript/core/tt_content/setup.ts">
+# tt_content: Image
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_core/Configuration/TypoScript/core/tt_content/image/setup.ts">
+# tt_content: Menu & Sitemaps
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_core/Configuration/TypoScript/core/tt_content/menu/setup.ts">
+# tt_content: RTE
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_core/Configuration/TypoScript/core/tt_content/rte/setup.ts">
+# tt_content: Uploads
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_core/Configuration/TypoScript/core/tt_content/uploads/setup.ts">
+
+
+# -----------------------------------------------------------------------------
+# Gridelements
+# -----------------------------------------------------------------------------
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_core/Configuration/TypoScript/gridelements/setup.ts">

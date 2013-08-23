@@ -1,0 +1,83 @@
+
+# --- Configuration of indexed_search ('old' plugin) ---
+#
+plugin.tx_indexedsearch {
+  # html template for form, results, rules...
+  templateFile = {$plugin.tx_bootstrapcore.resourceDir}/Private/Templates/indexed_search/indexed_search_css.html
+
+  # date format, used in result list
+  dateFormat {
+    created = {$plugin.tx_bootstrapcore.dateFormat.defaultDate}
+    modified = {$plugin.tx_bootstrapcore.dateFormat.defaultDate}
+  }
+
+  # search config
+  search {
+    # root page to search from
+    rootPidList = {$plugin.tx_bootstrapcore.pids.home}
+  }
+
+  # hide in advanced form
+  blind {
+    # match select: distinct work, part of word, beginning, sounds-like
+    type = 1
+    # op select: all words or any words (and/or)
+    #defOp = 0
+
+    # result types: internal pages, external pages, pdf, doc, ppt, xls
+    media = 1
+    # in language: all, specific
+    #lang = 0
+
+    # from section: whole site, all level 1, page x, page y
+    sections = 1
+
+    # Note: if 'order' OR 'desc' is 1, none is shown. (maybe only bug in 6.1.0)
+    # order
+    order = 1
+    # order direction: highest/lowest first
+    #desc = 0
+
+    # select-field with num of results to show
+    # results = 0
+
+    # style: flat list, section hierarchy (and subelement checkbox extended resume)
+    group = 1
+  }
+
+  show {
+    # hide box with search rules infos
+    rules = 0
+    # show the result number for each result (1,2,3...)
+    resultNumber = 1
+  }
+
+  # wrap for rule info box
+  # note: can't be shown below results, hard-coded in code
+  rules_stdWrap.wrap = <div class="alert alert-info"><button type="button" class="close" data-dismiss="alert">&times;</button>|</div>
+
+  # wrap for current search term show again below search form
+  #whatis_stdWrap.wrap = <div class="well well-small">|</div>
+  whatis_stdWrap.wrap = <div class="alert alert-info">|</div>
+}
+
+
+# --- jQuery based manipulation of search results ---
+#
+# Add to scripts at bottom of page
+page.20.2701 = TEXT
+page.20.2701.value (
+  <script type="text/javascript">
+  $(document).ready(function() {
+    /* change pagination in indexed search results */
+    $('.tx-indexedsearch-browselist-currentPage').find('strong').contents().unwrap();
+    $('.tx-indexedsearch-browselist-currentPage').attr('class', 'active');
+    $('.tx-indexedsearch-browsebox').attr('class', 'pagination');
+
+    /* change search string markup in result descriptions */
+    $('strong.tx-indexedsearch-redMarkup').attr('class', 'text-error');
+  });
+  </script>
+)
+
+

@@ -1,0 +1,11 @@
+
+plugin.tx_bootstrapcore {
+    theme {
+        css {
+            # cat=tx_bootstrapcore.theme/css/042; type=string; label=Font Awesome CSS: Default: netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css
+            fawesome    = //netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css
+            # cat=tx_bootstrapcore.theme/css/043; type=string; label=Font Awesome CSS for IE7: Default: netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css
+            fawesomeIE7 = //netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css
+        }
+    }
+}

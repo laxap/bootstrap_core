@@ -1,0 +1,239 @@
+
+// No less features used, but imported by rte/content.less!
+
+// -----------------------------------------------------
+// csc-header
+// -----------------------------------------------------
+// No padding/spacing for default TYPO3 header around Hx tags 
+header.csc-header {
+  padding: 0;
+  margin: 0;
+}
+
+// -----------------------------------------------------
+// csc-textpic
+// -----------------------------------------------------
+// polaroid style
+div.csc-textpic .csc-textpic-imagewrap img.img-polaroid {
+  padding: 4px;
+  border: 1px solid #333;
+  border: 1px solid rgba(51, 51, 51, 0.2);
+  box-shadow: 0 1px 3px rgba(51, 51, 51, 0.1);
+  -moz-box-shadow: 0 1px 3px rgba(51, 51, 51, 0.1);
+  -webkit-box-shadow: 0 1px 3px rgba(51, 51, 51, 0.1);
+}
+
+// -----------------------------------------------------
+// textpic/image changes
+// -----------------------------------------------------
+// figure and figure caption
+div.textpic figure {
+  margin: 0 0 10px 0;
+  display: table;
+}
+div.textpic .textpic-lastrow figure {
+  margin-bottom: 0;
+}
+div.textpic figure figcaption {
+  display: table-caption;
+  text-align: left;
+  caption-side: bottom;
+}
+div.textpic figure figcaption.csc-textpic-caption-r {
+  text-align: right;
+}
+div.textpic figure figcaption.csc-textpic-caption-c {
+  text-align: center;
+}
+// above, below, cols: right
+.textpic-right .textpic-imagegrid,
+.textpic-right .textpic-imagegrid div[class*="span"] {
+  float: right;
+}
+// above, below: left
+.textpic-left.textpic-above .textpic-imagegrid,
+.textpic-left.textpic-below .textpic-imagegrid {
+  float: left;
+}
+// textpic, in-text
+div.textpic-intext-left .textpic-imagegrid {
+  margin-right: 20px;
+}
+div.textpic-intext-right .textpic-imagegrid {
+  margin-left: 20px;
+}
+// textpic, text-col
+div.textpic-right .row-fluid figure {
+  margin-left: 0;
+  margin-right: 10px;
+}
+// center above/below
+div.textpic-imagegrid .csc-textpic-center-outer {
+  position: relative;
+  float: right;
+  right: 50%;
+}
+div.textpic-imagegrid .csc-textpic-center-outer .csc-textpic-center-inner {
+  position: relative;
+  float: right;
+  right: -50%;
+}
+
+// -----------------------------------------------------
+// csc-uploads
+// -----------------------------------------------------
+ul.csc-uploads {
+  margin-left: 0;
+}
+ul.csc-uploads span.csc-uploads-fileName {
+  text-decoration: none;
+}
+.csc-uploads-1 .csc-uploads-fileName,
+.csc-uploads-2 .csc-uploads-fileName {
+  font-weight: bold;
+  font-size: 120%;
+}
+.csc-uploads.csc-uploads-2 li a img {
+  margin-right: 1em;
+  padding-right: 0;
+}
+.csc-uploads span.csc-uploads-fileSize {
+  font-style: italic;
+}
+
+// -----------------------------------------------------
+// csc-mailform
+// -----------------------------------------------------
+
+// Input
+input, .uneditable-input {
+  width: 150px;
+}
+textarea {
+  width: 250px;
+}
+select {
+  width: 165px;
+}
+
+// Label Font
+div.csc-mailform fieldset label strong,
+div.csc-mailform fieldset.fieldset-subgroup legend strong {
+  font-size: 12px;
+  line-height: 16px;
+}
+div.csc-mailform fieldset.fieldset-subgroup legend strong {
+  padding-top: 4px;
+}
+// Fieldset OL
+div.csc-mailform fieldset ol {
+  padding: 0;
+}
+// Fieldset OL LI
+div.csc-mailform fieldset ol li {
+  padding: 0;
+  margin: 0;
+}
+// Fieldset Legend
+div.csc-mailform fieldset legend {
+  margin-left: 0;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+// Fieldset Label
+div.csc-mailform fieldset label {
+  width: 12em;
+  padding-top: 0px;
+}
+// Mark required lables with * behind field
+div.csc-mailform li label em {
+  display: inline;
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+// SUBGROUB FIELDSET
+// Fieldset Legend
+div.csc-mailform fieldset.fieldset-subgroup legend {
+  float: left;
+  font-size: 14px;
+  margin-bottom: 15px;
+  margin-right: 1em;
+  line-height: 16px;
+  padding-top: 0px;
+  width: 12em;
+  border: none;
+}
+div.csc-mailform fieldset.fieldset-subgroup ol {
+  margin: 0;
+}
+div.csc-mailform fieldset.fieldset-subgroup ol li {
+  margin-top: 20px;
+  padding-right: 10px;
+}
+div.csc-mailform fieldset.fieldset-subgroup ol li input {
+  margin-bottom: 0px;
+}
+div.csc-mailform fieldset.fieldset-subgroup ol li label {
+  margin: 0;
+}
+div.csc-mailform fieldset.fieldset-subgroup ol li label em {
+  padding-left: 5px;
+}
+div.csc-mailform fieldset.fieldset-subgroup legend em {
+  display: inline;
+  padding-left: 5px;
+}
+// Radion Group
+div.csc-mailform .fieldset-subgroup ol li.csc-form-element-radio,
+div.csc-mailform .fieldset-subgroup ol li.csc-form-element-checkbox {
+  float: left;
+}
+div.csc-mailform .fieldset-subgroup ol li.csc-form-element-radio label,
+div.csc-mailform .fieldset-subgroup ol li.csc-form-element-checkbox label {
+  float: right;
+  padding: 0;
+  margin: 0 20px 0 0;
+  width: auto;
+}
+div.csc-mailform .fieldset-subgroup ol li.csc-form-element-radio input,
+div.csc-mailform .fieldset-subgroup ol li.csc-form-element-checkbox input {
+  float: left;
+  margin: 3px 5px 0 0;
+}
+
+// Buttons
+div.csc-mailform li.csc-form-element-reset {
+  float: left;
+  clear: left;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+div.csc-mailform li.csc-form-element-submit {
+  float: left;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+// SUBGROUB FIELDSET CONFIRMATION
+div.csc-mailform ol li fieldset ol li fieldset legend {
+  float: left;
+  font-size: 14px;
+  margin-bottom: 15px;
+  margin-right: 1em;
+  line-height: 16px;
+  padding-top: 0px;
+  width: 12em;
+  border: none;
+}
+div.csc-mailform form.csc-form-confirmation li.csc-form-confirmation-false {
+  float: left;
+  clear: left;
+  padding-right: 20px;
+  margin-top: 20px;
+}
+div.csc-mailform form.csc-form-confirmation li.csc-form-confirmation-true {
+  float: left;
+  margin-right: 20px;
+  margin-top: 20px;
+}

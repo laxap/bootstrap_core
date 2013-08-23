@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <sDEF>
+            <ROOT type="array">
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.sheet.section</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el type="array">
+                    <rowclass type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.rowclass</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.default</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">Style 1</numIndex>
+                                        <numIndex index="1">style1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">Style 2</numIndex>
+                                        <numIndex index="1">style2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">Style 3</numIndex>
+                                        <numIndex index="1">style3</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </rowclass>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

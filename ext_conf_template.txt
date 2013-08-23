@@ -1,0 +1,11 @@
+# cat=basic; type=boolean; label=Enable extended link wizard for bootstrap specific links: Allows to set links opening modal boxes and to create popovers.
+enableBootstrapLinks = 1
+
+# cat=basic; type=boolean; label=Include FontAwesome and adds icon field to tt_content: Attention: Static ts template for FontAwesome has to be included after activating it here!
+enableFontIcons = 1
+# cat=basic; type=boolean; label=Show icon field on a separate tab: Allows to show all icons below the select field.
+showFontIconsOnSeparateTab = 0
+
+# cat=basic; type=boolean; label=Enable modified image rendering (responsive widths): Attention: Static ts template for Responsive Images has to be included after activating it here!
+enableModifiedImageRendering = 1
+

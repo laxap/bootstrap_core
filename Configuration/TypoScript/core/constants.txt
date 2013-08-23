@@ -1,0 +1,222 @@
+
+# --- Definition of custom subcategories
+#
+# customsubcategory=base=Base Configuration
+# customsubcategory=domain=Domain(s) of website
+# customsubcategory=language=Language settings
+# customsubcategory=meta=Meta tag settings
+# customsubcategory=css=CSS files
+# customsubcategory=js=JavaScript files
+# customsubcategory=extservice=External Services
+# customsubcategory=extension=Extension Configuration
+
+
+# -----------------------------------------------------------------------------
+# bootstrap default config and page constants
+# -----------------------------------------------------------------------------
+#
+
+plugin.tx_bootstrapcore.resourceDir = typo3conf/ext/bootstrap_core/Resources
+plugin.tx_bootstrapcore.langFile = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf
+
+plugin.tx_bootstrapcore {
+
+    # --- system config ---
+    #
+    config {
+        # cat=tx_bootstrapcore.system/css/050; type=boolean; label=Concatenate CSS files: Default is 0.
+        concatenateCss = 0
+        # cat=tx_bootstrapcore.system/css/051; type=boolean; label=Compress CSS files: Default is 0.
+        compressCss = 0
+        # cat=tx_bootstrapcore.system/js/070; type=boolean; label=Concatenate JS files: Default is 0.
+        concatenateJs = 0
+        # cat=tx_bootstrapcore.system/js/071; type=boolean; label=Compress JS files: Default is 0.
+        compressJs = 0
+
+        # cat=tx_bootstrapcore.system/base/060; type=boolean; label=Enable modified image rendering (responsive widths): Attention: Extension configration has to be set accordingly too!
+        enableModifiedImageRendering = 0
+    }
+
+
+    # --- package config ---
+    #
+    pids {
+        # cat=tx_bootstrapcore.system/base/040; type=int+; label=Website root page uid: Default is PID 1.
+        home = 1
+        # cat=tx_bootstrapcore.system/base/041; type=string; label=Footer content page uid: Page with the content shown in the footer of the website. Default is PID 12.
+        footer = 12
+        # cat=tx_bootstrapcore.system/base/042; type=string; label=Meta Navigation Folder: Default is PID 31.
+        metanav = 31
+    }
+
+
+    # --- website config ---
+    #
+    website {
+        # cat=tx_bootstrapcore.website/domain/010; type=string; label=Live domain: Domain of website in production mode.
+        domain = t3bootstrap.simple.ch
+        domain {
+            # cat=tx_bootstrapcore.website/domain/011; type=string; label=Development domain: Internal domain used for development.
+            dev = t3bootstrap.simpledev.ch
+            # cat=tx_bootstrapcore.website/domain/012; type=string; label=Staging domain: Preview or staging domain of website. E.g. preview.domain.com
+            preview = t3bootstrap.mysimple.ch
+        }
+        # cat=tx_bootstrapcore.website/domain/05; type=string; label=Protokoll (http or https): Default is http
+        protocol = http
+
+        # meta tags configuration
+        meta {
+            X-UA-Compatible = IE=edge,chrome=1
+            # cat=tx_bootstrapcore.website/meta/020; type=string; label=Author: Company or person name for meta tag author.
+            author          = Simplicity GmbH
+            # cat=tx_bootstrapcore.website/meta/021; type=string; label=Search Engines:Indexing information for robots. Default: index,follow
+            robots          = index,follow
+            # cat=tx_bootstrapcore.website/meta/022; type=string; label=Viewport: Setting for mobile devices and tablets. Default: width=device-width, initial-scale=1.0
+            viewport        = width=device-width, initial-scale=1.0
+        }
+
+        lang {
+            # cat=tx_bootstrapcore.website/language/010; type=string; label=Default locale: Locale key for default language. Default: de_DE.UTF-8
+            locale = de_DE.UTF-8
+            # cat=tx_bootstrapcore.website/language/011; type=string; label=Default locale, short: Locale 2-letter key for default language. Default: de
+            localeShort = de
+        }
+
+        # enable multi lang
+        multilang {
+            # cat=tx_bootstrapcore.multilang/language/020; type=boolean; label=Activate multi lang:Loads additional setup-multilang.ts supporting three more languages by default. Default: 0
+            enabled = 0
+        }
+
+        format {
+            # cat=tx_bootstrapcore.website/base/120; type=short; label=Default date format: Format as used in date()
+            defaultDate = d.m.Y
+            # cat=tx_bootstrapcore.website/base/120; type=short; label=Default date format: Format as used in strftime()
+            defaultDate_strftime = %d.%m.%Y
+        }
+
+        googleAnalytics {
+            # cat=tx_bootstrapcore.website/extservice/140; type=boolean; label=Enable Google Analytics: Default: 0
+            enabled = 0
+        }
+
+        ext {
+            # cat=tx_bootstrapcore.website/extension/151; type=boolean; label=Enable realurl: Default: 1
+            realurl {
+                enabled = 1
+            }
+            # cat=tx_bootstrapcore.website/extension/151; type=boolean; label=Enable indexed_search: Default: 1
+            indexed_search {
+                enabled = 1
+            }
+        }
+    }
+
+
+    # --- theme config ---
+    #
+    theme {
+        # cat=tx_bootstrapcore.theme/base/010; type=string; label=Theme base directory
+        baseDir = fileadmin/theme/default
+
+        css {
+            # cat=tx_bootstrapcore.theme/css/040; type=string; label=Webfont CSS Link: Default: fonts.googleapis.com/css?family=Open+Sans:400,600
+            webfont       = //fonts.googleapis.com/css?family=Open+Sans:400,600
+            # cat=tx_bootstrapcore.theme/css/041; type=string; label=Twitter Bootstrap CSS: Default: netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css
+            bootstrap     = //netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css
+
+            # cat=tx_bootstrapcore.theme/css/045; type=string; label=Lightbox CSS
+            lightbox      = {$plugin.tx_bootstrapcore.resourceDir}/Public/Libs/prettyphoto/css/prettyPhoto.css
+            # cat=tx_bootstrapcore.theme/css/046; type=string; label=Slider CSS
+            flexslider    = {$plugin.tx_bootstrapcore.resourceDir}/Public/Libs/flexslider/flexslider.css
+            # cat=tx_bootstrapcore.theme/css/049; type=string; label=t3bootstrap default CSS
+            bootstrapCore = {$plugin.tx_bootstrapcore.resourceDir}/Public/Css/style.css
+        }
+
+        js {
+            # cat=tx_bootstrapcore.theme/js/060; type=string; label=jQuery Library: Default: //code.jquery.com/jquery-1.10.2.min.js
+            jquery        = //code.jquery.com/jquery-1.10.2.min.js
+            # cat=tx_bootstrapcore.theme/js/061; type=string; label=Twitter Bootstrap JS: Default: //netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js
+            bootstrap     = //netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js
+
+            # cat=tx_bootstrapcore.theme/js/063; type=string; label=Lightbox JS
+            lightbox      = {$plugin.tx_bootstrapcore.resourceDir}/Public/Libs/prettyphoto/js/jquery.prettyPhoto.js
+            # cat=tx_bootstrapcore.theme/js/066; type=string; label=FlexSlider JS
+            flexslider    = {$plugin.tx_bootstrapcore.resourceDir}/Public/Libs/flexslider/jquery.flexslider-min.js
+            # cat=tx_bootstrapcore.theme/js/067; type=string; label=jquery.easing (for Flexslider)
+            jQueryEasing  = {$plugin.tx_bootstrapcore.resourceDir}/Public/JavaScript/jquery.easing.js
+            # cat=tx_bootstrapcore.theme/js/069; type=string; label=t3bootstrap default JS
+            bootstrapCore = {$plugin.tx_bootstrapcore.resourceDir}/Public/JavaScript/script.js
+        }
+    }
+}
+
+# -----------------------------------------------------------------------------
+# styles.content
+# -----------------------------------------------------------------------------
+#
+content {
+    # default header type not h1 but h2
+    defaultHeaderType = 2
+}
+
+styles.content {
+
+    # image/imgtext configuration
+    imgtext {
+        maxW = 1170
+        maxWInText = 970
+
+        # spaces between images/text (if not custom image rendering is used)
+        colSpace = 20
+        rowSpace = 20
+        textMargin = 20
+
+        # use caption split
+        captionSplit = 1
+
+        # link wrap (click-enlarge)
+        linkWrap {
+            width = 970
+            # open new window for each click-enlarge
+            newWindow = 1
+            # use prettyphoto for lightbox feature
+            lightboxEnabled = 1
+            lightboxCssClass = prettyPhoto
+            lightboxRelAttribute = prettyPhoto[{field:uid}]
+        }
+
+        #borderColor = black
+        borderThick = 1
+        # padding around image with border
+        borderSpace = 10
+
+        #borderClass = csc-textpic-border
+        #borderSelector = div.{$styles.content.imgtext.borderClass} div.csc-textpic-imagewrap img
+    }
+
+   # downloads
+    uploads {
+        filesizeBytesLabels = " | Kb| Mb| Gb"
+    }
+
+
+    # media
+    media {
+        # Video player
+        #defaultVideoWidth = 600
+        #defaultVideoHeight = 400
+
+        # Audio player
+        #defaultAudioWidth = 300
+        #defaultAudioHeight = 30
+    }
+
+    # not constants! define in setup.ts?
+    #links {
+    #    allowTags := removeFromList(acronym,big,center,font,sdfield,strike,tt)
+    #    #allowTags := addToList(area,audio,button,canvas,figure,video)
+    #}
+}
+
+

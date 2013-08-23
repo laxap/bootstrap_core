@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <sDEF>
+            <ROOT type="array">
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.sheet.config</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el type="array">
+                    <modalid type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.modal.uniqueid</label>
+                            <config type="array">
+                                <type>input</type>
+                                <size>30</size>
+                                <eval>required,trim,nospace,alphanum</eval>
+                            </config>
+                        </TCEforms>
+                    </modalid>
+                    <buttontype type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.modal.buttontype</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.modal.buttonclose</numIndex>
+                                        <numIndex index="1">close</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.modal.buttonok</numIndex>
+                                        <numIndex index="1">ok</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </buttontype>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

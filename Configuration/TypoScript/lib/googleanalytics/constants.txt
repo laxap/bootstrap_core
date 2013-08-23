@@ -1,0 +1,11 @@
+
+plugin.tx_bootstrapcore {
+    website {
+        googleAnalytics {
+            enabled = 0
+            # cat=tx_bootstrapcore.website/extservice/141; type=string; label=Google Analytics Account Id (UA-999999-9)
+            accountId = UA-999999-9
+        }
+    }
+}
+

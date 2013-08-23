@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-07-30T17:37:58Z" product-name="bootstrap_core">
+		<header/>
+		<body>
+
+			<trans-unit id="tt_content.tx_bootstrapcore_icon">
+				<source>Icon</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_bootstrapcore_iconbeforeheader">
+				<source>Icon before header</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_bootstrapcore_icon.I.0">
+				<source>none</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_bootstrapcore_imageswidth">
+				<source>Width all image cols</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_bootstrapcore_imageswidth.I.0">
+				<source>not used (use Width)</source>
+			</trans-unit>
+
+
+			<trans-unit id="tt_content.table.acctables_tableclass.I.0">
+				<source>Normal</source>
+			</trans-unit>
+			<trans-unit id="tt_content.table.acctables_tableclass.I.1">
+				<source>striped</source>
+			</trans-unit>
+			<trans-unit id="tt_content.table.acctables_tableclass.I.2">
+				<source>bordered</source>
+			</trans-unit>
+			<trans-unit id="tt_content.table.acctables_tableclass.I.3">
+				<source>hover</source>
+			</trans-unit>
+			<trans-unit id="tt_content.table.acctables_tableclass.I.4">
+				<source>condensed</source>
+			</trans-unit>
+			<trans-unit id="tt_content.table.acctables_tableclass.I.5">
+				<source>striped, hover, condensed</source>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

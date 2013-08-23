@@ -1,0 +1,37 @@
+
+# Only if enabled in constants!
+#
+[globalVar = LIT:1 = {$plugin.tx_bootstrapcore.website.googleAnalytics.enabled}]
+
+    # -----------------------------------------------------------------------------
+    # page.30 for google analytics code
+    #
+    page.30 = TEXT
+    page.30.wrap = <script type="text/javascript">|</script>
+    page.30.value (
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', '{$plugin.tx_bootstrapcore.website.googleAnalytics.accountId}']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+    )
+
+
+    # Google Analytics Tracking for Downloads
+    #
+    tt_content.uploads.20.renderObj {
+        # on preview image
+        10.stdWrap.typolink.ATagParams = onclick="javascript:pageTracker._trackPageview('Download {file:current:name}');"
+        10.stdWrap.typolink.ATagParams.insertData = 1
+        # on icon
+        15.stdWrap.typolink.ATagParams < .10.stdWrap.typolink.ATagParams
+        # on title
+        20.typolink.ATagParams < .10.stdWrap.typolink.ATagParams
+    }
+
+[global]
