@@ -1,0 +1,47 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+    <f:if condition="{videos}">
+        <div class="video-wrapper">
+
+            <f:if condition="{spanNum}">
+                <f:then>
+                    <div class="row-fluid">
+                        <f:for each="{videos}" as="videoCol" key="colIndex" >
+                            <div class="span{spanNum}">
+                                <f:for each="{videoCol}" as="video" key="index" >
+                                    <iframe src="{video.embedLink}" width="{width}" height="{height}" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen ></iframe>
+                                    <f:if condition="{data.image_zoom}">
+                                        <span style="float: right; margin-left: 10px;"><a rel="prettyPhoto[c{data.uid}]" href="{video.extLink}"><i class="{extLinkIcon}"></i></a></span>
+                                    </f:if>
+                                    <f:if condition="{video.caption} == ' '">
+                                        <f:then>
+                                            <p class="caption {captionPosition}">&nbsp;</p>
+                                        </f:then>
+                                        <f:else>
+                                            <f:if condition="{video.caption}">
+                                                <p class="caption {captionPosition}">{video.caption}</p>
+                                            </f:if>
+                                        </f:else>
+                                    </f:if>
+                                </f:for>
+                            </div>
+                        </f:for>
+                    </div>
+                </f:then>
+                <f:else>
+                    <f:for each="{videos}" as="video" key="index" >
+                        <iframe src="{video.embedLink}" width="{width}" height="{height}" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen ></iframe>
+                        <f:if condition="{data.image_zoom}">
+                            <span style="float: right; margin-left: 10px;"><a rel="prettyPhoto[c{data.uid}]" href="{video.extLink}"><i class="{extLinkIcon}"></i></a></span>
+                        </f:if>
+                        <f:if condition="{video.caption}">
+                            <p class="caption {captionPosition}">{video.caption}</p>
+                        </f:if>
+                    </f:for>
+                </f:else>
+            </f:if>
+
+        </div>
+    </f:if>
+</f:section>

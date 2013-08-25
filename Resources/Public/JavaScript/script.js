@@ -50,6 +50,11 @@
         $('a[data-toggle=popover]').popover().click(function(e) { e.preventDefault() });
 
 
+        /* ------------------------------------------
+         * Responsive video size
+         * ------------------------------------------ */
+        $(".video-wrapper").fitVids();
+
     });
 
 } ) ( jQuery );

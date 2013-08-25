@@ -9,6 +9,7 @@
 # customsubcategory=js=JavaScript files
 # customsubcategory=extservice=External Services
 # customsubcategory=extension=Extension Configuration
+# customsubcategory=video=Video Content Element
 
 
 # -----------------------------------------------------------------------------
@@ -143,10 +144,42 @@ plugin.tx_bootstrapcore {
             lightbox      = {$plugin.tx_bootstrapcore.resourceDir}/Public/Libs/prettyphoto/js/jquery.prettyPhoto.js
             # cat=tx_bootstrapcore.theme/js/066; type=string; label=FlexSlider JS
             flexslider    = {$plugin.tx_bootstrapcore.resourceDir}/Public/Libs/flexslider/jquery.flexslider-min.js
-            # cat=tx_bootstrapcore.theme/js/067; type=string; label=jquery.easing (for Flexslider)
+            # cat=tx_bootstrapcore.theme/js/067; type=string; label=jQuery Easing Plugin (for flexslider)
             jQueryEasing  = {$plugin.tx_bootstrapcore.resourceDir}/Public/JavaScript/jquery.easing.js
+            # cat=tx_bootstrapcore.theme/js/067; type=string; label=jQuery FitVid Plugin (for responsive video size)
+            jQueryFitvid  = {$plugin.tx_bootstrapcore.resourceDir}/Public/JavaScript/jquery.fitvid.js
             # cat=tx_bootstrapcore.theme/js/069; type=string; label=t3bootstrap default JS
             bootstrapCore = {$plugin.tx_bootstrapcore.resourceDir}/Public/JavaScript/script.js
+        }
+    }
+
+
+    # --- video content element ---
+    #
+    video {
+        default {
+            # cat=tx_bootstrapcore.system/video/010; type=string; label=Default video width
+            width = 370
+            # cat=tx_bootstrapcore.system/video/011; type=string; label=Default video height
+            height = 208
+            # cat=tx_bootstrapcore.system/video/012; type=string; label=Default link icon for lightbox view
+            extLinkIcon = icon-external-link
+        }
+        youtube {
+            # cat=tx_bootstrapcore.system/video/030; type=string; label=Youtube embed link base url
+            embedLinkBase = http://www.youtube.com/embed/
+            # cat=tx_bootstrapcore.system/video/031; type=string; label=Addon for youtube link (after video id)
+            embedLinkAddOn = ?rel=0
+            # cat=tx_bootstrapcore.system/video/032; type=string; label=Base url for link to view on youtube website.
+            extLinkBase = http://www.youtube.com/watch?v=
+        }
+        vimeo {
+            # cat=tx_bootstrapcore.system/video/040; type=string; label=Vimeo embed link base url
+            embedLinkBase = http://player.vimeo.com/video/
+            # cat=tx_bootstrapcore.system/video/041; type=string; label=Addon for vimeo link (after video id)
+            embedLinkAddOn = ?title=0&byline=0&portrait=0&badge=0
+            # cat=tx_bootstrapcore.system/video/042; type=string; label=Base url for link to view on vimeo website.
+            extLinkBase = http://www.vimeo.com/
         }
     }
 }

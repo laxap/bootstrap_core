@@ -18,4 +18,6 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_core/Configuration/TypoScript/core/tt_content/rte/tsconfig.ts">
 # Downloads
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_core/Configuration/TypoScript/core/tt_content/uploads/tsconfig.ts">
+# Videos
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_core/Configuration/TypoScript/core/tt_content/videos/tsconfig.ts">
 

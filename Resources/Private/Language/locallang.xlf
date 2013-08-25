@@ -370,6 +370,28 @@
 			<trans-unit id="grid.modal.buttonclose" xml:space="preserve">
 				<source>Close</source>
 			</trans-unit>
+
+			<trans-unit id="video.ctype.title" xml:space="preserve">
+				<source>Video</source>
+			</trans-unit>
+			<trans-unit id="video.ctype.description" xml:space="preserve">
+				<source>Videos from Youtube or Vimeo</source>
+			</trans-unit>
+			<trans-unit id="video.links" xml:space="preserve">
+				<source>Video Links (one per line)</source>
+			</trans-unit>
+			<trans-unit id="video.caption" xml:space="preserve">
+				<source>Video Captions (one per line)</source>
+			</trans-unit>
+			<trans-unit id="video.width" xml:space="preserve">
+				<source>Max. width of video</source>
+			</trans-unit>
+			<trans-unit id="video.height" xml:space="preserve">
+				<source>Max. height of video</source>
+			</trans-unit>
+			<trans-unit id="video.position" xml:space="preserve">
+				<source>Position of caption</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

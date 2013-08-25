@@ -3,7 +3,7 @@
 #
 plugin.tx_indexedsearch {
   # html template for form, results, rules...
-  templateFile = {$plugin.tx_bootstrapcore.resourceDir}/Private/Templates/indexed_search/indexed_search_css.html
+  templateFile = {$plugin.tx_bootstrapcore.resourceDir}/Private/Templates/Extensions/indexed_search/indexed_search_css.html
 
   # date format, used in result list
   dateFormat {

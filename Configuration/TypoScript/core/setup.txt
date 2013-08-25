@@ -161,6 +161,7 @@ page {
         ligthbox = {$plugin.tx_bootstrapcore.theme.js.lightbox}
         flexslider   = {$plugin.tx_bootstrapcore.theme.js.flexslider}
         jQueryEasing = {$plugin.tx_bootstrapcore.theme.js.jQueryEasing}
+        jQueryFitvid = {$plugin.tx_bootstrapcore.theme.js.jQueryFitvid}
         bootstrapCore  = {$plugin.tx_bootstrapcore.theme.js.bootstrapCore}
     }
 
@@ -230,6 +231,8 @@ page.headerData.50.value (
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_core/Configuration/TypoScript/core/tt_content/rte/setup.ts">
 # tt_content: Uploads
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_core/Configuration/TypoScript/core/tt_content/uploads/setup.ts">
+# tt_content: Videos (Custom Element)
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_core/Configuration/TypoScript/core/tt_content/videos/setup.ts">
 
 
 # -----------------------------------------------------------------------------
