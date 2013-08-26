@@ -16,7 +16,7 @@ lib.parseFunc_RTE {
   # no p-tag around buttons?
   #externalBlocks := addToList(button)
 
-  # TODO: check if everything still required/ok?
+  # still required/ok?
   externalBlocks.table {
     # Allow more classes than only 'contenttable'
     stdWrap.HTMLparser.tags.table.fixAttrib.class.list >
