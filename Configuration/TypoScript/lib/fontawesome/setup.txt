@@ -2,11 +2,11 @@
 # --- lib.stdheader ----------
 #
 # Icons in headers
-# Header 1, <h1>
-lib.stdheader.10.1.current >
-lib.stdheader.10.1.dataWrap >
-lib.stdheader.10.1.cObject = CASE
-lib.stdheader.10.1.cObject {
+# Header 0, <h1>
+lib.stdheader.10.0.current >
+lib.stdheader.10.0.dataWrap >
+lib.stdheader.10.0.cObject = CASE
+lib.stdheader.10.0.cObject {
     key.field = tx_bootstrapcore_icon
     default = TEXT
     default.current = 1
@@ -16,10 +16,18 @@ lib.stdheader.10.1.cObject {
     0.current = 1
     0.dataWrap = <h1{register:headerClass}>|</h1>
 }
+# Header 1, <h1>
+lib.stdheader.10.1.current >
+lib.stdheader.10.1.dataWrap >
+lib.stdheader.10.1.cObject < lib.stdheader.10.0.cObject
+lib.stdheader.10.1.cObject {
+    default.dataWrap = <h1{register:headerClass}><i class="{field:tx_bootstrapcore_icon}"></i>|</h1>
+    0.dataWrap = <h1{register:headerClass}>|</h1>
+}
 # Header 2, <h2>
 lib.stdheader.10.2.current >
 lib.stdheader.10.2.dataWrap >
-lib.stdheader.10.2.cObject < lib.stdheader.10.1.cObject
+lib.stdheader.10.2.cObject < lib.stdheader.10.0.cObject
 lib.stdheader.10.2.cObject {
     default.dataWrap = <h2{register:headerClass}><i class="{field:tx_bootstrapcore_icon}"></i>|</h2>
     0.dataWrap = <h2{register:headerClass}>|</h2>
@@ -27,7 +35,7 @@ lib.stdheader.10.2.cObject {
 # Header 3, <h3>
 lib.stdheader.10.3.current >
 lib.stdheader.10.3.dataWrap >
-lib.stdheader.10.3.cObject < lib.stdheader.10.1.cObject
+lib.stdheader.10.3.cObject < lib.stdheader.10.0.cObject
 lib.stdheader.10.3.cObject {
     default.dataWrap = <h3{register:headerClass}><i class="{field:tx_bootstrapcore_icon}"></i>|</h3>
     0.dataWrap = <h3{register:headerClass}>|</h3>
@@ -35,7 +43,7 @@ lib.stdheader.10.3.cObject {
 # Header 4, <h4>
 lib.stdheader.10.4.current >
 lib.stdheader.10.4.dataWrap >
-lib.stdheader.10.4.cObject < lib.stdheader.10.1.cObject
+lib.stdheader.10.4.cObject < lib.stdheader.10.0.cObject
 lib.stdheader.10.4.cObject {
     default.dataWrap = <h4{register:headerClass}><i class="{field:tx_bootstrapcore_icon}"></i>|</h4>
     0.dataWrap = <h4{register:headerClass}>|</h4>
@@ -43,7 +51,7 @@ lib.stdheader.10.4.cObject {
 # Header 5, <h5>
 lib.stdheader.10.5.current >
 lib.stdheader.10.5.dataWrap >
-lib.stdheader.10.5.cObject < lib.stdheader.10.1.cObject
+lib.stdheader.10.5.cObject < lib.stdheader.10.0.cObject
 lib.stdheader.10.5.cObject {
     default.dataWrap = <h5{register:headerClass}><i class="{field:tx_bootstrapcore_icon}"></i>|</h5>
     0.dataWrap = <h5{register:headerClass}>|</h5>

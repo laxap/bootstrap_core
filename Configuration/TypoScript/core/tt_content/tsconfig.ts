@@ -8,10 +8,10 @@
 #
 TCEFORM.tt_content.header_layout {
     # 1 = 0, 100 is hide
-    removeItems = 1,100
+    removeItems = 0,100
     altLabels {
-        0 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.header_layout.0
-        #1 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.header_layout.1
+        #0 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.header_layout.0
+        1 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.header_layout.1
         2 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.header_layout.2
         3 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.header_layout.3
         4 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.header_layout.4
