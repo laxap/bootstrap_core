@@ -267,6 +267,7 @@ RTE.default {
   # Use stylesheet file to style the contents (htmlArea RTE only), default = 1
   #ignoreMainStyleOverride = 1
 
+  enableWordClean = 1
 
   # ======================================================
   # RTE toolbar container type and style selector
@@ -307,7 +308,7 @@ RTE.default {
   # ======================================================
 
   #showButtons = *
-  showButtons = blockstylelabel, blockstyle, textstylelabel, textstyle, formatblocklabel, formatblock, bold, italic, subscript, superscript, orderedlist, unorderedlist, outdent, indent, textindicator, insertcharacter, link, table, findreplace, chMode, removeformat, undo, redo, about, toggleborders, tableproperties, rowproperties, rowinsertabove, rowinsertunder, rowdelete, rowsplit, columninsertbefore, columninsertafter, columndelete, columnsplit, cellproperties, cellinsertbefore, cellinsertafter, celldelete, cellsplit, cellmerge, textindicator, acronym, line
+  showButtons = blockstylelabel, blockstyle, textstylelabel, textstyle, formatblocklabel, formatblock, bold, italic, subscript, superscript, orderedlist, unorderedlist, outdent, indent, textindicator, insertcharacter, link, table, findreplace, chMode, removeformat, undo, redo, about, toggleborders, tableproperties, rowproperties, rowinsertabove, rowinsertunder, rowdelete, rowsplit, columninsertbefore, columninsertafter, columndelete, columnsplit, cellproperties, cellinsertbefore, cellinsertafter, celldelete, cellsplit, cellmerge, textindicator, acronym, line, copy, cut, paste, pastetoggle, pastebehaviour, pasteastext
 
   toolbarOrder (
     table, toggleborders, bar, tableproperties, rowproperties, cellproperties, bar,
@@ -319,7 +320,7 @@ RTE.default {
     linebreak,
     blockstylelabel, blockstyle,
     linebreak,
-    bold, italic, bar, orderedlist, unorderedlist, textstyle, link, insertcharacter, line, bar, subscript, superscript, bar, textindicator
+    bold, italic, bar, orderedlist, unorderedlist, textstyle, link, insertcharacter, line, bar, subscript, superscript, bar, copy, cut, paste, pastetoggle, pastebehaviour, pasteastext, bar, textindicator
   )
 
 

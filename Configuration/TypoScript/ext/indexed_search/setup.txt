@@ -7,8 +7,8 @@ plugin.tx_indexedsearch {
 
   # date format, used in result list
   dateFormat {
-    created = {$plugin.tx_bootstrapcore.dateFormat.defaultDate}
-    modified = {$plugin.tx_bootstrapcore.dateFormat.defaultDate}
+    created = {$plugin.tx_bootstrapcore.website.format.defaultDate_strftime}
+    modified = {$plugin.tx_bootstrapcore.website.format.defaultDate_strftime}
   }
 
   # search config
