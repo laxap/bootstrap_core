@@ -65,7 +65,7 @@ RTE.classes {
     value = text-align: right;
   }
 
-  muted {
+  text-muted {
     name = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:rte.classes.muted
     value = color: #999999;
   }
@@ -73,7 +73,7 @@ RTE.classes {
     name = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:rte.classes.warning
     value = color: #c09853;
   }
-  text-error {
+  text-danger {
     name = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:rte.classes.error
     value = color: #B94A48;
   }
@@ -123,10 +123,14 @@ RTE.classes {
   table-condensed {
     name = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:rte.classes.table-condensed
   }
+  # -- div wrap around table
+  table-responsive {
+    name = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:rte.classes.table-responsive
+  }
 
   # --- Table row classes ---
   #
-  info {
+  active {
     name = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:rte.classes.info
     value = background-color: #d9edf7;
   }
@@ -134,7 +138,7 @@ RTE.classes {
     name = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:rte.classes.success
     value = background-color: #dff0d8;
   }
-  error {
+  danger {
     name = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:rte.classes.error
     value = background-color: #f2dede;
   }
@@ -221,7 +225,7 @@ RTE.classesAnchor {
   # --- Button styles (for internal links)
   #
   button {
-    class = btn
+    class = "btn btn-default"
     titleText =
     type = page
   }
@@ -241,12 +245,12 @@ RTE.classesAnchor {
     type = page
   }
   button5 {
-    class = "btn btn-primary btn-large"
+    class = "btn btn-primary btn-lg"
     titleText =
     type = page
   }
   button6 {
-    class = "btn btn-info btn-large"
+    class = "btn btn-info btn-lg"
     titleText =
     type = page
   }
@@ -279,7 +283,7 @@ RTE.default {
     }
 
     blockstyle.tags {
-      p.allowedClasses = lead, text-left, text-center, text-right, muted, text-warning, text-error, text-info, text-success
+      p.allowedClasses = lead, text-left, text-center, text-right, text-muted, text-warning, text-danger, text-info, text-success
 
       blockquote.allowedClasses = pull-left, pull-right
 
@@ -289,16 +293,18 @@ RTE.default {
       h4.allowedClasses = text-left, text-center, text-right, media-heading
 
       table.allowedClasses = table, table-striped, table-bordered, table-hover, table-condensed
-      tr.allowedClasses = success, error, warning, info
-      td.allowedClasses = text-left, text-center, text-right
+      div.allowedClasses = table-responsive
+
+      tr.allowedClasses = success, danger, warning, active
+      td.allowedClasses = text-left, text-center, text-right, success, danger, warning, active
     }
 
     textstyle.tags {
-      span.allowedClasses = muted, text-warning, text-error, text-info, text-success, label, badge
+      span.allowedClasses = text-muted, text-warning, text-danger, text-info, text-success, label, badge
     }
 
     link {
-       properties.class.allowedClasses := addToList(lightbox,btn,btn btn-primary,btn btn-info,btn btn-inverse,btn btn-primar btn-large,btn btn-info btn-large)
+       properties.class.allowedClasses := addToList(lightbox,btn btn-default,btn btn-primary,btn btn-info,btn btn-inverse,btn btn-primar btn-lg,btn btn-info btn-lg)
     }
   }
 
@@ -347,11 +353,11 @@ RTE.default {
     # text-justify not in set
     allowedClasses (
         external-link, internal-link, download, mail,
-        btn, btn-primary, btn-info, btn-success, btn-warning, btn-error, btn-inverse, btn-link, btn-large, btn-small, btn-mini,
+        btn, btn-default, btn-primary, btn-info, btn-success, btn-warning, btn-danger, btn-inverse, btn-link, btn-lg, btn-sm, btn-xs,
         text-left, text-center, text-right,
-        text-info, text-success, text-warning, text-error, muted,
+        text-info, text-success, text-warning, text-danger, text-muted,
         lead, label, badge,
-        table, table-bordered, table-striped, table-condensed, table-hover, success, warning, error, info,
+        table, table-bordered, table-striped, table-condensed, table-hover, success, warning, danger, active,
         lightbox, indent
     )
 

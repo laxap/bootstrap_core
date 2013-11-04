@@ -9,6 +9,7 @@ config {
   #  Character sets
   renderCharset = utf-8
   metaCharset = utf-8
+
   # Cache settings
   cache_period = 43200
   sendCacheHeaders = 1
@@ -17,30 +18,18 @@ config {
   # Page title before Website title  (<title> tag)
   pageTitleFirst = 1
 
-  # Link settings
-  absRefPrefix = {$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain}/
-  prefixLocalAnchors = all
-  extTarget =
-
   # URL Settings
   tx_realurl_enable = {$plugin.tx_bootstrapcore.website.ext.realurl.enabled}
   #simulateStaticDocuments = 0
-  # Indexed Search
-  index_enable = {$plugin.tx_bootstrapcore.website.ext.indexed_search.enabled}
-  index_externals = {$plugin.tx_bootstrapcore.website.ext.indexed_search.enabled}
-  index_metatags = 0
 
   # Code cleaning
   disablePrefixComment = 1
   # Move default CSS and JS to external file
   removeDefaultJS = external
   inlineStyle2TempFile = 1
-  # combine & compress css
+  # concatenate css & js
   concatenateCss = {$plugin.tx_bootstrapcore.config.concatenateCss}
-  compressCss = {$plugin.tx_bootstrapcore.config.compressCss}
-  # combine & compress js
   concatenateJs = {$plugin.tx_bootstrapcore.config.concatenateJs}
-  compressJs = {$plugin.tx_bootstrapcore.config.compressJs}
 
   # Protect mail addresses from spamming
   spamProtectEmailAddresses = 1
@@ -71,37 +60,28 @@ config {
   language = {$plugin.tx_bootstrapcore.website.lang.localeShort}
   htmlTag_langKey < config.language
 
-
 }
 
+
 # -----------------------------------------
-# SSL
+# BaseUrl ...
 #
 /*
+# base tag
+config.baseURL = {$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain}/
+# base tag with SSL
 [globalString = _SERVER|HTTPS=on]
-  config {
-    # Link settings
-    absRefPrefix = https://{$plugin.tx_bootstrapcore.website.domain}/
-  }
+  config.baseURL = https://{$plugin.tx_bootstrapcore.website.domain}/
 [global]
 */
 
-# -----------------------------------------
-# Dev & Preview Domains
-#
-[globalString = IENV:HTTP_HOST = {$plugin.tx_bootstrapcore.website.domain.preview}]
-  config {
-    # Link settings
-    absRefPrefix = {$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain.preview}/
-  }
-[global]
-[globalString = IENV:HTTP_HOST = {$plugin.tx_bootstrapcore.website.domain.dev}]
-  config {
-    # Link settings
-    absRefPrefix = {$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain.dev}/
-  }
-[global]
-
+# ...or AbsRefPrefix
+config {
+  # absolute urls
+  absRefPrefix = /
+  prefixLocalAnchors = all
+  extTarget =
+}
 
 
 # -----------------------------------------------------------------------------
@@ -127,13 +107,11 @@ page {
         bootstrap.excludeFromConcatenation = 1
         bootstrap.external = 1
         bootstrap.forceOnTop = 1
-
         # will be first (forced on top as last)
         webfont     = {$plugin.tx_bootstrapcore.website.protocol}:{$plugin.tx_bootstrapcore.theme.css.webfont}
         webfont.excludeFromConcatenation = 1
         webfont.external = 1
         webfont.forceOnTop = 1
-
         # --- will be merged (if activated)
         # prettyPhoto (for image/video/content lightbox)
         lightbox = {$plugin.tx_bootstrapcore.theme.css.lightbox}
@@ -156,12 +134,11 @@ page {
         jquery.excludeFromConcatenation = 1
         jquery.external = 1
         jquery.forceOnTop = 1
-
         # --- will be merged (if activated)
-        ligthbox = {$plugin.tx_bootstrapcore.theme.js.lightbox}
-        flexslider   = {$plugin.tx_bootstrapcore.theme.js.flexslider}
-        jQueryEasing = {$plugin.tx_bootstrapcore.theme.js.jQueryEasing}
-        jQueryFitvid = {$plugin.tx_bootstrapcore.theme.js.jQueryFitvid}
+        ligthbox       = {$plugin.tx_bootstrapcore.theme.js.lightbox}
+        flexslider     = {$plugin.tx_bootstrapcore.theme.js.flexslider}
+        jQueryEasing   = {$plugin.tx_bootstrapcore.theme.js.jQueryEasing}
+        jQueryFitvid   = {$plugin.tx_bootstrapcore.theme.js.jQueryFitvid}
         bootstrapCore  = {$plugin.tx_bootstrapcore.theme.js.bootstrapCore}
     }
 
@@ -170,45 +147,111 @@ page {
     meta {
         X-UA-Compatible = {$plugin.tx_bootstrapcore.website.meta.X-UA-Compatible}
         X-UA-Compatible.httpEquivalent = 1
-
-        author   = {$plugin.tx_bootstrapcore.website.meta.author}
+        # viewport for iPad, mobile
         viewport = {$plugin.tx_bootstrapcore.website.meta.viewport}
+        # use google+ profile url if persons or company is active
+        author   = {$plugin.tx_bootstrapcore.website.meta.author}
+        # search engine
         robots   = {$plugin.tx_bootstrapcore.website.meta.robots}
-
-        keywords = TEXT
-        keywords.data = levelfield:-1, keywords, slide
+        #keywords = TEXT
+        #keywords.data = levelfield:-1, keywords, slide
         description = TEXT
         description.data = field:description // field:abstract // levelfield :-1, description, slide // levelfield :-1, abstract, slide
     }
 }
 
-
-
 # -----------------------------------------------------------------------------
-# HTML5 Support for IE <9 -->
+# Meta Tags for sharing via Facebook and Twitter
 # -----------------------------------------------------------------------------
 #
-page.headerData.10 = TEXT
-page.headerData.10.value (
-<!--[if lt IE 9]>
-  <script src="{$plugin.tx_bootstrapcore.resourceDir}/Public/JavaScript/html5shiv/html5shiv.js"></script>
-<![endif]-->
+# Facebook OpenGraph
+page.headerData.20 = COA
+page.headerData.20 {
+    10 = TEXT
+    10.insertData = 1
+    10.append = TEXT
+    10.append.char = 10
+    10.value (
+<!-- fb/opengraph // -->
+<meta property="og:title" content="{page:title}" />
+<meta property="og:site_name" content="{TSFE:tmpl|sitetitle}" />
 )
+    # description
+    20 = TEXT
+    20.data = field:description // field:abstract
+    20.required = 1
+    #20.data = field:description // field:abstract // levelfield :-1, description, slide // levelfield :-1, abstract, slide
+    20.wrap = <meta property="og:description" content="|" />
+    20.append = TEXT
+    20.append.char = 10
+
+    # url
+    30 = TEXT
+    30.typolink.parameter.data = TSFE:id
+    30.typolink.returnLast = url
+    30.wrap = <meta property="og:url" content="{$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain}|" />
+    30.wrap.insertData = 1
+    30.append = TEXT
+    30.append.char = 10
+
+    # image
+    40 = FILES
+    40 {
+        references {
+            table = pages
+            data = levelmedia:-1,slide
+        }
+        renderObj = TEXT
+        renderObj {
+            data = file:current:publicUrl
+            wrap = <meta property="og:image" content="{$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain}/|" />
+        }
+    }
+}
+
+# Twitter Cards
+page.headerData.21 < page.headerData.20
+page.headerData.21 {
+    10.value (
+
+<!-- twitter // -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="{page:title}" />
+)
+    # description
+    20.wrap = <meta name="twitter:description" content="|" />
+    # url
+    30.wrap = <meta name="twitter:url" content="{$plugin.tx_bootstrapcore.website.protocol}://|" />
+    # image
+    40.renderObj.wrap = <meta name="twitter:image" content="{$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain}/|" />
+}
+
 
 
 # -----------------------------------------------------------------------------
 # page.headerData.50 for favicon and apple-touch-icons
 # -----------------------------------------------------------------------------
 #
-page.headerData.50 = TEXT
-page.headerData.50.value (
-  <link rel="shortcut icon" href="/fileadmin/favicons/favicon.ico" />
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/fileadmin/favicons/apple-touch-icon-144x144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/fileadmin/favicons/apple-touch-icon-114x114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/fileadmin/favicons/apple-touch-icon-72x72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="/fileadmin/favicons/apple-touch-icon-precomposed.png">
+page.headerData.40 = TEXT
+page.headerData.40.value (
+<link rel="shortcut icon" href="fileadmin/favicons/favicon.ico" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="fileadmin/favicons/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="fileadmin/favicons/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="fileadmin/favicons/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="fileadmin/favicons/apple-touch-icon-precomposed.png">
+
 )
 
+# -----------------------------------------------------------------------------
+# HTML5 Support for IE<9 -->
+# -----------------------------------------------------------------------------
+#
+page.headerData.50 = TEXT
+page.headerData.50.value (
+<!--[if lt IE 9]>
+  <script src="lib/html5shiv/html5shiv.js"></script>
+<![endif]-->
+)
 
 
 # -----------------------------------------------------------------------------

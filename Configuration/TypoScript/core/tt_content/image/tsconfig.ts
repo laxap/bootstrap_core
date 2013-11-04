@@ -15,8 +15,11 @@ TCEFORM.tt_content {
                     2 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.layout.images.2
                     3 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.layout.images.3
                 }
-                # Slider, not anymore availbable
-                #addItems.4 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.layout.images.4
+                addItems.4 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.layout.images.4
+                addItems.5 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.layout.images.5
+                addItems.6 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.layout.images.6
+                addItems.7 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.layout.images.7
+
             }
 
             # Image only
@@ -27,7 +30,10 @@ TCEFORM.tt_content {
                     2 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.layout.images.2
                     3 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.layout.images.3
                 }
-                #addItems.4 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.layout.images.4
+                addItems.4 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.layout.images.4
+                addItems.5 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.layout.images.5
+                addItems.6 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.layout.images.6
+                addItems.7 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:tceform.tt_content.layout.images.7
             }
         }
     }

@@ -41,7 +41,8 @@ TCEFORM.tt_content.section_frame {
     # Add new frame types for bootstrap
     addItems {
         120 = Well
-        121 = Well condensed
+        121 = Well small
+        122 = Well large
         130 = Hero Unit
         140 = Info Box
         141 = Success Box

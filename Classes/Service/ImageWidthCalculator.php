@@ -79,19 +79,45 @@ class ImageWidthCalculator extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
 			if ( ! is_null($this->pGridContainer) ) {
 				$gridLayout = $this->pGridContainer['tx_gridelements_backend_layout'];
 				$gridColPos = $this->cObj->data['parentgrid_tx_gridelements_columns'];
-				// get column layout from flexform field
-				$flexformLayout = $this->pi_getFFvalue(\TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($this->pGridContainer['pi_flexform']), 'layout');
+				// get column grid size from flexform field
+				switch ( $gridColPos ) {
+					case 102:
+						$colGridWidth = $this->pi_getFFvalue(\TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($this->pGridContainer['pi_flexform']), 'mdCol2');
+						break;
+					case 103:
+						$colGridWidth = $this->pi_getFFvalue(\TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($this->pGridContainer['pi_flexform']), 'mdCol3');
+						break;
+					case 104:
+						$colGridWidth = $this->pi_getFFvalue(\TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($this->pGridContainer['pi_flexform']), 'mdCol4');
+						break;
+					default:
+						$colGridWidth = $this->pi_getFFvalue(\TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($this->pGridContainer['pi_flexform']), 'mdCol1');
+						break;
+				}
 				// get in grid width
-				$contentWidth = $this->getGridElementContentWidth($contentWidth, $gridLayout, $gridColPos, $flexformLayout);
-
+				$contentWidth = $this->getGridElementContentWidth($contentWidth, $gridLayout, $gridColPos, $colGridWidth);
 			}
 
 			// calc width in grid
 			$gridLayout = $this->cObj->data['parentgrid_tx_gridelements_backend_layout'];
 			$gridColPos = $this->cObj->data['tx_gridelements_columns'];
-			$flexformLayout = $this->cObj->data['parentgrid_flexform_layout'];
+			switch ( $gridColPos ) {
+				case 102:
+					$colGridWidth = $this->cObj->data['parentgrid_flexform_mdCol2'];
+					break;
+				case 103:
+					$colGridWidth = $this->cObj->data['parentgrid_flexform_mdCol3'];
+					break;
+				case 104:
+					$colGridWidth = $this->cObj->data['parentgrid_flexform_mdCol4'];
+					break;
+				default:
+					$colGridWidth = $this->cObj->data['parentgrid_flexform_mdCol1'];
+					break;
+			}
+
 			// get in grid width
-			$contentWidth = $this->getGridElementContentWidth($contentWidth, $gridLayout, $gridColPos, $flexformLayout);
+			$contentWidth = $this->getGridElementContentWidth($contentWidth, $gridLayout, $gridColPos, $colGridWidth);
 		}
 
 		// get single image width
@@ -105,7 +131,7 @@ class ImageWidthCalculator extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
 	 * @return bool
 	 */
 	protected function setConfiguration($conf) {
-		// array with row-fluid span width (in percentage)
+		// array with row span width (in percentage)
 		if ( ! isset($conf['rowFluidSpanWidth.']) || ! is_array($conf['rowFluidSpanWidth.']) ) {
 			$this->devLog('rowFluidSpanWidth is not defined.', 3, $conf['rowFluidSpanWidth.']);
 			return false;
@@ -204,6 +230,7 @@ class ImageWidthCalculator extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
 		// Column grids
 		// Attention: works only because 2-col has uid 1, 3-col has uid 2 and 4-col has uid 3
 		if ( $gridLayout < 4 ) {
+			/*
 			$gridCols = $gridLayout + 1;
 			$gridElementCol = $gridColumn;
 			// col nr: 102 - 101 = Col 1
@@ -212,6 +239,8 @@ class ImageWidthCalculator extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
 			$gridElementColLayout = explode('-', $colLayout);
 			// get colwith from array
 			$gridElementColWidthSpan = $gridElementColLayout[$gridElementColNr];
+			*/
+			$gridElementColWidthSpan = $colLayout;
 
 			// get width in percentage for span
 			$spanWidthPercent = $this->rowFluidSpanWidth[$gridElementColWidthSpan];

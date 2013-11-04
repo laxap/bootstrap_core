@@ -36,12 +36,13 @@ tt_content.stdWrap {
 
     110.20.10.value = page-header
     120.20.10.value = well
-    121.20.10.value = well well-small
-    130.20.10.value = hero-unit
+    121.20.10.value = well well-sm
+    122.20.10.value = well well-lg
+    130.20.10.value = jumbotron
     140.20.10.value = alert alert-info
     141.20.10.value = alert alert-success
     142.20.10.value = alert alert-warning
-    143.20.10.value = alert alert-error
+    143.20.10.value = alert alert-danger
 
     # Special wraps for specific frames
     #
