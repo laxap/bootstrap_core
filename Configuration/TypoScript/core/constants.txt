@@ -27,12 +27,8 @@ plugin.tx_bootstrapcore {
     config {
         # cat=tx_bootstrapcore.system/css/050; type=boolean; label=Concatenate CSS files: Default is 0.
         concatenateCss = 0
-        # cat=tx_bootstrapcore.system/css/051; type=boolean; label=Compress CSS files: Default is 0.
-        compressCss = 0
         # cat=tx_bootstrapcore.system/js/070; type=boolean; label=Concatenate JS files: Default is 0.
         concatenateJs = 0
-        # cat=tx_bootstrapcore.system/js/071; type=boolean; label=Compress JS files: Default is 0.
-        compressJs = 0
 
         # cat=tx_bootstrapcore.system/base/060; type=boolean; label=Enable modified image rendering (responsive widths): Attention: Extension configration has to be set accordingly too!
         enableModifiedImageRendering = 0
@@ -56,12 +52,6 @@ plugin.tx_bootstrapcore {
     website {
         # cat=tx_bootstrapcore.website/domain/010; type=string; label=Live domain: Domain of website in production mode.
         domain = t3bootstrap.simple.ch
-        domain {
-            # cat=tx_bootstrapcore.website/domain/011; type=string; label=Development domain: Internal domain used for development.
-            dev = t3bootstrap.simpledev.ch
-            # cat=tx_bootstrapcore.website/domain/012; type=string; label=Staging domain: Preview or staging domain of website. E.g. preview.domain.com
-            preview = t3bootstrap.mysimple.ch
-        }
         # cat=tx_bootstrapcore.website/domain/05; type=string; label=Protokoll (http or https): Default is http
         protocol = http
 
@@ -69,9 +59,9 @@ plugin.tx_bootstrapcore {
         meta {
             X-UA-Compatible = IE=edge,chrome=1
             # cat=tx_bootstrapcore.website/meta/020; type=string; label=Author: Company or person name for meta tag author.
-            author          = Simplicity GmbH
+            author          =
             # cat=tx_bootstrapcore.website/meta/021; type=string; label=Search Engines:Indexing information for robots. Default: index,follow
-            robots          = index,follow
+            robots          = noindex,nofollow
             # cat=tx_bootstrapcore.website/meta/022; type=string; label=Viewport: Setting for mobile devices and tablets. Default: width=device-width, initial-scale=1.0
             viewport        = width=device-width, initial-scale=1.0
         }
@@ -106,10 +96,6 @@ plugin.tx_bootstrapcore {
             realurl {
                 enabled = 1
             }
-            # cat=tx_bootstrapcore.website/extension/151; type=boolean; label=Enable indexed_search: Default: 1
-            indexed_search {
-                enabled = 1
-            }
         }
     }
 
@@ -118,18 +104,18 @@ plugin.tx_bootstrapcore {
     #
     theme {
         # cat=tx_bootstrapcore.theme/base/010; type=string; label=Theme base directory
-        baseDir = fileadmin/theme/default
+        baseDir = theme/default
 
         css {
             # cat=tx_bootstrapcore.theme/css/040; type=string; label=Webfont CSS Link: Default: fonts.googleapis.com/css?family=Open+Sans:400,600
             webfont       = //fonts.googleapis.com/css?family=Open+Sans:400,600
-            # cat=tx_bootstrapcore.theme/css/041; type=string; label=Twitter Bootstrap CSS: Default: netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css
-            bootstrap     = //netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css
+            # cat=tx_bootstrapcore.theme/css/041; type=string; label=Twitter Bootstrap CSS: Default: netdna.bootstrapcdn.com/twitter-bootstrap/3.x.x/css/bootstrap-combined.no-icons.min.css
+            bootstrap     = //netdna.bootstrapcdn.com/twitter-bootstrap/3.0.0/css/bootstrap.min.css
 
             # cat=tx_bootstrapcore.theme/css/045; type=string; label=Lightbox CSS
-            lightbox      = {$plugin.tx_bootstrapcore.resourceDir}/Public/Libs/prettyphoto/css/prettyPhoto.css
+            lightbox      = lib/jquerytools/prettyphoto/css/prettyPhoto.css
             # cat=tx_bootstrapcore.theme/css/046; type=string; label=Slider CSS
-            flexslider    = {$plugin.tx_bootstrapcore.resourceDir}/Public/Libs/flexslider/flexslider.css
+            flexslider    = lib/jquerytools/flexslider/flexslider.css
             # cat=tx_bootstrapcore.theme/css/049; type=string; label=t3bootstrap default CSS
             bootstrapCore = {$plugin.tx_bootstrapcore.resourceDir}/Public/Css/style.css
         }
@@ -137,17 +123,17 @@ plugin.tx_bootstrapcore {
         js {
             # cat=tx_bootstrapcore.theme/js/060; type=string; label=jQuery Library: Default: //code.jquery.com/jquery-1.10.2.min.js
             jquery        = //code.jquery.com/jquery-1.10.2.min.js
-            # cat=tx_bootstrapcore.theme/js/061; type=string; label=Twitter Bootstrap JS: Default: //netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js
-            bootstrap     = //netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js
+            # cat=tx_bootstrapcore.theme/js/061; type=string; label=Twitter Bootstrap JS: Default: //netdna.bootstrapcdn.com/twitter-bootstrap/3.x.x/js/bootstrap.min.js
+            bootstrap     = //netdna.bootstrapcdn.com/twitter-bootstrap/3.0.0/js/bootstrap.min.js
 
             # cat=tx_bootstrapcore.theme/js/063; type=string; label=Lightbox JS
-            lightbox      = {$plugin.tx_bootstrapcore.resourceDir}/Public/Libs/prettyphoto/js/jquery.prettyPhoto.js
+            lightbox      = lib/jquerytools/prettyphoto/js/jquery.prettyPhoto.js
             # cat=tx_bootstrapcore.theme/js/066; type=string; label=FlexSlider JS
-            flexslider    = {$plugin.tx_bootstrapcore.resourceDir}/Public/Libs/flexslider/jquery.flexslider-min.js
+            flexslider    = lib/jquerytools/flexslider/jquery.flexslider-min.js
             # cat=tx_bootstrapcore.theme/js/067; type=string; label=jQuery Easing Plugin (for flexslider)
-            jQueryEasing  = {$plugin.tx_bootstrapcore.resourceDir}/Public/JavaScript/jquery.easing.js
+            jQueryEasing  = lib/jquerytools/jquery.easing.js
             # cat=tx_bootstrapcore.theme/js/067; type=string; label=jQuery FitVid Plugin (for responsive video size)
-            jQueryFitvid  = {$plugin.tx_bootstrapcore.resourceDir}/Public/JavaScript/jquery.fitvid.js
+            jQueryFitvid  = lib/jquerytools/jquery.fitvid.js
             # cat=tx_bootstrapcore.theme/js/069; type=string; label=t3bootstrap default JS
             bootstrapCore = {$plugin.tx_bootstrapcore.resourceDir}/Public/JavaScript/script.js
         }

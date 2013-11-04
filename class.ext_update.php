@@ -168,7 +168,7 @@ class ext_update  {
 		$content .= '<form action="' . htmlspecialchars(\TYPO3\CMS\Core\Utility\GeneralUtility::linkThisScript()) . '" method="post">';
 		$content .= '<input type="hidden" name="action" value="update" />';
 		$content .= $this->getRecordLists();
-		$content .= '<br /><br /><input type="submit" name="btn" value="Insert and/or update" />';
+		$content .= '<br /><br /><input type="submit" name="btn btn-default" value="Insert and/or update" />';
 		$content .= '</form>';
 
 		return $this->getPageOutput($pageTitle, $content);
@@ -391,7 +391,7 @@ class ext_update  {
 														'TSconfig' => array('format' => 'pre'),
 														'deleted' => array('style' => 'center', 'fixValue' => 0));
 		// data
-		$recordDef['pages']['records'] = array(1 => array('title' => 'Home',            'doktype' => 1,   'TSconfig' => "# Include theme pageTS config\r\n<INCLUDE_TYPOSCRIPT: source=\"FILE: fileadmin/theme/default/typoscript/tsconfig.ts\">"),
+		$recordDef['pages']['records'] = array(1 => array('title' => 'Home',            'doktype' => 1,   'TSconfig' => "# Include theme pageTS config\r\n<INCLUDE_TYPOSCRIPT: source=\"FILE: theme/default/typoscript/tsconfig.ts\">"),
 											   2 => array('title' => 'Backend Layouts', 'doktype' => 254, 'TSconfig' => '') );
 
 		// --- sys_template ---
@@ -402,7 +402,7 @@ class ext_update  {
 															   'include_static_file' => array('split' => ','),
 															   'constants' => array(),
 															   'config' => array() );
-		$recordDef['sys_template']['records'] = array(1 => array('include_static_file' => 'EXT:css_styled_content/static/,EXT:gridelements/Configuration/TypoScript/,EXT:bootstrap_core/Configuration/TypoScript/core,EXT:bootstrap_core/Configuration/TypoScript/lib/fontawesome,EXT:bootstrap_core/Configuration/TypoScript/core/tt_content/image/responsive', 'constants' => '<INCLUDE_TYPOSCRIPT: source="FILE: fileadmin/theme/default/typoscript/constants.ts">', 'config' => '<INCLUDE_TYPOSCRIPT: source="FILE: fileadmin/theme/default/typoscript/setup.ts">'));
+		$recordDef['sys_template']['records'] = array(1 => array('include_static_file' => 'EXT:css_styled_content/static/,EXT:gridelements/Configuration/TypoScript/,EXT:bootstrap_core/Configuration/TypoScript/core,EXT:bootstrap_core/Configuration/TypoScript/lib/fontawesome,EXT:bootstrap_core/Configuration/TypoScript/core/tt_content/image/responsive', 'constants' => '<INCLUDE_TYPOSCRIPT: source="FILE: theme/default/typoscript/constants.ts">', 'config' => '<INCLUDE_TYPOSCRIPT: source="FILE: theme/default/typoscript/setup.ts">'));
 
 		// --- backend layouts ---
 		//
@@ -453,16 +453,16 @@ class ext_update  {
 		// --- pages ---
 		//
 		// insert sql
-		$sqlStatement['pages']['insert'][1] = "INSERT INTO `pages` (`uid`, `pid`, `t3_origuid`, `tstamp`, `sorting`, `deleted`, `perms_userid`, `perms_groupid`, `perms_user`, `perms_group`, `perms_everybody`, `editlock`, `crdate`, `cruser_id`, `hidden`, `title`, `doktype`, `TSconfig`, `storage_pid`, `is_siteroot`, `php_tree_stop`, `tx_impexp_origuid`, `url`, `starttime`, `endtime`, `urltype`, `shortcut`, `shortcut_mode`, `no_cache`, `fe_group`, `subtitle`, `layout`, `url_scheme`, `target`, `media`, `lastUpdated`, `keywords`, `cache_timeout`, `cache_tags`, `newUntil`, `description`, `no_search`, `SYS_LASTCHANGED`, `abstract`, `module`, `extendToSubpages`, `author`, `author_email`, `nav_title`, `nav_hide`, `content_from_pid`, `mount_pid`, `mount_pid_ol`, `alias`, `l18n_cfg`, `backend_layout`, `backend_layout_next_level`) VALUES (1, 0, 0, 1375376840, 512, 0, 0, 0, 0, 0, 0, 0, 1374756220, 0, 0, 'Home', 1, '# Include default pageTS config for twitter bootstrap system\r\n<INCLUDE_TYPOSCRIPT: source=\\\"FILE:EXT:bootstrap_core/Configuration/TypoScript/core/tsconfig.ts\\\">\r\n\r\n# Include theme pageTS config\r\n<INCLUDE_TYPOSCRIPT: source=\\\"FILE: fileadmin/theme/default/typoscript/tsconfig.ts\\\">', 0, 1, 0, 0, '', 0, 0, 0, 0, 0, 0, '', '', 0, 0, '', '0', 0, NULL, 0, '', 0, NULL, 0, 1375309314, NULL, '', 0, '', '', '', 0, 0, 0, 0, '', 0, 1, 2)";
+		$sqlStatement['pages']['insert'][1] = "INSERT INTO `pages` (`uid`, `pid`, `t3_origuid`, `tstamp`, `sorting`, `deleted`, `perms_userid`, `perms_groupid`, `perms_user`, `perms_group`, `perms_everybody`, `editlock`, `crdate`, `cruser_id`, `hidden`, `title`, `doktype`, `TSconfig`, `storage_pid`, `is_siteroot`, `php_tree_stop`, `tx_impexp_origuid`, `url`, `starttime`, `endtime`, `urltype`, `shortcut`, `shortcut_mode`, `no_cache`, `fe_group`, `subtitle`, `layout`, `url_scheme`, `target`, `media`, `lastUpdated`, `keywords`, `cache_timeout`, `cache_tags`, `newUntil`, `description`, `no_search`, `SYS_LASTCHANGED`, `abstract`, `module`, `extendToSubpages`, `author`, `author_email`, `nav_title`, `nav_hide`, `content_from_pid`, `mount_pid`, `mount_pid_ol`, `alias`, `l18n_cfg`, `backend_layout`, `backend_layout_next_level`) VALUES (1, 0, 0, 1375376840, 512, 0, 0, 0, 0, 0, 0, 0, 1374756220, 0, 0, 'Home', 1, '# Include default pageTS config for twitter bootstrap system\r\n<INCLUDE_TYPOSCRIPT: source=\\\"FILE:EXT:bootstrap_core/Configuration/TypoScript/core/tsconfig.ts\\\">\r\n\r\n# Include theme pageTS config\r\n<INCLUDE_TYPOSCRIPT: source=\\\"FILE: theme/default/typoscript/tsconfig.ts\\\">', 0, 1, 0, 0, '', 0, 0, 0, 0, 0, 0, '', '', 0, 0, '', '0', 0, NULL, 0, '', 0, NULL, 0, 1375309314, NULL, '', 0, '', '', '', 0, 0, 0, 0, '', 0, 1, 2)";
 		$sqlStatement['pages']['insert'][2] = "INSERT INTO `pages` (`uid`, `pid`, `t3_origuid`, `tstamp`, `sorting`, `deleted`, `perms_userid`, `perms_groupid`, `perms_user`, `perms_group`, `perms_everybody`, `editlock`, `crdate`, `cruser_id`, `hidden`, `title`, `doktype`, `TSconfig`, `storage_pid`, `is_siteroot`, `php_tree_stop`, `tx_impexp_origuid`, `url`, `starttime`, `endtime`, `urltype`, `shortcut`, `shortcut_mode`, `no_cache`, `fe_group`, `subtitle`, `layout`, `url_scheme`, `target`, `media`, `lastUpdated`, `keywords`, `cache_timeout`, `cache_tags`, `newUntil`, `description`, `no_search`, `SYS_LASTCHANGED`, `abstract`, `module`, `extendToSubpages`, `author`, `author_email`, `nav_title`, `nav_hide`, `content_from_pid`, `mount_pid`, `mount_pid_ol`, `alias`, `l18n_cfg`, `backend_layout`, `backend_layout_next_level`) VALUES (2, 0, 0, 1374757371, 256, 0, 1, 0, 31, 27, 0, 0, 1374757350, 1, 0, 'Backend Layouts', 254, '', 0, 0, 0, 0, '', 0, 0, 1, 0, 0, 0, '', '', 0, 0, '', '0', 0, '', 0, '', 0, '', 0, 0, '', '', 0, '', '', '', 0, 0, 0, 0, '', 0, 0, 0)";
 		// update sql
-		$sqlStatement['pages']['update'][1] = "UPDATE `pages` SET `deleted`=0, `doktype`=1, `TSconfig`='# Include theme pageTS config\r\n<INCLUDE_TYPOSCRIPT: source=\\\"FILE: fileadmin/theme/default/typoscript/tsconfig.ts\\\">' where uid=1";
+		$sqlStatement['pages']['update'][1] = "UPDATE `pages` SET `deleted`=0, `doktype`=1, `TSconfig`='# Include theme pageTS config\r\n<INCLUDE_TYPOSCRIPT: source=\\\"FILE: theme/default/typoscript/tsconfig.ts\\\">' where uid=1";
 		$sqlStatement['pages']['update'][2] = "UPDATE `pages` SET `deleted`=0, `doktype`=254, `TSconfig`='' where uid=2";
 
 		// --- templates ---
 		//
 		$sqlStatement['sys_template']['insert'][1] = '';
-		$sqlStatement['sys_template']['update'][1] = "UPDATE `sys_template` SET `include_static_file`='EXT:css_styled_content/static/,EXT:gridelements/Configuration/TypoScript/,EXT:bootstrap_core/Configuration/TypoScript/core,EXT:bootstrap_core/Configuration/TypoScript/lib/fontawesome,EXT:bootstrap_core/Configuration/TypoScript/core/tt_content/image/responsive', constants='<INCLUDE_TYPOSCRIPT: source=\\\"FILE: fileadmin/theme/default/typoscript/constants.ts\\\">', config='<INCLUDE_TYPOSCRIPT: source=\\\"FILE: fileadmin/theme/default/typoscript/setup.ts\\\">' where uid=1";
+		$sqlStatement['sys_template']['update'][1] = "UPDATE `sys_template` SET `include_static_file`='EXT:css_styled_content/static/,EXT:gridelements/Configuration/TypoScript/,EXT:bootstrap_core/Configuration/TypoScript/core,EXT:bootstrap_core/Configuration/TypoScript/lib/fontawesome,EXT:bootstrap_core/Configuration/TypoScript/core/tt_content/image/responsive', constants='<INCLUDE_TYPOSCRIPT: source=\\\"FILE: theme/default/typoscript/constants.ts\\\">', config='<INCLUDE_TYPOSCRIPT: source=\\\"FILE: theme/default/typoscript/setup.ts\\\">' where uid=1";
 
 		// --- backend layouts ---
 		//

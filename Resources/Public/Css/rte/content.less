@@ -1,5 +1,5 @@
 /** ----------------------------------------------------------------------------- */
-@import '../../../../../../../fileadmin/bootstrap/2.3/less/bootstrap.less';
+@import '../../../../../../../lib/bootstrap/3.0/less/bootstrap.less';
 
 /** -----------------------------------------------------------------------------
  *
@@ -7,6 +7,7 @@
  *
  *  ----------------------------------------------------------------------------- */
 @import '../style.less';
+
 
 
 /** -----------------------------------------------------------------------------
@@ -18,18 +19,22 @@ div.text-left, p.text-left { .text-left; }
 div.text-center, p.text-center { .text-center;}
 div.text-right, p.text-right { .text-right; }
 
+// does not work, maybe because only defined in @media (max-width: xyz)??
+//div.table-responsive { .table-responsive; }
+div.table-responsive { width: 100%; }
+
 p.lead { .lead; }
 
 span.text-warning, p.text-warning { .text-warning; }
-span.text-error, p.text-error { .text-error; }
+span.text-error, p.text-error { .text-danger; }
 span.text-info, p.text-info { .text-info; }
 span.text-success, p.text-success { .text-success; }
-p.muted { .muted; }
+p.muted { .text-muted; }
 
 blockquote.pull-left { .pull-left; }
 blockquote.pull-right { .pull-right; }
 
-div.hero-unit { .hero-unit; }
+div.jumbotron { .jumbotron; }
 div.well { .well; }
 
 div.alert { .alert; }
@@ -43,3 +48,5 @@ table.table-striped { .table-striped; }
 table.table-bordered { .table-bordered; }
 table.table-hover { .table-hover; }
 table.table-condensed { .table-condensed; }
+
+

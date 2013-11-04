@@ -6,9 +6,9 @@
 
             <f:if condition="{spanNum}">
                 <f:then>
-                    <div class="row-fluid">
+                    <div class="row">
                         <f:for each="{videos}" as="videoCol" key="colIndex" >
-                            <div class="span{spanNum}">
+                            <div class="col-md-{spanNum}">
                                 <f:for each="{videoCol}" as="video" key="index" >
                                     <iframe src="{video.embedLink}" width="{width}" height="{height}" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen ></iframe>
                                     <f:if condition="{data.image_zoom}">

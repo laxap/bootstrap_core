@@ -18,45 +18,27 @@ tt_content.gridelements_pi1.20.10.setup {
   1 < lib.gridelements.defaultGridSetup
   1 {
     # row wrap
-    #wrap = <div class="row-fluid">|</div>
+    #wrap = <div class="row">|</div>
     wrap.stdWrap.cObject = CASE
     wrap.stdWrap.cObject {
         key.field = flexform_rowclass2
         default = TEXT
-        default.value = <div class="row-fluid">|</div>
+        default.value = <div class="row">|</div>
     }
 
     columns {
         101 < .default
-
-        # default wrap of cols
         101.wrap.stdWrap.cObject = CASE
         101.wrap.stdWrap.cObject {
-            key.field = flexform_layout
+            key.field = flexform_col21style
             default = TEXT
-            default.value = <div class="span6 {field:flexform_col21class}">|</div>
+            default.value = <div class="{field:flexform_xsCol1} {field:flexform_smCol1} col-md-{field:flexform_mdCol1} {field:flexform_lgCol1} {field:flexform_col21class}">|</div>
             default.insertData = 1
-            3-9 = TEXT
-            3-9.value = <div class="span3 {field:flexform_col21class}">|</div>
-            3-9.insertData = 1
-            9-3 = TEXT
-            9-3.value = <div class="span9 {field:flexform_col21class}">|</div>
-            9-3.insertData = 1
-            4-8 = TEXT
-            4-8.value = <div class="span4 {field:flexform_col21class}">|</div>
-            4-8.insertData = 1
-            8-4 = TEXT
-            8-4.value = <div class="span8 {field:flexform_col21class}">|</div>
-            8-4.insertData = 1
         }
-
         102 < .101
         102.wrap.stdWrap.cObject {
-            default.value = <div class="span6 {field:flexform_col22class}">|</div>
-            3-9.value = <div class="span9 {field:flexform_col22class}">|</div>
-            9-3.value = <div class="span3 {field:flexform_col22class}">|</div>
-            4-8.value = <div class="span8 {field:flexform_col22class}">|</div>
-            8-4.value = <div class="span4 {field:flexform_col22class}">|</div>
+            key.field = flexform_col22style
+            default.value = <div class="{field:flexform_xsCol2} {field:flexform_smCol2} col-md-{field:flexform_mdCol2} {field:flexform_lgCol2} {field:flexform_col22class}">|</div>
         }
     }
   }
@@ -70,50 +52,27 @@ tt_content.gridelements_pi1.20.10.setup {
     wrap.stdWrap.cObject {
         key.field = flexform_rowclass3
         default = TEXT
-        default.value = <div class="row-fluid">|</div>
+        default.value = <div class="row">|</div>
     }
 
     columns {
         101 < .default
         101.wrap.stdWrap.cObject = CASE
         101.wrap.stdWrap.cObject {
-            key.field = flexform_layout
+            key.field = flexform_col31style
             default = TEXT
-            default.value = <div class="span4 {field:flexform_col31class}">|</div>
+            default.value = <div class="{field:flexform_xsCol1} {field:flexform_smCol1} col-md-{field:flexform_mdCol1} {field:flexform_lgCol1} {field:flexform_col31class}">|</div>
             default.insertData = 1
-            3-3-6 = TEXT
-            3-3-6.value = <div class="span3 {field:flexform_col31class}">|</div>
-            3-3-6.insertData = 1
-            3-6-3 = TEXT
-            3-6-3.value = <div class="span3 {field:flexform_col31class}">|</div>
-            3-6-3.insertData = 1
-            6-3-3 = TEXT
-            6-3-3.value = <div class="span6 {field:flexform_col31class}">|</div>
-            6-3-3.insertData = 1
-            3-4-5 = TEXT
-            3-4-5.value = <div class="span3 {field:flexform_col31class}">|</div>
-            3-4-5.insertData = 1
-            5-4-3 = TEXT
-            5-4-3.value = <div class="span5 {field:flexform_col31class}">|</div>
-            5-4-3.insertData = 1
         }
         102 < .101
         102.wrap.stdWrap.cObject {
-            default.value = <div class="span4 {field:flexform_col32class}">|</div>
-            3-3-6.value = <div class="span3 {field:flexform_col32class}">|</div>
-            3-6-3.value = <div class="span6 {field:flexform_col32class}">|</div>
-            6-3-3.value = <div class="span3 {field:flexform_col32class}">|</div>
-            3-4-5.value = <div class="span4 {field:flexform_col32class}">|</div>
-            5-4-3.value = <div class="span4 {field:flexform_col32class}">|</div>
+            key.field = flexform_col32style
+            default.value = <div class="{field:flexform_xsCol2} {field:flexform_smCol2} col-md-{field:flexform_mdCol2} {field:flexform_lgCol2} {field:flexform_col32class}">|</div>
         }
         103 < .101
         103.wrap.stdWrap.cObject {
-            default.value = <div class="span4 {field:flexform_col33class}">|</div>
-            3-3-6.value = <div class="span6 {field:flexform_col33class}">|</div>
-            3-6-3.value = <div class="span3 {field:flexform_col33class}">|</div>
-            6-3-3.value = <div class="span3 {field:flexform_col33class}">|</div>
-            3-4-5.value = <div class="span5 {field:flexform_col33class}">|</div>
-            5-4-3.value = <div class="span3 {field:flexform_col33class}">|</div>
+            key.field = flexform_col33style
+            default.value = <div class="{field:flexform_xsCol3} {field:flexform_smCol3} col-md-{field:flexform_mdCol3} {field:flexform_lgCol3} {field:flexform_col33class}">|</div>
         }
     }
   }
@@ -127,65 +86,36 @@ tt_content.gridelements_pi1.20.10.setup {
     wrap.stdWrap.cObject {
         key.field = flexform_rowclass4
         default = TEXT
-        default.value = <div class="row-fluid">|</div>
+        default.value = <div class="row">|</div>
+        #special1 = TEXT
+        #special1.value = <div class="row special">|</div>
     }
 
     columns {
         101 < .default
         101.wrap.stdWrap.cObject = CASE
         101.wrap.stdWrap.cObject {
-            key.field = flexform_layout
+            key.field = flexform_col41style
             default = TEXT
-            default.value = <div class="span3 {field:flexform_col41class}">|</div>
+            default.value = <div class="{field:flexform_xsCol1} {field:flexform_smCol1} col-md-{field:flexform_mdCol1} {field:flexform_lgCol1} {field:flexform_col41class}">|</div>
             default.insertData = 1
-            2-4-2-4 = TEXT
-            2-4-2-4.value = <div class="span2 {field:flexform_col41class}">|</div>
-            2-4-2-4.insertData = 1
-            2-4-4-2 = TEXT
-            2-4-4-2.value = <div class="span2 {field:flexform_col41class}">|</div>
-            2-4-4-2.insertData = 1
-            4-2-2-4 = TEXT
-            4-2-2-4.value = <div class="span4 {field:flexform_col41class}">|</div>
-            4-2-2-4.insertData = 1
-            4-2-4-2 = TEXT
-            4-2-4-2.value = <div class="span4 {field:flexform_col41class}">|</div>
-            4-2-4-2.insertData = 1
-            4-4-2-2 = TEXT
-            4-4-2-2.value = <div class="span4 {field:flexform_col41class}">|</div>
-            4-4-2-2.insertData = 1
-            2-2-4-4 = TEXT
-            2-2-4-4.value = <div class="span2 {field:flexform_col41class}">|</div>
-            2-2-4-4.insertData = 1
+            #specialStyle1 = TEXT
+            #specialStyle1.value = <div class="col-md-{field:flexform_mdCol1}"><div class="box-inner-wrap">|</div></div>
         }
         102 < .101
         102.wrap.stdWrap.cObject {
-            default.value = <div class="span3 {field:flexform_col42class}">|</div>
-            2-4-2-4.value = <div class="span4 {field:flexform_col42class}">|</div>
-            2-4-4-2.value = <div class="span4 {field:flexform_col42class}">|</div>
-            4-2-2-4.value = <div class="span2 {field:flexform_col42class}">|</div>
-            4-2-4-2.value = <div class="span2 {field:flexform_col42class}">|</div>
-            4-4-2-2.value = <div class="span4 {field:flexform_col42class}">|</div>
-            2-2-4-4.value = <div class="span2 {field:flexform_col42class}">|</div>
+            key.field = flexform_col42style
+            default.value = <div class="{field:flexform_xsCol2} {field:flexform_smCol2} col-md-{field:flexform_mdCol2} {field:flexform_lgCol2} {field:flexform_col42class}">|</div>
         }
         103 < .101
         103.wrap.stdWrap.cObject {
-            default.value = <div class="span3 {field:flexform_col43class}">|</div>
-            2-4-2-4.value = <div class="span2 {field:flexform_col43class}">|</div>
-            2-4-4-2.value = <div class="span4 {field:flexform_col43class}">|</div>
-            4-2-2-4.value = <div class="span2 {field:flexform_col43class}">|</div>
-            4-2-4-2.value = <div class="span4 {field:flexform_col43class}">|</div>
-            4-4-2-2.value = <div class="span2 {field:flexform_col43class}">|</div>
-            2-2-4-4.value = <div class="span4 {field:flexform_col43class}">|</div>
+            key.field = flexform_col43style
+            default.value = <div class="{field:flexform_xsCol3} {field:flexform_smCol3} col-md-{field:flexform_mdCol3} {field:flexform_lgCol3} {field:flexform_col43class}">|</div>
         }
         104 < .101
         104.wrap.stdWrap.cObject {
-            default.value = <div class="span3 {field:flexform_col44class}">|</div>
-            2-4-2-4.value = <div class="span4 {field:flexform_col44class}">|</div>
-            2-4-4-2.value = <div class="span2 {field:flexform_col44class}">|</div>
-            4-2-2-4.value = <div class="span4 {field:flexform_col44class}">|</div>
-            4-2-4-2.value = <div class="span2 {field:flexform_col44class}">|</div>
-            4-4-2-2.value = <div class="span2 {field:flexform_col44class}">|</div>
-            2-2-4-4.value = <div class="span4 {field:flexform_col44class}">|</div>
+            key.field = flexform_col44style
+            default.value = <div class="{field:flexform_xsCol4} {field:flexform_smCol4} col-md-{field:flexform_mdCol4} {field:flexform_lgCol4} {field:flexform_col44class}">|</div>
         }
 
     }
@@ -227,7 +157,7 @@ tt_content.gridelements_pi1.20.10.setup {
         default = TEXT
         default.value = <div class="stdWrap wrap">|</div>
         special1 = TEXT
-        special1.value = <div class="service-one"><div class="row-fluid">|</div></div>
+        special1.value = <div class="service-one"><div class="row">|</div></div>
     }
     */
 
@@ -253,7 +183,7 @@ tt_content.gridelements_pi1.20.10.setup {
     outerWrap.stdWrap.cObject {
         key.field = flexform_rowclass
         default = TEXT
-        default.value = <div class="accordion" id="accordion-{field:uid}">|</div>
+        default.value = <div class="panel-group" id="accordion-{field:uid}">|</div>
         #acc = TEXT
         #acc.value = <div class="tabs"><div class="accordion" id="accordion-{field:uid}">|</div></div>
     }
@@ -266,7 +196,7 @@ tt_content.gridelements_pi1.20.10.setup {
      101 {
       renderObj {
 
-        stdWrap.outerWrap = <div class="accordion-group">|</div>
+        stdWrap.outerWrap = <div class="panel panel-default">|</div>
 
         5 = LOAD_REGISTER
         5 {
@@ -293,8 +223,8 @@ tt_content.gridelements_pi1.20.10.setup {
             10 {
               field = header
               insertData = 1
-              wrap = <div class="accordion-heading"><a class="accordion-toggle" data-parent="#accordion-{field:tx_gridelements_container}" href="#collapse-{field:uid}" data-toggle="collapse"><h4>|</h4></a></div><div id="collapse-{field:uid}" class="accordion-body collapse"><div class="accordion-inner">
-              wrap.override = <div class="accordion-heading"><a class="accordion-toggle" data-parent="#accordion-{field:tx_gridelements_container}" href="#collapse-{field:uid}" data-toggle="collapse"><h4>|</h4></a></div><div id="collapse-{field:uid}" class="accordion-body collapse in"><div class="accordion-inner">
+              wrap          = <div class="panel-heading"><a class="accordion-toggle" data-parent="#accordion-{field:tx_gridelements_container}" href="#collapse-{field:uid}" data-toggle="collapse"><h4>|</h4></a></div><div id="collapse-{field:uid}" class="panel-collapse collapse"><div class="panel-body">
+              wrap.override = <div class="panel-heading"><a class="accordion-toggle" data-parent="#accordion-{field:tx_gridelements_container}" href="#collapse-{field:uid}" data-toggle="collapse"><h4>|</h4></a></div><div id="collapse-{field:uid}" class="panel-collapse collapse in"><div class="panel-body">
               wrap.override.if.value = 1
               wrap.override.if.equals.data = register:AccordionCount
             }
@@ -328,9 +258,9 @@ tt_content.gridelements_pi1.20.10.setup {
     outerWrap.stdWrap.cObject {
         key.field = flexform_rowclass
         default = TEXT
-        default.value = <div class="tabbable" id="tabs-{field:tx_gridelements_container}">|</div>
-        tabs = TEXT
-        tabs.value = <div class="tabs"><div class="tabbable" id="tabs-{field:tx_gridelements_container}">|</div></div>
+        default.value = |
+        #tabs = TEXT
+        #tabs.value = <div class="tabbable" id="tabs-{field:tx_gridelements_container}">|</div>
     }
     outerWrap.insertData = 1
 
@@ -407,12 +337,12 @@ tt_content.gridelements_pi1.20.10.setup {
             key.data = register:TabCount2
             #key.field = sorting
             default = TEXT
-            default.value = <div id="tab-{field:uid}" class="tab-pane fade">|</div>
+            default.value = <div class="tab-pane fade" id="tab-{field:uid}">|</div>
             1 = TEXT
-            1.value = <div id="tab-{field:uid}" class="tab-pane fade active in">|</div>
+            1.value = <div class="tab-pane fade active in" id="tab-{field:uid}">|</div>
           }
 
-          # don't show headers in accordion
+          # don't show headers in tabs
           #20 =< tt_content
           20 < tt_content
           20.text.10 >
@@ -529,18 +459,21 @@ tt_content.gridelements_pi1.20.10.setup {
             10 {
               field = header
               insertData = 1
-              wrap = <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h3 id="modalLabel{field:tx_gridelements_container}">|</h3></div><div class="modal-body">
+              wrap = <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title" id="modalLabel{field:tx_gridelements_container}">|</h4></div><div class="modal-body">
             }
           }
         }
 
-        # don't show headers in accordion
+        # accordion content
         #20 =< tt_content
         20 < tt_content
+        # don't show headers in accordion
         20.text.10 >
         20.image.10 >
         20.textpic.10 >
 
+
+        # close div from 5.renderObj.10.wrap
         30 = TEXT
         30.wrap = |</div>
 
@@ -551,7 +484,7 @@ tt_content.gridelements_pi1.20.10.setup {
     stdWrap.outerWrap.cObject = COA
     stdWrap.outerWrap.cObject {
       10 = TEXT
-      10.value = <div id="{field:flexform_modalid}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalLabel{field:uid}" aria-hidden="true">|
+      10.value = <div class="modal fade" id="{field:flexform_modalid}" tabindex="-1" role="dialog" aria-labelledby="modalLabel{field:uid}" aria-hidden="true"><div class="modal-dialog"><div class="modal-content">|
       10.insertData = 1
 
       20 = COA
@@ -560,7 +493,7 @@ tt_content.gridelements_pi1.20.10.setup {
 
         10 = TEXT
         10.data = {$plugin.tx_bootstrapcore.langFile}:grid.modal.buttonclose
-        10.wrap = <button class="btn" data-dismiss="modal" aria-hidden="true">|</button>
+        10.wrap = <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">|</button>
         10.if.value.data = field:flexform_buttontype
         10.if.equals = close
 
@@ -571,8 +504,9 @@ tt_content.gridelements_pi1.20.10.setup {
         20.if.equals = ok
       }
 
+      # close divs from .10
       40 = TEXT
-      40.value = </div>
+      40.value = </div></div></div>
     }
 
   }

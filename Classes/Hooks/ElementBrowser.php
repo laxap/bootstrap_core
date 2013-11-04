@@ -50,7 +50,7 @@ class ElementBrowser implements \TYPO3\CMS\Core\ElementBrowser\ElementBrowserHoo
 	/**
 	 * @var array
 	 */
-	protected $styleOption;
+	protected $styleOptions;
 
 	/**
 	 * @var array
@@ -115,16 +115,16 @@ class ElementBrowser implements \TYPO3\CMS\Core\ElementBrowser\ElementBrowserHoo
 		$this->styleOptions = array(''            => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.style.I.0', 'bootstrap_core'),
 									'btn-primary' => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.style.I.1', 'bootstrap_core'),
 									'btn-info'    => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.style.I.2', 'bootstrap_core'),
-									'btn-inverse' => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.style.I.3', 'bootstrap_core'),
-									'btn-warning' => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.style.I.4', 'bootstrap_core'),
-									'btn-danger'  => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.style.I.5', 'bootstrap_core'),
-									'btn'         => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.style.I.6', 'bootstrap_core'));
+									'btn-warning' => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.style.I.3', 'bootstrap_core'),
+									'btn-danger'  => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.style.I.4', 'bootstrap_core'),
+									'btn-default' => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.style.I.5', 'bootstrap_core'),
+									'btn-link'    => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.style.I.6', 'bootstrap_core'));
 
 		// button size options
 		$this->btnSizeOptions = array(''          => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.btnsize.I.0', 'bootstrap_core'),
-									  'btn-large' => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.btnsize.I.1', 'bootstrap_core'),
-									  'btn-small' => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.btnsize.I.2', 'bootstrap_core'),
-									  'btn-mini'  => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.btnsize.I.3', 'bootstrap_core'));
+									  'btn-lg' => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.btnsize.I.1', 'bootstrap_core'),
+									  'btn-sm' => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.btnsize.I.2', 'bootstrap_core'),
+									  'btn-xs'  => \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('browselinks.btnsize.I.3', 'bootstrap_core'));
 	}
 
 	/**

@@ -124,25 +124,25 @@ tt_content.image.20 {
 
     layout {
         # above center
-        default.value = <div class="row-fluid textpic textpic-center textpic-above ###CLASSES###">###IMAGES###<div class="clearfix"></div>###TEXT###</div>
+        default.value = <div class="row textpic textpic-center textpic-above ###CLASSES###">###IMAGES###<div class="clearfix"></div>###TEXT###</div>
         # above right
-        1.value = <div class="row-fluid textpic textpic-right textpic-above ###CLASSES###">###IMAGES###<div class="clearfix"></div>###TEXT###</div>
+        1.value = <div class="row textpic textpic-right textpic-above ###CLASSES###">###IMAGES###<div class="clearfix"></div>###TEXT###</div>
         # above left
-        2.value = <div class="row-fluid textpic textpic-left textpic-above ###CLASSES###">###IMAGES###<div class="clearfix"></div>###TEXT###</div>
+        2.value = <div class="row textpic textpic-left textpic-above ###CLASSES###">###IMAGES###<div class="clearfix"></div>###TEXT###</div>
         # below center
-        8.value = <div class="row-fluid textpic textpic-center textpic-below ###CLASSES###">###TEXT###<div class="clearfix"></div>###IMAGES###</div>
+        8.value = <div class="row textpic textpic-center textpic-below ###CLASSES###">###TEXT###<div class="clearfix"></div>###IMAGES###</div>
         # below right
-        9.value = <div class="row-fluid textpic textpic-right textpic-below ###CLASSES###">###TEXT###<div class="clearfix"></div>###IMAGES###</div>
+        9.value = <div class="row textpic textpic-right textpic-below ###CLASSES###">###TEXT###<div class="clearfix"></div>###IMAGES###</div>
         # below left
-        10.value = <div class="row-fluid textpic textpic-left textpic-below ###CLASSES###">###TEXT###<div class="clearfix"></div>###IMAGES###</div>
+        10.value = <div class="row textpic textpic-left textpic-below ###CLASSES###">###TEXT###<div class="clearfix"></div>###IMAGES###</div>
 
         # Intext, right
         17.value >
         17 = COA
-        17.wrap = <div class="row-fluid textpic textpic-intext-right">|###TEXT###</div>
+        17.wrap = <div class="row textpic textpic-intext-right">|###TEXT###</div>
         17 {
             10 = TEXT
-            10.dataWrap = <div class="span{field:tx_bootstrapcore_imageswidth} textpic-intext-images pull-right">###IMAGES###</div>
+            10.dataWrap = <div class="col-md-{field:tx_bootstrapcore_imageswidth} col-sm-{field:tx_bootstrapcore_imageswidth} textpic-intext-images pull-right">###IMAGES###</div>
             # override if image col span > 10
             10.dataWrap.override = <div class="textpic-intext-images pull-right" style="width:{register:rowWidthPlusTextMargin}px;">###IMAGES###</div>
             10.dataWrap.override.if.value = 0
@@ -151,14 +151,14 @@ tt_content.image.20 {
         # Intext, left
         18.value >
         18 < .17
-        18.wrap = <div class="row-fluid textpic textpic-intext-left">|###TEXT###</div>
-        18.10.dataWrap = <div class="span{field:tx_bootstrapcore_imageswidth} textpic-intext-images">###IMAGES###</div>
+        18.wrap = <div class="row textpic textpic-intext-left">|###TEXT###</div>
+        18.10.dataWrap = <div class="col-md-{field:tx_bootstrapcore_imageswidth} col-sm-{field:tx_bootstrapcore_imageswidth} textpic-intext-images">###IMAGES###</div>
         18.10.dataWrap.override = <div class="textpic-intext-images pull-left" style="width:{register:rowWidthPlusTextMargin}px;">###IMAGES###</div>
 
         # Besides text right
         25.value >
         25 = COA
-        25.wrap = <div class="row-fluid textpic textpic-rightcol">|</div>
+        25.wrap = <div class="row textpic textpic-rightcol">|</div>
         25 {
             5 = LOAD_REGISTER
             5 {
@@ -167,14 +167,14 @@ tt_content.image.20 {
                 TextSpanSize.prioriCalc = 1
             }
             10 = TEXT
-            10.dataWrap = <div class="span{register:TextSpanSize} textpic-cols-text">###TEXT###</div>
+            10.dataWrap = <div class="col-md-{register:TextSpanSize} col-sm-{register:TextSpanSize} textpic-cols-text">###TEXT###</div>
             # override if new imagewidth field not used (switch text/image!)
             10.dataWrap.override = <div class="textpic-cols-images pull-right" style="width:{register:rowwidth}px;">###IMAGES###</div>
             10.dataWrap.override.if.value = 0
             10.dataWrap.override.if.equals.field = tx_bootstrapcore_imageswidth
 
             20 = TEXT
-            20.dataWrap = <div class="span{field:tx_bootstrapcore_imageswidth} textpic-cols-images">###IMAGES###</div>
+            20.dataWrap = <div class="col-md-{field:tx_bootstrapcore_imageswidth} col-sm-{field:tx_bootstrapcore_imageswidth} textpic-cols-images">###IMAGES###</div>
             # override if new imagewidth field not used (switch text/image!)
             20.dataWrap.override = <div class="textpic-cols-text" style="margin-right:{register:rowWidthPlusTextMargin}px;">###TEXT###</div>
             20.dataWrap.override.if.value = 0
@@ -184,7 +184,7 @@ tt_content.image.20 {
         # Besides text left
         26.value >
         26 < .25
-        26.wrap = <div class="row-fluid textpic textpic-leftcol">|</div>
+        26.wrap = <div class="row textpic textpic-leftcol">|</div>
         26 {
             20.dataWrap.override = <div class="textpic-cols-images pull-left" style="width:{register:rowwidth}px;">###IMAGES###</div>
 
@@ -210,20 +210,20 @@ tt_content.image.20 {
             allStdWrap.wrap >
             allStdWrap.dataWrap = <div class="textpic-imagegrid"> | </div>
 
-            noRowsStdWrap.wrap = <div class="row-fluid textpic-norows"> | </div>
+            noRowsStdWrap.wrap = <div class="row textpic-norows"> | </div>
 
-            rowStdWrap.wrap = <div class="row-fluid"> | </div>
+            rowStdWrap.wrap = <div class="row"> | </div>
             rowStdWrap.wrap.override >
-            lastRowStdWrap.wrap = <div class="row-fluid textpic-lastrow"> | </div>
+            lastRowStdWrap.wrap = <div class="row textpic-lastrow"> | </div>
             lastRowStdWrap.wrap.override >
 
-            #columnStdWrap.wrap = <div class="spanX"> | </div>
+            #columnStdWrap.wrap = <div class="col-sm-X"> | </div>
             columnStdWrap.wrap.stdWrap.cObject = COA
             columnStdWrap.wrap.stdWrap.cObject {
                 10 = TEXT
                 10.stdWrap.dataWrap = 12/{field:imagecols}
                 10.prioriCalc = 1
-                10.wrap = <div class="span|">
+                10.wrap = <div class="col-xs-|">
 
                 20 = TEXT
                 20.value = |</div>
@@ -244,20 +244,20 @@ tt_content.image.20 {
         }
 
         splitCaption {
-            noRowsStdWrap.wrap = <div class="row-fluid textpic-norows"> | </div>
+            noRowsStdWrap.wrap = <div class="row textpic-norows"> | </div>
 
-            rowStdWrap.wrap = <div class="row-fluid"> | </div>
+            rowStdWrap.wrap = <div class="row"> | </div>
             rowStdWrap.wrap.override >
-            lastRowStdWrap.wrap = <div class="row-fluid textpic-lastrow"> | </div>
+            lastRowStdWrap.wrap = <div class="row textpic-lastrow"> | </div>
             lastRowStdWrap.wrap.override >
 
-            #columnStdWrap.wrap = <div class="spanX ###CLASSES###"> | </div>
+            #columnStdWrap.wrap = <div class="col-sm-X ###CLASSES###"> | </div>
             columnStdWrap.wrap.stdWrap.cObject = COA
             columnStdWrap.wrap.stdWrap.cObject {
                 10 = TEXT
                 10.stdWrap.dataWrap = 12/{field:imagecols}
                 10.prioriCalc = 1
-                10.wrap = <div class="span| ###CLASSES###">
+                10.wrap = <div class="col-sm-| ###CLASSES###">
 
                 20 = TEXT
                 20.value = |</div>

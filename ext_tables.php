@@ -14,7 +14,7 @@ if ( strlen($_EXTCONF) ) {
 //
 // Add static typoscript configurations
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/core', 'Bootstrap Core');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/core/multilang', 'Bootstrap Option: Multilang');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/core/multilang', 'Bootstrap: Multilang');
 
 // Set custom flexform for tt_content ctype table
 $GLOBALS['TCA']['tt_content']['columns']['pi_flexform']['config']['ds']['*,table'] = 'FILE:EXT:bootstrap_core/Configuration/FlexForm/css_styled_content/flexform_ds.xml';
@@ -65,7 +65,7 @@ if ( isset($extConf['enableIconFont']) && $extConf['enableIconFont'] != 'none' &
 	}
 
 	// Add static ts configurations for FontAwesome
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/lib/' . $extConf['enableIconFont'], 'Bootstrap Option: Icon Font');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/lib/' . $extConf['enableIconFont'], 'Bootstrap: Icon Font');
 }
 
 
@@ -109,7 +109,7 @@ if ( isset($extConf['enableModifiedImageRendering']) && $extConf['enableModified
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'image_settings', 'tx_bootstrapcore_imageswidth', 'before:imagewidth');
 
 	// Add static ts configurations for responsive image rendering
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/core/tt_content/image/responsive', 'Bootstrap Option: Responsive Images');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/core/tt_content/image/responsive', 'Bootstrap: Responsive Images');
 }
 
 
@@ -157,8 +157,6 @@ if ( isset($extConf['enableNewVideoCType']) && $extConf['enableNewVideoCType'] =
 // Add more static ts configurations (extensions, libs)
 // --------------------------------------------------------------------
 //
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/ext/indexed_search', 'Bootstrap Option: Indexed Search');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/ext/felogin', 'Bootstrap Option: FE Login');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/lib/googleanalytics', 'Bootstrap Option: Google Analytics');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/lib/googleanalytics', 'Bootstrap: Google Analytics');
 
 ?>

@@ -7,48 +7,10 @@
         <sDEF>
             <ROOT type="array">
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.sheet.layout</sheetTitle>
+                    <sheetTitle>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.sheet.mediumDevices</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el type="array">
-                    <layout type="array">
-                        <TCEforms type="array">
-                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.collayout</label>
-                            <config type="array">
-                                <type>select</type>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">25% - 25% - 25% - 25%</numIndex>
-                                        <numIndex index="1">3-3-3-3</numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">16% - 33% - 16% - 33%</numIndex>
-                                        <numIndex index="1">2-4-2-4</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">16% - 33% - 33% - 16</numIndex>
-                                        <numIndex index="1">2-4-4-2</numIndex>
-                                    </numIndex>
-                                    <numIndex index="3" type="array">
-                                        <numIndex index="0">33% - 16% - 16% - 33%</numIndex>
-                                        <numIndex index="1">4-2-2-4</numIndex>
-                                    </numIndex>
-                                    <numIndex index="4" type="array">
-                                        <numIndex index="0">33% - 16% - 33% - 16%</numIndex>
-                                        <numIndex index="1">4-2-4-2</numIndex>
-                                    </numIndex>
-                                    <numIndex index="5" type="array">
-                                        <numIndex index="0">33% - 33% - 16% - 16%</numIndex>
-                                        <numIndex index="1">4-4-2-2</numIndex>
-                                    </numIndex>
-                                    <numIndex index="6" type="array">
-                                        <numIndex index="0">16% - 16% - 33% - 33%</numIndex>
-                                        <numIndex index="1">2-2-4-4</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
-                    </layout>
                     <rowclass4 type="array">
                         <TCEforms type="array">
                             <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.rowclass</label>
@@ -63,74 +25,1094 @@
                             </config>
                         </TCEforms>
                     </rowclass4>
+                    <mdCol1 type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col1</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">25% (1/4)</numIndex>
+                                        <numIndex index="1">3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">33% (1/3)</numIndex>
+                                        <numIndex index="1">4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">50% (1/2)</numIndex>
+                                        <numIndex index="1">6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">66% (2/3)</numIndex>
+                                        <numIndex index="1">8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">75% (3/4)</numIndex>
+                                        <numIndex index="1">9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreWidth</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">8.3% (1/12)</numIndex>
+                                        <numIndex index="1">1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">16.6%  (2/12)</numIndex>
+                                        <numIndex index="1">2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">41.6% (5/12)</numIndex>
+                                        <numIndex index="1">5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">58.3% (7/12)</numIndex>
+                                        <numIndex index="1">7</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </mdCol1>
+                    <mdCol2 type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col2</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">25% (1/4)</numIndex>
+                                        <numIndex index="1">3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">33% (1/3)</numIndex>
+                                        <numIndex index="1">4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">50% (1/2)</numIndex>
+                                        <numIndex index="1">6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">66% (2/3)</numIndex>
+                                        <numIndex index="1">8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">75% (3/4)</numIndex>
+                                        <numIndex index="1">9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreWidth</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">8.3% (1/12)</numIndex>
+                                        <numIndex index="1">1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">16.6%  (2/12)</numIndex>
+                                        <numIndex index="1">2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">41.6% (5/12)</numIndex>
+                                        <numIndex index="1">5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">58.3% (7/12)</numIndex>
+                                        <numIndex index="1">7</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </mdCol2>
+                    <mdCol3 type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col3</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">25% (1/4)</numIndex>
+                                        <numIndex index="1">3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">33% (1/3)</numIndex>
+                                        <numIndex index="1">4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">50% (1/2)</numIndex>
+                                        <numIndex index="1">6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">66% (2/3)</numIndex>
+                                        <numIndex index="1">8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">75% (3/4)</numIndex>
+                                        <numIndex index="1">9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreWidth</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">8.3% (1/12)</numIndex>
+                                        <numIndex index="1">1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">16.6%  (2/12)</numIndex>
+                                        <numIndex index="1">2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">41.6% (5/12)</numIndex>
+                                        <numIndex index="1">5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">58.3% (7/12)</numIndex>
+                                        <numIndex index="1">7</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </mdCol3>
+                    <mdCol4 type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col4</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">25% (1/4)</numIndex>
+                                        <numIndex index="1">3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">33% (1/3)</numIndex>
+                                        <numIndex index="1">4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">50% (1/2)</numIndex>
+                                        <numIndex index="1">6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">66% (2/3)</numIndex>
+                                        <numIndex index="1">8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">75% (3/4)</numIndex>
+                                        <numIndex index="1">9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreWidth</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">8.3% (1/12)</numIndex>
+                                        <numIndex index="1">1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">16.6%  (2/12)</numIndex>
+                                        <numIndex index="1">2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">41.6% (5/12)</numIndex>
+                                        <numIndex index="1">5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">58.3% (7/12)</numIndex>
+                                        <numIndex index="1">7</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </mdCol4>
                 </el>
             </ROOT>
         </sDEF>
-        <sColumns>
+        <smallDevices>
+            <ROOT type="array">
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.sheet.smallDevices</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el type="array">
+                    <smCol1 type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col1</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.notset</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">25% (1/4)</numIndex>
+                                        <numIndex index="1">col-sm-3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">33% (1/3)</numIndex>
+                                        <numIndex index="1">col-sm-4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">50% (1/2)</numIndex>
+                                        <numIndex index="1">col-sm-6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">66% (2/3)</numIndex>
+                                        <numIndex index="1">col-sm-8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">75% (3/4)</numIndex>
+                                        <numIndex index="1">col-sm-9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreWidth</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">8.3% (1/12)</numIndex>
+                                        <numIndex index="1">col-sm-1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">16.6%  (2/12)</numIndex>
+                                        <numIndex index="1">col-sm-2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">41.6% (5/12)</numIndex>
+                                        <numIndex index="1">col-sm-5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">58.3% (7/12)</numIndex>
+                                        <numIndex index="1">col-sm-7</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreOptions</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.hidden</numIndex>
+                                        <numIndex index="1">hidden-lg</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </smCol1>
+                    <smCol2 type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col2</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.notset</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">25% (1/4)</numIndex>
+                                        <numIndex index="1">col-sm-3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">33% (1/3)</numIndex>
+                                        <numIndex index="1">col-sm-4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">50% (1/2)</numIndex>
+                                        <numIndex index="1">col-sm-6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">66% (2/3)</numIndex>
+                                        <numIndex index="1">col-sm-8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">75% (3/4)</numIndex>
+                                        <numIndex index="1">col-sm-9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreWidth</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">8.3% (1/12)</numIndex>
+                                        <numIndex index="1">col-sm-1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">16.6%  (2/12)</numIndex>
+                                        <numIndex index="1">col-sm-2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">41.6% (5/12)</numIndex>
+                                        <numIndex index="1">col-sm-5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">58.3% (7/12)</numIndex>
+                                        <numIndex index="1">col-sm-7</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreOptions</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.hidden</numIndex>
+                                        <numIndex index="1">hidden-lg</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </smCol2>
+                    <smCol3 type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col3</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.notset</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">25% (1/4)</numIndex>
+                                        <numIndex index="1">col-sm-3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">33% (1/3)</numIndex>
+                                        <numIndex index="1">col-sm-4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">50% (1/2)</numIndex>
+                                        <numIndex index="1">col-sm-6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">66% (2/3)</numIndex>
+                                        <numIndex index="1">col-sm-8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">75% (3/4)</numIndex>
+                                        <numIndex index="1">col-sm-9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreWidth</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">8.3% (1/12)</numIndex>
+                                        <numIndex index="1">col-sm-1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">16.6%  (2/12)</numIndex>
+                                        <numIndex index="1">col-sm-2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">41.6% (5/12)</numIndex>
+                                        <numIndex index="1">col-sm-5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">58.3% (7/12)</numIndex>
+                                        <numIndex index="1">col-sm-7</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreOptions</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.hidden</numIndex>
+                                        <numIndex index="1">hidden-lg</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </smCol3>
+                    <smCol4 type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col4</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.notset</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">25% (1/4)</numIndex>
+                                        <numIndex index="1">col-sm-3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">33% (1/3)</numIndex>
+                                        <numIndex index="1">col-sm-4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">50% (1/2)</numIndex>
+                                        <numIndex index="1">col-sm-6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">66% (2/3)</numIndex>
+                                        <numIndex index="1">col-sm-8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">75% (3/4)</numIndex>
+                                        <numIndex index="1">col-sm-9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreWidth</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">8.3% (1/12)</numIndex>
+                                        <numIndex index="1">col-sm-1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">16.6%  (2/12)</numIndex>
+                                        <numIndex index="1">col-sm-2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">41.6% (5/12)</numIndex>
+                                        <numIndex index="1">col-sm-5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">58.3% (7/12)</numIndex>
+                                        <numIndex index="1">col-sm-7</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreOptions</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.hidden</numIndex>
+                                        <numIndex index="1">hidden-lg</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </smCol4>
+                </el>
+            </ROOT>
+        </smallDevices>
+        <extraSmallDevices>
+            <ROOT type="array">
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.sheet.extraSmallDevices</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el type="array">
+                    <xsCol1 type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col1</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.notset</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">25% (1/4)</numIndex>
+                                        <numIndex index="1">col-xs-3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">33% (1/3)</numIndex>
+                                        <numIndex index="1">col-xs-4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">50% (1/2)</numIndex>
+                                        <numIndex index="1">col-xs-6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">66% (2/3)</numIndex>
+                                        <numIndex index="1">col-xs-8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">75% (3/4)</numIndex>
+                                        <numIndex index="1">col-xs-9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreWidth</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">8.3% (1/12)</numIndex>
+                                        <numIndex index="1">col-xs-1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">16.6%  (2/12)</numIndex>
+                                        <numIndex index="1">col-xs-2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">41.6% (5/12)</numIndex>
+                                        <numIndex index="1">col-xs-5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">58.3% (7/12)</numIndex>
+                                        <numIndex index="1">col-xs-7</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreOptions</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.hidden</numIndex>
+                                        <numIndex index="1">hidden-xs</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </xsCol1>
+                    <xsCol2 type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col2</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.notset</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">25% (1/4)</numIndex>
+                                        <numIndex index="1">col-xs-3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">33% (1/3)</numIndex>
+                                        <numIndex index="1">col-xs-4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">50% (1/2)</numIndex>
+                                        <numIndex index="1">col-xs-6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">66% (2/3)</numIndex>
+                                        <numIndex index="1">col-xs-8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">75% (3/4)</numIndex>
+                                        <numIndex index="1">col-xs-9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreWidth</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">8.3% (1/12)</numIndex>
+                                        <numIndex index="1">col-xs-1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">16.6%  (2/12)</numIndex>
+                                        <numIndex index="1">col-xs-2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">41.6% (5/12)</numIndex>
+                                        <numIndex index="1">col-xs-5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">58.3% (7/12)</numIndex>
+                                        <numIndex index="1">col-xs-7</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreOptions</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.hidden</numIndex>
+                                        <numIndex index="1">hidden-xs</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </xsCol2>
+                    <xsCol3 type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col3</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.notset</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">25% (1/4)</numIndex>
+                                        <numIndex index="1">col-xs-3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">33% (1/3)</numIndex>
+                                        <numIndex index="1">col-xs-4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">50% (1/2)</numIndex>
+                                        <numIndex index="1">col-xs-6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">66% (2/3)</numIndex>
+                                        <numIndex index="1">col-xs-8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">75% (3/4)</numIndex>
+                                        <numIndex index="1">col-xs-9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreWidth</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">8.3% (1/12)</numIndex>
+                                        <numIndex index="1">col-xs-1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">16.6%  (2/12)</numIndex>
+                                        <numIndex index="1">col-xs-2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">41.6% (5/12)</numIndex>
+                                        <numIndex index="1">col-xs-5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">58.3% (7/12)</numIndex>
+                                        <numIndex index="1">col-xs-7</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreOptions</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.hidden</numIndex>
+                                        <numIndex index="1">hidden-xs</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </xsCol3>
+                    <xsCol4 type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col4</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.notset</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">25% (1/4)</numIndex>
+                                        <numIndex index="1">col-xs-3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">33% (1/3)</numIndex>
+                                        <numIndex index="1">col-xs-4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">50% (1/2)</numIndex>
+                                        <numIndex index="1">col-xs-6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">66% (2/3)</numIndex>
+                                        <numIndex index="1">col-xs-8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">75% (3/4)</numIndex>
+                                        <numIndex index="1">col-xs-9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreWidth</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">8.3% (1/12)</numIndex>
+                                        <numIndex index="1">col-xs-1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">16.6%  (2/12)</numIndex>
+                                        <numIndex index="1">col-xs-2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">41.6% (5/12)</numIndex>
+                                        <numIndex index="1">col-xs-5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">58.3% (7/12)</numIndex>
+                                        <numIndex index="1">col-xs-7</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreOptions</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.hidden</numIndex>
+                                        <numIndex index="1">hidden-xs</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </xsCol4>
+                </el>
+            </ROOT>
+        </extraSmallDevices>
+        <largeDevices>
+            <ROOT type="array">
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.sheet.largeDevices</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el type="array">
+                    <lgCol1 type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col1</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.notset</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">25% (1/4)</numIndex>
+                                        <numIndex index="1">col-lg-3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">33% (1/3)</numIndex>
+                                        <numIndex index="1">col-lg-4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">50% (1/2)</numIndex>
+                                        <numIndex index="1">col-lg-6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">66% (2/3)</numIndex>
+                                        <numIndex index="1">col-lg-8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">75% (3/4)</numIndex>
+                                        <numIndex index="1">col-lg-9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreWidth</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">8.3% (1/12)</numIndex>
+                                        <numIndex index="1">col-lg-1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">16.6%  (2/12)</numIndex>
+                                        <numIndex index="1">col-lg-2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">41.6% (5/12)</numIndex>
+                                        <numIndex index="1">col-lg-5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">58.3% (7/12)</numIndex>
+                                        <numIndex index="1">col-lg-7</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreOptions</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.hidden</numIndex>
+                                        <numIndex index="1">hidden-lg</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </lgCol1>
+                    <lgCol2 type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col2</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.notset</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">25% (1/4)</numIndex>
+                                        <numIndex index="1">col-lg-3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">33% (1/3)</numIndex>
+                                        <numIndex index="1">col-lg-4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">50% (1/2)</numIndex>
+                                        <numIndex index="1">col-lg-6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">66% (2/3)</numIndex>
+                                        <numIndex index="1">col-lg-8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">75% (3/4)</numIndex>
+                                        <numIndex index="1">col-lg-9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreWidth</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">8.3% (1/12)</numIndex>
+                                        <numIndex index="1">col-lg-1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">16.6%  (2/12)</numIndex>
+                                        <numIndex index="1">col-lg-2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">41.6% (5/12)</numIndex>
+                                        <numIndex index="1">col-lg-5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">58.3% (7/12)</numIndex>
+                                        <numIndex index="1">col-lg-7</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreOptions</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.hidden</numIndex>
+                                        <numIndex index="1">hidden-lg</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </lgCol2>
+                    <lgCol3 type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col3</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.notset</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">25% (1/4)</numIndex>
+                                        <numIndex index="1">col-lg-3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">33% (1/3)</numIndex>
+                                        <numIndex index="1">col-lg-4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">50% (1/2)</numIndex>
+                                        <numIndex index="1">col-lg-6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">66% (2/3)</numIndex>
+                                        <numIndex index="1">col-lg-8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">75% (3/4)</numIndex>
+                                        <numIndex index="1">col-lg-9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreWidth</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">8.3% (1/12)</numIndex>
+                                        <numIndex index="1">col-lg-1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">16.6%  (2/12)</numIndex>
+                                        <numIndex index="1">col-lg-2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">41.6% (5/12)</numIndex>
+                                        <numIndex index="1">col-lg-5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">58.3% (7/12)</numIndex>
+                                        <numIndex index="1">col-lg-7</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreOptions</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.hidden</numIndex>
+                                        <numIndex index="1">hidden-lg</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </lgCol3>
+                    <lgCol4 type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col4</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.notset</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">25% (1/4)</numIndex>
+                                        <numIndex index="1">col-lg-3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">33% (1/3)</numIndex>
+                                        <numIndex index="1">col-lg-4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">50% (1/2)</numIndex>
+                                        <numIndex index="1">col-lg-6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">66% (2/3)</numIndex>
+                                        <numIndex index="1">col-lg-8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">75% (3/4)</numIndex>
+                                        <numIndex index="1">col-lg-9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreWidth</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">8.3% (1/12)</numIndex>
+                                        <numIndex index="1">col-lg-1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">16.6%  (2/12)</numIndex>
+                                        <numIndex index="1">col-lg-2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">41.6% (5/12)</numIndex>
+                                        <numIndex index="1">col-lg-5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">58.3% (7/12)</numIndex>
+                                        <numIndex index="1">col-lg-7</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.moreOptions</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.hidden</numIndex>
+                                        <numIndex index="1">hidden-lg</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </lgCol4>
+                </el>
+            </ROOT>
+        </largeDevices>
+        <customClasses>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.sheet.columns</sheetTitle>
+                    <sheetTitle>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.sheet.customClasses</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el type="array">
                     <col41class type="array">
                         <TCEforms type="array">
-                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.column1style</label>
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col1</label>
                             <config type="array">
-                                <type>select</type>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.default</numIndex>
-                                        <numIndex index="1">0</numIndex>
-                                    </numIndex>
-                                </items>
+                                <type>input</type>
+                                <eval>trim</eval>
                             </config>
                         </TCEforms>
                     </col41class>
                     <col42class type="array">
                         <TCEforms type="array">
-                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.column2style</label>
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col2</label>
                             <config type="array">
-                                <type>select</type>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.default</numIndex>
-                                        <numIndex index="1">0</numIndex>
-                                    </numIndex>
-                                </items>
+                                <type>input</type>
+                                <eval>trim</eval>
                             </config>
                         </TCEforms>
                     </col42class>
                     <col43class type="array">
                         <TCEforms type="array">
-                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.column3style</label>
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col3</label>
                             <config type="array">
-                                <type>select</type>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.default</numIndex>
-                                        <numIndex index="1">0</numIndex>
-                                    </numIndex>
-                                </items>
+                                <type>input</type>
+                                <eval>trim</eval>
                             </config>
                         </TCEforms>
                     </col43class>
                     <col44class type="array">
                         <TCEforms type="array">
-                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.column4style</label>
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col4</label>
                             <config type="array">
-                                <type>select</type>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.default</numIndex>
-                                        <numIndex index="1">0</numIndex>
-                                    </numIndex>
-                                </items>
+                                <type>input</type>
+                                <eval>trim</eval>
                             </config>
                         </TCEforms>
                     </col44class>
                 </el>
             </ROOT>
-        </sColumns>
+        </customClasses>
+        <preDefStyles>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.sheet.specialStyles</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el type="array">
+                    <col41style type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col1</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.default</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </col41style>
+                    <col42style type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col2</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.default</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </col42style>
+                    <col43style type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col3</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.default</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </col43style>
+                    <col44style type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.col4</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:bootstrap_core/Resources/Private/Language/locallang.xlf:grid.label.default</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </col44style>
+                </el>
+            </ROOT>
+        </preDefStyles>
     </sheets>
 </T3DataStructure>

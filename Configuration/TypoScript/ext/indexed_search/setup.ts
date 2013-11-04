@@ -1,4 +1,17 @@
 
+
+# --- Activate indexed_search ---
+#
+config {
+  # Indexed Search
+  index_enable = {$plugin.tx_bootstrapcore.website.ext.indexed_search.enabled}
+  # index files
+  index_externals = {$plugin.tx_bootstrapcore.website.ext.indexed_search.enabled}
+  # don't index metatags
+  index_metatags = 0
+}
+
+
 # --- Configuration of indexed_search ('old' plugin) ---
 #
 plugin.tx_indexedsearch {
@@ -57,27 +70,31 @@ plugin.tx_indexedsearch {
   rules_stdWrap.wrap = <div class="alert alert-info"><button type="button" class="close" data-dismiss="alert">&times;</button>|</div>
 
   # wrap for current search term show again below search form
-  #whatis_stdWrap.wrap = <div class="well well-small">|</div>
+  #whatis_stdWrap.wrap = <div class="well well-sm">|</div>
   whatis_stdWrap.wrap = <div class="alert alert-info">|</div>
 }
 
 
-# --- jQuery based manipulation of search results ---
+# --- Only on search page ----
 #
-# Add to scripts at bottom of page
-page.20.2701 = TEXT
-page.20.2701.value (
-  <script type="text/javascript">
-  $(document).ready(function() {
-    /* change pagination in indexed search results */
-    $('.tx-indexedsearch-browselist-currentPage').find('strong').contents().unwrap();
-    $('.tx-indexedsearch-browselist-currentPage').attr('class', 'active');
-    $('.tx-indexedsearch-browsebox').attr('class', 'pagination');
+[PIDinRootline = {$plugin.tx_bootstrapcore.website.ext.indexed_search.searchPids}]
 
-    /* change search string markup in result descriptions */
-    $('strong.tx-indexedsearch-redMarkup').attr('class', 'text-error');
-  });
-  </script>
-)
+    # --- jQuery based manipulation of search results ---
+    page.footerData.2701 = TEXT
+    page.footerData.2701.value (
+      <script type="text/javascript">
+      $(document).ready(function() {
+        /* change pagination in indexed search results */
+        $('.tx-indexedsearch-browselist-currentPage').find('strong').contents().unwrap();
+        $('.tx-indexedsearch-browselist-currentPage').attr('class', 'active');
+        $('.tx-indexedsearch-browsebox').attr('class', 'pagination');
+
+        /* change search string markup in result descriptions */
+        $('strong.tx-indexedsearch-redMarkup').attr('class', 'text-danger');
+      });
+      </script>
+
+    )
+[global]
 
 

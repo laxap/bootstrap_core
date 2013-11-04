@@ -86,21 +86,32 @@
 			<trans-unit id="tceform.tt_content.header_layout.5" xml:space="preserve" approved="yes">
 				<source>Heading 5</source>
 			<target state="translated">Überschrift 5</target></trans-unit>
+
 			<trans-unit id="tceform.tt_content.layout.images.0" xml:space="preserve" approved="yes">
 				<source>Normal</source>
 			<target state="translated">Standard</target></trans-unit>
 			<trans-unit id="tceform.tt_content.layout.images.1" xml:space="preserve" approved="yes">
+				<source>Responsive</source>
+			<target state="translated">Responsive</target></trans-unit>
+			<trans-unit id="tceform.tt_content.layout.images.2" xml:space="preserve" approved="yes">
 				<source>Image corners rounded</source>
 			<target state="translated">Bildecken abgerundet</target></trans-unit>
-			<trans-unit id="tceform.tt_content.layout.images.2" xml:space="preserve" approved="yes">
+			<trans-unit id="tceform.tt_content.layout.images.3" xml:space="preserve" approved="yes">
+				<source>Image corners rounded (responsive)</source>
+			<target state="translated">Bildecken abgerundet (responsive)</target></trans-unit>
+			<trans-unit id="tceform.tt_content.layout.images.4" xml:space="preserve" approved="yes">
 				<source>Image round/oval</source>
 			<target state="translated">Bild rund/oval</target></trans-unit>
-			<trans-unit id="tceform.tt_content.layout.images.3" xml:space="preserve" approved="yes">
+			<trans-unit id="tceform.tt_content.layout.images.5" xml:space="preserve" approved="yes">
+				<source>Image round/oval (responsive)</source>
+			<target state="translated">Bild rund/oval (responsive)</target></trans-unit>
+			<trans-unit id="tceform.tt_content.layout.images.6" xml:space="preserve" approved="yes">
 				<source>Image with border</source>
 			<target state="translated">Bild mit Rahmen</target></trans-unit>
-			<trans-unit id="tceform.tt_content.layout.images.4" xml:space="preserve" approved="yes">
-				<source>Slider</source>
-			<target state="translated">Slider</target></trans-unit>
+			<trans-unit id="tceform.tt_content.layout.images.7" xml:space="preserve" approved="yes">
+				<source>Image with border (responsive)</source>
+			<target state="translated">Bild mit Rahmen (responsive)</target></trans-unit>
+
 			<trans-unit id="tceform.tt_content.layout.menu.0" xml:space="preserve" approved="yes">
 				<source>Normal</source>
 			<target state="translated">Standard</target></trans-unit>
