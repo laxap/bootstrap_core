@@ -32,8 +32,6 @@ $EM_CONF[$_EXTKEY] = array(
 		'conflicts' => array(
 		),
 		'suggests' => array(
-			'felogin' => '6.1.0-',
-			'indexed_search' => '6.1.0-',
 			'realurl' => '1.12.0-',
 		),
 	),

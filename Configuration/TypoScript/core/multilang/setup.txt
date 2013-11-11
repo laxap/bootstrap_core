@@ -1,7 +1,7 @@
 
 config {
   # Activating multi-lang links (1-3)
-  linkVars := addToList(L(3))
+  linkVars := addToList(L)
 
   # Language overlay & mode
   sys_language_overlay = {$plugin.tx_bootstrapcore.website.multilang.overlay}

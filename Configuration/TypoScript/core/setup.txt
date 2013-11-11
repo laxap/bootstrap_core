@@ -123,7 +123,7 @@ page {
 
     # --- JS ----
     #
-    includeJSlibs {
+    includeJSFooterlibs {
         # second js
         bootstrap    = {$plugin.tx_bootstrapcore.website.protocol}:{$plugin.tx_bootstrapcore.theme.js.bootstrap}
         bootstrap.excludeFromConcatenation = 1
@@ -135,7 +135,7 @@ page {
         jquery.external = 1
         jquery.forceOnTop = 1
         # --- will be merged (if activated)
-        ligthbox       = {$plugin.tx_bootstrapcore.theme.js.lightbox}
+        lightbox       = {$plugin.tx_bootstrapcore.theme.js.lightbox}
         flexslider     = {$plugin.tx_bootstrapcore.theme.js.flexslider}
         jQueryEasing   = {$plugin.tx_bootstrapcore.theme.js.jQueryEasing}
         jQueryFitvid   = {$plugin.tx_bootstrapcore.theme.js.jQueryFitvid}
