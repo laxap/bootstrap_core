@@ -26,8 +26,10 @@ $GLOBALS['TCA']['tt_content']['columns']['pi_flexform']['config']['ds']['*,table
 // --------------------------------------------------------------------
 //
 if ( isset($extConf['enableIconFont']) && $extConf['enableIconFont'] != 'none' && $extConf['enableIconFont'] ) {
+	// icon font key/name
+	$iconFont = $extConf['enableIconFont'];
 	// load icon font specific select array (defines $iconFontOption)
-	include(PATH_site . 'typo3conf/ext/bootstrap_core/ext_tables_' . $extConf['enableIconFont'] . '.php');
+	include(PATH_site . 'typo3conf/ext/bootstrap_core/ext_tables_' . $iconFont . '.php');
 
 	// define field
 	$tempColumn = array(
@@ -65,7 +67,15 @@ if ( isset($extConf['enableIconFont']) && $extConf['enableIconFont'] != 'none' &
 	}
 
 	// Add static ts configurations for FontAwesome
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/lib/' . $extConf['enableIconFont'], 'Bootstrap: Icon Font');
+	switch ( $iconFont ) {
+		case 'fontawesome':
+			\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/lib/' . $iconFont, 'Bootstrap: Fontawesome Icons');
+			break;
+		case 'entypo':
+			\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/lib/' . $iconFont, 'Bootstrap: Entypo Icons');
+			break;
+	}
+
 }
 
 

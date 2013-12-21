@@ -1,0 +1,9 @@
+
+plugin.tx_bootstrapcore {
+    theme {
+        css {
+            # cat=tx_bootstrapcore.theme/css/042; type=string; label=Font Awesome CSS: Default: /theme/default/css/entypo.css
+            entypo    = /theme/default/css/entypo.css
+        }
+    }
+}
