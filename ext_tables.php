@@ -74,6 +74,9 @@ if ( isset($extConf['enableIconFont']) && $extConf['enableIconFont'] != 'none' &
 		case 'entypo':
 			\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/lib/' . $iconFont, 'Bootstrap: Entypo Icons');
 			break;
+		case 'fontello':
+			\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/lib/' . $iconFont, 'Bootstrap: Fontello Icons');
+			break;
 	}
 
 }

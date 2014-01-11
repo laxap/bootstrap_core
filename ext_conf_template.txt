@@ -1,5 +1,5 @@
 
-# cat=basic; type=options[fontawesome, entypo, none]; label=Include Font Awesome and adds icon field to tt_content: Attention: Static ts template for FontAwesome has to be included after activating it here!
+# cat=basic; type=options[fontawesome, entypo, fontello, none]; label=Include Font Awesome and adds icon field to tt_content: Attention: Static ts template for FontAwesome has to be included after activating it here!
 enableIconFont = fontawesome
 # cat=basic; type=boolean; label=Show icon field on a separate tab: Allows to show all icons below the select field.
 showFontIconsOnSeparateTab = 0
