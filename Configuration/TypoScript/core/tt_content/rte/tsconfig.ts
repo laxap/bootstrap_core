@@ -266,7 +266,7 @@ RTE.classesAnchor {
 RTE.default {
 
   # CSS file for RTE
-  contentCSS = typo3conf/ext/bootstrap_core/Resources/Public/Css/rte/content.css
+  contentCSS = theme/default/css/rte/content.css
 
   # Use stylesheet file to style the contents (htmlArea RTE only), default = 1
   #ignoreMainStyleOverride = 1

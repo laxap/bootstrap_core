@@ -25,11 +25,6 @@ plugin.tx_bootstrapcore {
     # --- system config ---
     #
     config {
-        # cat=tx_bootstrapcore.system/css/050; type=boolean; label=Concatenate CSS files: Default is 0.
-        concatenateCss = 0
-        # cat=tx_bootstrapcore.system/js/070; type=boolean; label=Concatenate JS files: Default is 0.
-        concatenateJs = 0
-
         # cat=tx_bootstrapcore.system/base/060; type=boolean; label=Enable modified image rendering (responsive widths): Attention: Extension configration has to be set accordingly too!
         enableModifiedImageRendering = 0
     }
@@ -90,13 +85,6 @@ plugin.tx_bootstrapcore {
             # cat=tx_bootstrapcore.website/extservice/140; type=boolean; label=Enable Google Analytics: Default: 0
             enabled = 0
         }
-
-        ext {
-            # cat=tx_bootstrapcore.website/extension/151; type=boolean; label=Enable realurl: Default: 1
-            realurl {
-                enabled = 1
-            }
-        }
     }
 
 
@@ -107,17 +95,8 @@ plugin.tx_bootstrapcore {
         baseDir = theme/default
 
         css {
-            # cat=tx_bootstrapcore.theme/css/040; type=string; label=Webfont CSS Link: Default: fonts.googleapis.com/css?family=Open+Sans:400,600
-            webfont       = //fonts.googleapis.com/css?family=Open+Sans:400,600
             # cat=tx_bootstrapcore.theme/css/041; type=string; label=Twitter Bootstrap CSS: Default: netdna.bootstrapcdn.com/twitter-bootstrap/3.x.x/css/bootstrap-combined.no-icons.min.css
             bootstrap     = //netdna.bootstrapcdn.com/twitter-bootstrap/3.0.0/css/bootstrap.min.css
-
-            # cat=tx_bootstrapcore.theme/css/045; type=string; label=Lightbox CSS
-            lightbox      = lib/jquerytools/prettyphoto/css/prettyPhoto.css
-            # cat=tx_bootstrapcore.theme/css/046; type=string; label=Slider CSS
-            flexslider    = lib/jquerytools/flexslider/flexslider.css
-            # cat=tx_bootstrapcore.theme/css/049; type=string; label=t3bootstrap default CSS
-            bootstrapCore = {$plugin.tx_bootstrapcore.resourceDir}/Public/Css/style.css
         }
 
         js {
@@ -125,17 +104,6 @@ plugin.tx_bootstrapcore {
             jquery        = //code.jquery.com/jquery-1.10.2.min.js
             # cat=tx_bootstrapcore.theme/js/061; type=string; label=Twitter Bootstrap JS: Default: //netdna.bootstrapcdn.com/twitter-bootstrap/3.x.x/js/bootstrap.min.js
             bootstrap     = //netdna.bootstrapcdn.com/twitter-bootstrap/3.0.0/js/bootstrap.min.js
-
-            # cat=tx_bootstrapcore.theme/js/063; type=string; label=Lightbox JS
-            lightbox      = lib/jquerytools/prettyphoto/js/jquery.prettyPhoto.js
-            # cat=tx_bootstrapcore.theme/js/066; type=string; label=FlexSlider JS
-            flexslider    = lib/jquerytools/flexslider/jquery.flexslider-min.js
-            # cat=tx_bootstrapcore.theme/js/067; type=string; label=jQuery Easing Plugin (for flexslider)
-            jQueryEasing  = lib/jquerytools/jquery.easing.js
-            # cat=tx_bootstrapcore.theme/js/067; type=string; label=jQuery FitVid Plugin (for responsive video size)
-            jQueryFitvid  = lib/jquerytools/jquery.fitvid.js
-            # cat=tx_bootstrapcore.theme/js/069; type=string; label=t3bootstrap default JS
-            bootstrapCore = {$plugin.tx_bootstrapcore.resourceDir}/Public/JavaScript/script.js
         }
     }
 

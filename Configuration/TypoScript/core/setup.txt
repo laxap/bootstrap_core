@@ -18,8 +18,10 @@ config {
   # Page title before Website title  (<title> tag)
   pageTitleFirst = 1
 
-  # URL Settings
-  tx_realurl_enable = {$plugin.tx_bootstrapcore.website.ext.realurl.enabled}
+  # absolute urls
+  absRefPrefix = /
+  prefixLocalAnchors = all
+  extTarget =
   #simulateStaticDocuments = 0
 
   # Code cleaning
@@ -27,9 +29,6 @@ config {
   # Move default CSS and JS to external file
   removeDefaultJS = external
   inlineStyle2TempFile = 1
-  # concatenate css & js
-  concatenateCss = {$plugin.tx_bootstrapcore.config.concatenateCss}
-  concatenateJs = {$plugin.tx_bootstrapcore.config.concatenateJs}
 
   # Protect mail addresses from spamming
   spamProtectEmailAddresses = 1
@@ -64,24 +63,18 @@ config {
 
 
 # -----------------------------------------
-# BaseUrl ...
+# Usage of config.baseURL
 #
 /*
 # base tag
 config.baseURL = {$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain}/
+config.absRefPrefix >
+config.prefixLocalAnchors >
 # base tag with SSL
 [globalString = _SERVER|HTTPS=on]
   config.baseURL = https://{$plugin.tx_bootstrapcore.website.domain}/
 [global]
 */
-
-# ...or AbsRefPrefix
-config {
-  # absolute urls
-  absRefPrefix = /
-  prefixLocalAnchors = all
-  extTarget =
-}
 
 
 # -----------------------------------------------------------------------------
@@ -107,18 +100,6 @@ page {
         bootstrap.excludeFromConcatenation = 1
         bootstrap.external = 1
         bootstrap.forceOnTop = 1
-        # will be first (forced on top as last)
-        webfont     = {$plugin.tx_bootstrapcore.website.protocol}:{$plugin.tx_bootstrapcore.theme.css.webfont}
-        webfont.excludeFromConcatenation = 1
-        webfont.external = 1
-        webfont.forceOnTop = 1
-        # --- will be merged (if activated)
-        # prettyPhoto (for image/video/content lightbox)
-        lightbox = {$plugin.tx_bootstrapcore.theme.css.lightbox}
-        # flexslider2 (for slider grid, textpic/image, news)
-        flexslider = {$plugin.tx_bootstrapcore.theme.css.flexslider}
-        # Default bootstrap core css
-        bootstrapCore = {$plugin.tx_bootstrapcore.theme.css.bootstrapCore}
     }
 
     # --- JS ----
@@ -134,12 +115,6 @@ page {
         jquery.excludeFromConcatenation = 1
         jquery.external = 1
         jquery.forceOnTop = 1
-        # --- will be merged (if activated)
-        lightbox       = {$plugin.tx_bootstrapcore.theme.js.lightbox}
-        flexslider     = {$plugin.tx_bootstrapcore.theme.js.flexslider}
-        jQueryEasing   = {$plugin.tx_bootstrapcore.theme.js.jQueryEasing}
-        jQueryFitvid   = {$plugin.tx_bootstrapcore.theme.js.jQueryFitvid}
-        bootstrapCore  = {$plugin.tx_bootstrapcore.theme.js.bootstrapCore}
     }
 
     # --- Meta tags ----
@@ -160,98 +135,111 @@ page {
     }
 }
 
+
 # -----------------------------------------------------------------------------
-# Meta Tags for sharing via Facebook and Twitter
+# Header data
 # -----------------------------------------------------------------------------
 #
-# Facebook OpenGraph
-page.headerData.20 = COA
-page.headerData.20 {
-    10 = TEXT
-    10.insertData = 1
-    10.append = TEXT
-    10.append.char = 10
-    10.value (
-<!-- fb/opengraph // -->
-<meta property="og:title" content="{page:title}" />
-<meta property="og:site_name" content="{TSFE:tmpl|sitetitle}" />
-)
-    # description
-    20 = TEXT
-    20.data = field:description // field:abstract
-    20.required = 1
-    #20.data = field:description // field:abstract // levelfield :-1, description, slide // levelfield :-1, abstract, slide
-    20.wrap = <meta property="og:description" content="|" />
-    20.append = TEXT
-    20.append.char = 10
+# --- Meta Tags for sharing via Facebook and Twitter, favicon, html5support for older browser ---
+#
+lib.t3b {
+    # Facebook
+    meta.fb = COA
+    meta.fb {
+        10 = TEXT
+        10 {
+            value (
+    <meta property="og:title" content="{page:title}" />
+    <meta property="og:site_name" content="{TSFE:tmpl|sitetitle}" />
 
-    # url
-    30 = TEXT
-    30.typolink.parameter.data = TSFE:id
-    30.typolink.returnLast = url
-    30.wrap = <meta property="og:url" content="{$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain}|" />
-    30.wrap.insertData = 1
-    30.append = TEXT
-    30.append.char = 10
-
-    # image
-    40 = FILES
-    40 {
-        references {
-            table = pages
-            data = levelmedia:-1,slide
+            )
+            insertData = 1
         }
-        renderObj = TEXT
-        renderObj {
-            data = file:current:publicUrl
-            wrap = <meta property="og:image" content="{$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain}/|" />
+
+        # description
+        20 = TEXT
+        20 {
+            required = 1
+            data = field:description // field:abstract
+            #data = field:description // field:abstract // levelfield :-1, description, slide // levelfield :-1, abstract, slide
+            wrap = <meta property="og:description" content="|" />
+            append = TEXT
+            append.char = 10
+        }
+
+        # url
+        30 = TEXT
+        30 {
+            typolink.parameter.data = TSFE:id
+            typolink.returnLast = url
+            wrap = <meta property="og:url" content="{$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain}|" />
+            wrap.insertData = 1
+            append = TEXT
+            append.char = 10
+        }
+
+        # image
+        40 = FILES
+        40 {
+            references {
+                table = pages
+                data = levelmedia:-1,slide
+            }
+            renderObj = TEXT
+            renderObj {
+                data = file:current:publicUrl
+                wrap = <meta property="og:image" content="{$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain}/|" />
+            }
         }
     }
+
+    # Twitter
+    meta.twitter < lib.t3b.meta.fb
+    meta.twitter {
+        10.value (
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{page:title}" />
+
+    )
+        20.wrap = <meta name="twitter:description" content="|" />
+        30.wrap = <meta name="twitter:url" content="{$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain}|" />
+        40.renderObj.wrap = <meta name="twitter:image" content="{$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain}/|" />
+    }
+
+    # --- Favicon & Apple Touch Icons ---
+    #
+    favicons = TEXT
+    favicons.value (
+    <link rel="shortcut icon" href="fileadmin/favicons/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="fileadmin/favicons/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="fileadmin/favicons/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="fileadmin/favicons/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="fileadmin/favicons/apple-touch-icon-precomposed.png">
+
+    )
+
+    # --- HTML5 Support for IE<9 ---
+    #
+    html5support = TEXT
+    html5support.value (
+    <!--[if lt IE 9]>
+        <script src="lib/html5shiv/html5shiv.js"></script>
+    <![endif]-->
+
+    )
 }
 
-# Twitter Cards
-page.headerData.21 < page.headerData.20
-page.headerData.21 {
-    10.value (
-
-<!-- twitter // -->
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="{page:title}" />
-)
-    # description
-    20.wrap = <meta name="twitter:description" content="|" />
-    # url
-    30.wrap = <meta name="twitter:url" content="{$plugin.tx_bootstrapcore.website.protocol}://|" />
-    # image
-    40.renderObj.wrap = <meta name="twitter:image" content="{$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain}/|" />
+# -----------------------------------------------------------------------------
+# Add above header data
+# -----------------------------------------------------------------------------
+page.headerData.20 = COA
+page.headerData.20 {
+    10 < lib.t3b.html5support
+    20 < lib.t3b.favicons
+    30 < lib.t3b.meta.fb
+    40 < lib.t3b.meta.twitter
 }
 
-
-
-# -----------------------------------------------------------------------------
-# page.headerData.50 for favicon and apple-touch-icons
-# -----------------------------------------------------------------------------
-#
-page.headerData.40 = TEXT
-page.headerData.40.value (
-<link rel="shortcut icon" href="fileadmin/favicons/favicon.ico" />
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="fileadmin/favicons/apple-touch-icon-144x144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="fileadmin/favicons/apple-touch-icon-114x114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="fileadmin/favicons/apple-touch-icon-72x72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="fileadmin/favicons/apple-touch-icon-precomposed.png">
-
-)
-
-# -----------------------------------------------------------------------------
-# HTML5 Support for IE<9 -->
-# -----------------------------------------------------------------------------
-#
-page.headerData.50 = TEXT
-page.headerData.50.value (
-<!--[if lt IE 9]>
-  <script src="lib/html5shiv/html5shiv.js"></script>
-<![endif]-->
-)
 
 
 # -----------------------------------------------------------------------------
