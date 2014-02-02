@@ -2,12 +2,8 @@
 plugin.tx_bootstrapcore {
     theme {
         css {
-            # cat=tx_bootstrapcore.theme/css/042; type=string; label=Fontello CSS: Default
-            fontello    = /theme/default/css/fontello/fontello.css
-            # cat=tx_bootstrapcore.theme/css/043; type=string; label=Fontello Animation CSS
-            fontello_animation    = /theme/default/css/fontello/animation.css
-            # cat=tx_bootstrapcore.theme/css/043; type=string; label=Fontello Animation CSS
-            fontello_ie7    = /theme/default/css/fontello/fontello-ie7.css
+            iconFontClassPrefix = icon-
+            iconFontClassAddon =
         }
     }
 }

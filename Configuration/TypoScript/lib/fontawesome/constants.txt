@@ -2,8 +2,8 @@
 plugin.tx_bootstrapcore {
     theme {
         css {
-            # cat=tx_bootstrapcore.theme/css/042; type=string; label=Font Awesome CSS: Default: netdna.bootstrapcdn.com/font-awesome/4.x.x/css/font-awesome.min.css
-            fawesome    = //netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css
+            iconFontClassPrefix = fa fa-
+            iconFontClassAddon =
         }
     }
 }
