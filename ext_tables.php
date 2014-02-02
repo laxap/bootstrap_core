@@ -20,6 +20,13 @@ if ( strlen($_EXTCONF) ) {
 $GLOBALS['TCA']['tt_content']['columns']['pi_flexform']['config']['ds']['*,table'] = 'FILE:EXT:bootstrap_core/Configuration/FlexForm/css_styled_content/flexform_ds.xml';
 
 
+// --------------------------------------------------------------------
+// Custom config
+// --------------------------------------------------------------------
+//
+if ( file_exists(PATH_site . 'typo3conf/tx_bootstrapcore_custom.php') ) {
+	include(PATH_site . 'typo3conf/tx_bootstrapcore_custom.php');
+}
 
 // --------------------------------------------------------------------
 // Optional: Icon Font
@@ -28,10 +35,14 @@ $GLOBALS['TCA']['tt_content']['columns']['pi_flexform']['config']['ds']['*,table
 if ( isset($extConf['enableIconFont']) && $extConf['enableIconFont'] != 'none' && $extConf['enableIconFont'] ) {
 	// icon font key/name
 	$iconFont = $extConf['enableIconFont'];
-	// load icon font specific select array (defines $iconFontOption)
-	include(PATH_site . 'typo3conf/ext/bootstrap_core/ext_tables_' . $iconFont . '.php');
 
-	// define field
+	// If not yet defined via custom config
+	if ( ! is_array($iconFontOption) || count($iconFontOption) == 0 ) {
+		// Load default icon font specific select array
+		include(PATH_site . 'typo3conf/ext/bootstrap_core/ext_tables_' . $iconFont . '.php');
+	}
+
+	// Define field
 	$tempColumn = array(
 		'tx_bootstrapcore_icon' => array (
 			'exclude' => 0,
@@ -68,16 +79,14 @@ if ( isset($extConf['enableIconFont']) && $extConf['enableIconFont'] != 'none' &
 
 	// Add static ts configurations for FontAwesome
 	switch ( $iconFont ) {
-		case 'fontawesome':
-			\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/lib/' . $iconFont, 'Bootstrap: Fontawesome Icons');
-			break;
-		case 'entypo':
-			\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/lib/' . $iconFont, 'Bootstrap: Entypo Icons');
-			break;
 		case 'fontello':
-			\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/lib/' . $iconFont, 'Bootstrap: Fontello Icons');
+			\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/lib/' . $iconFont, 'Bootstrap: FontIcon Fontello');
+			break;
+		case 'fontawesome':
+			\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/lib/' . $iconFont, 'Bootstrap: FontIcon FontAwesome');
 			break;
 	}
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/lib/fonticon', 'Bootstrap: FontIcons Setup');
 
 }
 
@@ -90,6 +99,26 @@ if ( isset($extConf['enableIconFont']) && $extConf['enableIconFont'] != 'none' &
 // add imageswidth field
 if ( isset($extConf['enableModifiedImageRendering']) && $extConf['enableModifiedImageRendering'] == 1 ) {
 
+	// If not yet defined via custom config
+	if ( ! is_array($imageWidthOption) || count($imageWidthOption) == 0 ) {
+		// Set default image width options
+		$imageWidthOption = array(
+			array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrapcore_imageswidth.I.0', '0'),
+			array('1/12',   '1'),
+			array('2/12',  '2'),
+			array('25%',   '3'),
+			array('33%',   '4'),
+			array('5/12',  '5'),
+			array('50%',   '6'),
+			array('7/12',  '7'),
+			array('66%',   '8'),
+			array('75%',   '9'),
+			array('10/12', '10'),
+			array('11/12', '11'),
+			array('100%',  '12')
+		);
+	}
+
 	// define field
 	$tempColumn = array(
 		'tx_bootstrapcore_imageswidth' => array (
@@ -97,21 +126,7 @@ if ( isset($extConf['enableModifiedImageRendering']) && $extConf['enableModified
 			'label' => 'LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrapcore_imageswidth',
 			'config' => array (
 				'type' => 'select',
-				'items' => array(
-					array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrapcore_imageswidth.I.0', '0'),
-					array('1/12',   '1'),
-					array('2/12',  '2'),
-					array('25%',   '3'),
-					array('33%',   '4'),
-					array('5/12',  '5'),
-					array('50%',   '6'),
-					array('7/12',  '7'),
-					array('66%',   '8'),
-					array('75%',   '9'),
-					array('10/12', '10'),
-					array('11/12', '11'),
-					array('100%',  '12')
-				),
+				'items' => $imageWidthOption,
 				'size' => 1,
 				'maxitems' => 1,
 			)
