@@ -63,7 +63,7 @@ tt_content.menu {
       10 {
         field = accessibility_title
         htmlSpecialChars = 1
-        dataWrap = <div style="max-width: 250px; padding: 8px 0;" class="well"><ul class="nav nav-list"><li class="nav-header"></li>
+        dataWrap = <div style="max-width: 250px; padding: 8px 0;" class="well"><ul class="nav nav-list"><li class="nav-header">|</li>
         noTrimWrap = || |
       }
       20 = TEXT
