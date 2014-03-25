@@ -455,6 +455,9 @@
             <trans-unit id="grid.label.hidden" xml:space="preserve">
 				<source>hidden</source>
 			</trans-unit>
+            <trans-unit id="grid.label.visible" xml:space="preserve">
+				<source>visible</source>
+			</trans-unit>
 
 		</body>
 	</file>

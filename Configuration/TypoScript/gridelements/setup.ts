@@ -303,7 +303,7 @@ tt_content.gridelements_pi1.20.10.setup {
               1.value = <li class="active" id="tab-element-{field:uid}">|</li>
             }
           }
-        } # end renderObj
+        }
 
       }
     }
@@ -349,9 +349,9 @@ tt_content.gridelements_pi1.20.10.setup {
           20.image.10 >
           20.textpic.10 >
 
-        } # end renderObj
+        }
       }
-    } # end columns
+    }
 
   }
 
