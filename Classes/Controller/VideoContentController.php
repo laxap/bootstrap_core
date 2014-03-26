@@ -28,7 +28,7 @@ namespace Simplicity\BootstrapCore\Controller;
 /**
  *
  *
- * @package slider_pack
+ * @package BootstrapCore
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */

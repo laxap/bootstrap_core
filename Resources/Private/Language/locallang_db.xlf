@@ -39,7 +39,22 @@
 			<trans-unit id="tt_content.table.acctables_tableclass.I.5">
 				<source>striped, hover, condensed</source>
 			</trans-unit>
-			
+
+
+            <trans-unit id="textelement.ctype.title">
+                <source>Spezielles Textelement</source>
+            </trans-unit>
+            <trans-unit id="textelement.ctype.description">
+                <source>für vordefinierte Spezialelemente</source>
+            </trans-unit>
+            <trans-unit id="imageelement.ctype.title">
+                <source>Spezielles Bildtextelement</source>
+            </trans-unit>
+            <trans-unit id="imageelement.ctype.description">
+                <source>für vordefinierte Spezialelemente</source>
+            </trans-unit>
+
+
 		</body>
 	</file>
 </xliff>

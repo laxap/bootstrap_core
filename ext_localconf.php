@@ -61,4 +61,32 @@ if ( isset($extConf['enableNewVideoCType']) && $extConf['enableNewVideoCType'] =
 
 }
 
+// --------------------------------------------------------------------
+// Additional Content Elements for special layouts
+// --------------------------------------------------------------------
+//
+// --- Content Element without images
+//
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+	'Simplicity.' . $_EXTKEY,
+	'TextElement',
+	// cacheable actions
+	array('ContentElement' => 'showText'),
+	// non-cacheable actions
+	array(),
+	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+);
+
+// --- Content Element with image(s)
+//
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+	'Simplicity.' . $_EXTKEY,
+	'ImageElement',
+	// cacheable actions
+	array('ContentElement' => 'showTextImage'),
+	// non-cacheable actions
+	array(),
+	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+);
+
 ?>

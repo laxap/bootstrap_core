@@ -75,6 +75,7 @@ if ( isset($extConf['enableIconFont']) && $extConf['enableIconFont'] != 'none' &
 		// add after header_layout
 		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumn, 1);
 		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'header', 'tx_bootstrapcore_icon', 'after:header_layout');
+		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'headers', 'tx_bootstrapcore_icon', 'after:header_layout');
 	}
 
 	// Add static ts configurations for FontAwesome
@@ -179,12 +180,82 @@ if ( isset($extConf['enableNewVideoCType']) && $extConf['enableNewVideoCType'] =
 }
 
 
-
-
 // --------------------------------------------------------------------
 // Add more static ts configurations (extensions, libs)
 // --------------------------------------------------------------------
 //
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/lib/googleanalytics', 'Bootstrap: Google Analytics');
+
+
+
+// --------------------------------------------------------------------
+// Additional Content Elements for special layouts
+// --------------------------------------------------------------------
+//
+// create new frames-palette without layout (layout is a "primary" field on first tab)
+$TCA['tt_content']['palettes']['tx_bootstrapcore'] = array(
+	'showitem' => 'spaceBefore;LLL:EXT:cms/locallang_ttc.xml:spaceBefore_formlabel, spaceAfter;LLL:EXT:cms/locallang_ttc.xml:spaceAfter_formlabel, section_frame;LLL:EXT:cms/locallang_ttc.xml:section_frame_formlabel',
+	'canNotCollapse' => 1
+);
+
+// --- Content Element without images
+//
+// register plugin, with icon
+$pluginIcon = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/plugin_textelement.png';
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	'Simplicity.' . $_EXTKEY,
+	'TextElement',
+	'Spezieller Textinhalt',
+	$pluginIcon
+);
+// create plugin sig key
+$pluginSignature = str_replace('_','',$_EXTKEY) . '_textelement';
+// show an icon in the page view
+\TYPO3\CMS\Backend\Sprite\SpriteManager::addTcaTypeIcon('tt_content', $pluginSignature, $pluginIcon);
+// define used fields
+$TCA['tt_content']['types'][$pluginSignature]['showitem'] = '
+					--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.general;general,
+					layout;LLL:EXT:cms/locallang_ttc.xml:layout_formlabel,
+					--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.headers;headers,
+					bodytext;Text;;richtext:rte_transform[flag=rte_enabled|mode=ts_css],
+					rte_enabled;LLL:EXT:cms/locallang_ttc.xml:rte_enabled_formlabel,' . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.appearance,
+					--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.frames;tx_bootstrapcore,
+				--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,
+					--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.visibility;visibility,
+					--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.access;access,
+				--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.extended';
+
+
+// --- Content Element with image(s)
+//
+// register plugin, with icon
+$pluginIcon = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/plugin_imageelement.png';
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	'Simplicity.' . $_EXTKEY,
+	'ImageElement',
+	'Spezieller Bildtextinhalt',
+	$pluginIcon
+);
+// create plugin sig key
+$pluginSignature = str_replace('_','',$_EXTKEY) . '_imageelement';
+// show an icon in the page view
+\TYPO3\CMS\Backend\Sprite\SpriteManager::addTcaTypeIcon('tt_content', $pluginSignature, $pluginIcon);
+// define used fields
+$TCA['tt_content']['types'][$pluginSignature]['showitem'] = '
+					--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.general;general,
+					layout;LLL:EXT:cms/locallang_ttc.xml:layout_formlabel,
+					--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.headers;headers,
+					bodytext;Text;;richtext:rte_transform[flag=rte_enabled|mode=ts_css],
+					rte_enabled;LLL:EXT:cms/locallang_ttc.xml:rte_enabled_formlabel,' . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,
+					image,
+					--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,' . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.appearance,
+					--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.frames;tx_bootstrapcore,
+					--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,
+					--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,
+					--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.textlayout;textlayout,
+				--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,
+					--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.visibility;visibility,
+					--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.access;access,
+				--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.extended';
 
 ?>
