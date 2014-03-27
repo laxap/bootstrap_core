@@ -2,7 +2,7 @@
 # cat=basic; type=options[fontello, fontawesome, none]; label=Include Font Awesome and adds icon field to tt_content: Attention: Static ts template for FontAwesome has to be included after activating it here!
 enableIconFont = fontello
 # cat=basic; type=boolean; label=Show icon field on a separate tab: Allows to show all icons below the select field.
-showFontIconsOnSeparateTab = 0
+#showFontIconsOnSeparateTab = 0
 
 # cat=basic; type=boolean; label=Enable extended link wizard for bootstrap specific links: Allows to set links opening modal boxes and to create popovers.
 enableBootstrapLinks = 1
@@ -13,3 +13,5 @@ enableModifiedImageRendering = 1
 # cat=basic; type=boolean; label=Enable additional video content element: For embedding Youtube and Vimeo videos.
 enableNewVideoCType = 1
 
+# cat=basic; type=boolean; label=Enable additional content elements: Two additional content elements for special layouts, changeable thru fluid templates.
+enableAdditionalContentElements = 1

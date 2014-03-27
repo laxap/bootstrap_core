@@ -1,4 +1,3 @@
-
 # -----------------------------------------------------------------------------
 # Core config setup
 # -----------------------------------------------------------------------------
@@ -13,7 +12,6 @@ config {
   # Cache settings
   cache_period = 43200
   sendCacheHeaders = 1
-  #sendCacheHeaders_onlyWhenLoginDeniedInBranch = 1
 
   # Page title before Website title  (<title> tag)
   pageTitleFirst = 1
@@ -22,7 +20,6 @@ config {
   absRefPrefix = /
   prefixLocalAnchors = all
   extTarget =
-  #simulateStaticDocuments = 0
 
   # Code cleaning
   disablePrefixComment = 1
@@ -32,23 +29,9 @@ config {
 
   # Protect mail addresses from spamming
   spamProtectEmailAddresses = 1
-  #spamProtectEmailAddresses = -3
-  #spamProtectEmailAddresses_atSubst = @<span style="display:none;">ohne-mich</span>
-
-  # Enable jumpurl
-  #jumpurl_enable = 1
-  #jumpurl_mailto_disable = 1
-
-  # Comment in the <head> tag
-  #headerComment (
-  #   -->
-  #   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  #   <!--
-  #)
 
   # Administrator settings
   admPanel = 0
-
 
   # -----------------------------------------
   # Language setup
@@ -60,21 +43,6 @@ config {
   htmlTag_langKey < config.language
 
 }
-
-
-# -----------------------------------------
-# Usage of config.baseURL
-#
-/*
-# base tag
-config.baseURL = {$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain}/
-config.absRefPrefix >
-config.prefixLocalAnchors >
-# base tag with SSL
-[globalString = _SERVER|HTTPS=on]
-  config.baseURL = https://{$plugin.tx_bootstrapcore.website.domain}/
-[global]
-*/
 
 
 # -----------------------------------------------------------------------------
@@ -95,26 +63,30 @@ page {
     # --- CSS ----
     #
     includeCSS {
-        # second
-        bootstrap   = {$plugin.tx_bootstrapcore.website.protocol}:{$plugin.tx_bootstrapcore.theme.css.bootstrap}
+        # first
+        bootstrap   = {$plugin.tx_bootstrapcore.theme.css.bootstrap}
         bootstrap.excludeFromConcatenation = 1
         bootstrap.external = 1
         bootstrap.forceOnTop = 1
     }
 
     # --- JS ----
-    #
-    includeJSFooterlibs {
-        # second js
-        bootstrap    = {$plugin.tx_bootstrapcore.website.protocol}:{$plugin.tx_bootstrapcore.theme.js.bootstrap}
-        bootstrap.excludeFromConcatenation = 1
-        bootstrap.external = 1
-        bootstrap.forceOnTop = 1
-        # first js
-        jquery       = {$plugin.tx_bootstrapcore.website.protocol}:{$plugin.tx_bootstrapcore.theme.js.jquery}
+    # in header
+    includeJSlibs {
+        jquery       = {$plugin.tx_bootstrapcore.theme.js.jquery}
         jquery.excludeFromConcatenation = 1
         jquery.external = 1
+        # first js
         jquery.forceOnTop = 1
+
+    }
+    # in footer
+    includeJSFooterlibs {
+        bootstrap    = {$plugin.tx_bootstrapcore.theme.js.bootstrap}
+        bootstrap.excludeFromConcatenation = 1
+        bootstrap.external = 1
+        # first js
+        bootstrap.forceOnTop = 1
     }
 
     # --- Meta tags ----
@@ -137,12 +109,34 @@ page {
 
 
 # -----------------------------------------------------------------------------
-# Header data
+# Header data - for favicons, html5support for older IE, sharing via FB/Twitter
 # -----------------------------------------------------------------------------
 #
-# --- Meta Tags for sharing via Facebook and Twitter, favicon, html5support for older browser ---
-#
 lib.t3b {
+    # --- Favicon & Apple Touch Icons ---
+    #
+    favicons = TEXT
+    favicons.value (
+    <link rel="shortcut icon" href="fileadmin/favicons/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="fileadmin/favicons/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="fileadmin/favicons/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="fileadmin/favicons/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="fileadmin/favicons/apple-touch-icon-precomposed.png">
+
+    )
+
+    # --- HTML5 Support for IE<9 ---
+    #
+    iesupport = TEXT
+    iesupport.value (
+    <!--[if lt IE 9]>
+        <script src="lib/html5shiv/html5shiv.js"></script>
+    <![endif]-->
+
+    )
+
+    # --- Social Networks ---
+    #
     # Facebook
     meta.fb = COA
     meta.fb {
@@ -205,48 +199,9 @@ lib.t3b {
         30.wrap = <meta name="twitter:url" content="{$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain}|" />
         40.renderObj.wrap = <meta name="twitter:image" content="{$plugin.tx_bootstrapcore.website.protocol}://{$plugin.tx_bootstrapcore.website.domain}/|" />
     }
-
-    # --- Favicon & Apple Touch Icons ---
-    #
-    favicons = TEXT
-    favicons.value (
-    <link rel="shortcut icon" href="fileadmin/favicons/favicon.ico" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="fileadmin/favicons/apple-touch-icon-144x144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="fileadmin/favicons/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="fileadmin/favicons/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="fileadmin/favicons/apple-touch-icon-precomposed.png">
-
-    )
-
-    # --- HTML5 Support for IE<9 ---
-    #
-    html5support = TEXT
-    html5support.value (
-    <!--[if lt IE 9]>
-        <script src="lib/html5shiv/html5shiv.js"></script>
-    <![endif]-->
-
-    )
-}
-
-# -----------------------------------------------------------------------------
-# Add above header data
-# -----------------------------------------------------------------------------
-page.headerData.20 = COA
-page.headerData.20 {
-    10 < lib.t3b.html5support
-    20 < lib.t3b.favicons
-    30 < lib.t3b.meta.fb
-    40 < lib.t3b.meta.twitter
 }
 
 
-
-# -----------------------------------------------------------------------------
-# pages
-# -----------------------------------------------------------------------------
-#
-# none (only TSconfig)
 
 # -----------------------------------------------------------------------------
 # tt_content
