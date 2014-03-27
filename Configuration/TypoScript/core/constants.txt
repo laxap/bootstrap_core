@@ -15,6 +15,14 @@
 # -----------------------------------------------------------------------------
 #
 plugin.tx_bootstrapcore {
+
+    view {
+        templateRootPath = EXT:bootstrap_core/Resources/Private/Templates/
+        partialRootPath = EXT:bootstrap_core/Resources/Private/Partials/
+        layoutRootPath = EXT:bootstrap_core/Resources/Private/Layouts/
+    }
+
+
     # Resource directory
     resourceDir = typo3conf/ext/bootstrap_core/Resources
     # Language file
