@@ -6,13 +6,14 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'Bootstrap for TYPO3',
-	'description' => 'Gridelements for columns, tabs, accordion and slider. Field customizations, page TSconfig and typoscript configurations. Link handler extension.',
-	'category' => 'misc',
+	'description' => 'Bootstrap specific changes for the frontend rendering of content elements. Adds sectionframe options and layout options for images and menus.',
+	'category' => 'fe',
 	'author' => 'Pascal Mayer',
 	'author_email' => 'typo3@simple.ch',
-	'author_company' => 'Simplicity GmbH',
+	'author_company' => 'simplicity gmbh',
 	'shy' => '',
-	'priority' => 'bottom',
+	'version' => '1.0.0',
+	'priority' => 'top',
 	'module' => '',
 	'state' => 'beta',
 	'internal' => '',
@@ -21,18 +22,12 @@ $EM_CONF[$_EXTKEY] = array(
 	'modify_tables' => 'tt_content',
 	'clearCacheOnLoad' => 1,
 	'lockType' => '',
-	'version' => '0.9.1',
 	'constraints' => array(
 		'depends' => array(
-			'extbase' => '6.1.0-',
-			'fluid' => '6.1.0-',
-			'typo3' => '6.1.0-',
-			'gridelements' => '2.0.0-',
+			'typo3' => '6.2.0-6.2.99',
 		),
 		'conflicts' => array(
-		),
-		'suggests' => array(
-			'realurl' => '1.12.0-',
+			'bootstrap_package' => '',
 		),
 	),
 );

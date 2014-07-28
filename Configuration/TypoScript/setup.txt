@@ -1,0 +1,739 @@
+/** -----------------------------------------
+ * Core config setup
+ */
+config {
+    doctype = html5
+    renderCharset = utf-8
+    metaCharset = utf-8
+
+    disablePrefixComment = 1
+    removeDefaultJS = external
+    inlineStyle2TempFile = 1
+
+    cache_period = 43200
+    sendCacheHeaders = 0
+
+    absRefPrefix = /
+    prefixLocalAnchors = all
+    extTarget =
+    intTarget =
+
+    tx_realurl_enable = 1
+    simulateStaticDocuments = 0
+
+    noScaleUp = 1
+
+    sys_language_uid = 0
+    language = {$plugin.tx_bootstrapcore.website.lang.localeShort}
+    locale_all = {$plugin.tx_bootstrapcore.website.lang.locale}
+    htmlTag_langKey < config.language
+
+    spamProtectEmailAddresses = ascii
+
+    admPanel = 0
+}
+
+
+/** -----------------------------------------
+ * Core page setup
+ */
+page = PAGE
+page {
+    typeNum = 0
+
+    10 = FLUIDTEMPLATE
+    10 {
+        layoutRootPath = {$plugin.tx_bootstrapcore.theme.baseDir}/tmpl/backend_layout/Layouts/
+        partialRootPath = {$plugin.tx_bootstrapcore.theme.baseDir}/tmpl/backend_layout/Partials/
+
+        file.cObject = CASE
+        file.cObject {
+            key.data = levelfield:-1, backend_layout_next_level, slide
+            key.override.field = backend_layout
+            default = TEXT
+            default.value = {$plugin.tx_bootstrapcore.theme.baseDir}/tmpl/backend_layout/tmpl_default.html
+        }
+        variables {
+            content < styles.content.get
+        }
+    }
+
+    meta {
+        X-UA-Compatible = IE=edge,chrome=1
+        X-UA-Compatible.httpEquivalent = 1
+        viewport = width=device-width, initial-scale=1.0
+        description = TEXT
+        description.data = field:description // field:abstract // levelfield :-1, description, slide // levelfield :-1, abstract, slide
+    }
+
+    includeCSS {
+        bootstrap_core = typo3conf/ext/bootstrap_core/Resources/Public/Css/content.css
+    }
+}
+
+
+/** -----------------------------------------
+ * Unset, remove default styles
+ */
+plugin.tx_cssstyledcontent._CSS_DEFAULT_STYLE >
+plugin.tx_form._CSS_DEFAULT_STYLE >
+
+
+/** -----------------------------------------
+ * Bootstrap Core config
+ */
+plugin.tx_bootstrapcore {
+    view {
+        templateRootPath = {$plugin.tx_bootstrapcore.view.templateRootPath}
+        partialRootPath = {$plugin.tx_bootstrapcore.view.partialRootPath}
+        layoutRootPath = {$plugin.tx_bootstrapcore.view.layoutRootPath}
+    }
+}
+
+
+/** -----------------------------------------
+ * RTE parsing settings
+ */
+
+lib.parseFunc_RTE {
+    nonTypoTagStdWrap.encapsLines {
+        # remove class 'bodytext' from p-tags
+        addAttributes.P.class >
+        #addAttributes.P.class.setOnly >
+
+        encapsTagList := addToList(ul,ol)
+    }
+
+    /*
+    # allow buttons
+    allowTags := addToList(button)
+    # no p-tag around buttons?
+    #externalBlocks := addToList(button)
+    */
+
+    # still required/ok?
+    externalBlocks {
+        table {
+            # Allow more classes than only 'contenttable'
+            stdWrap.HTMLparser.tags.table.fixAttrib.class.list >
+            # Default table tag class
+            stdWrap.HTMLparser.tags.table.fixAttrib.class.default = table
+            # p-Tags in th/td entfernen
+            #HTMLtableCells.default >
+            #HTMLtableCells.default.stdWrap.parseFunc =< lib.parseFunc
+        }
+    }
+}
+
+/** -----------------------------------------
+ * Header and subheader
+ */
+lib.stdheader {
+    # change class
+    3.headerClass.cObject.10.noTrimWrap = |text-| |
+    # no non-html5 date
+    5 >
+    # add subheader into <hx> with <small>
+    # copy code to .2 and change .1, if h1 should be handled differently
+    10 {
+        1 >
+        1 = COA
+        1 {
+            10 = TEXT
+            10.current = 1
+            20 = TEXT
+            20 {
+                field = subheader
+                stdWrap.noTrimWrap = | <small>|</small>|
+                stdWrap.required = 1
+            }
+            stdWrap.dataWrap = <h1{register:headerClass}>|</h1>
+            stdWrap.required = 1
+        }
+        2 < .1
+        2.stdWrap.dataWrap = <h2{register:headerClass}>|</h2>
+        3 < .1
+        3.stdWrap.dataWrap = <h3{register:headerClass}>|</h3>
+        4 < .1
+        4.stdWrap.dataWrap = <h4{register:headerClass}>|</h4>
+        5 < .1
+        5.stdWrap.dataWrap = <h5{register:headerClass}>|</h5>
+
+        # Add custom headline
+        /*
+        6 < .1
+        6.stdWrap.dataWrap = <h3 class="special"><span>|</span></h3>
+        */
+    }
+    # remove orig subheader handling (for html5)
+    20 >
+    # date (html5)
+    40 {
+        stdWrap {
+            wrap = <p>|</p>
+        }
+        # change format
+        10.strftime = %Y-%m-%d
+        # remove html5 check
+        if.value >
+        if.equals >
+    }
+    # wrap around header
+    stdWrap {
+        # no wrap around headers
+        dataWrap = |
+        dataWrap.override >
+    }
+}
+
+
+/** -----------------------------------------
+ * CTypes
+ */
+tt_content.header {
+    # remove default subheader
+    20 >
+}
+
+tt_content.image {
+    20 {
+        caption.1.1.dataWrap = <p class="caption-{field : imagecaption_position}">|</p>
+        1 {
+
+            # image styles (rounded, circle)
+            params.cObject = CASE
+            params.cObject {
+                # Define wrappers for each column position (colPos 0,1,2)
+                key.field = layout
+                # Default is responsive
+                default = TEXT
+                default.value = class="img-responsive img-content"
+                # Normal
+                1 = TEXT
+                1.value = class="img-content"
+                # Rounded corners
+                2 = TEXT
+                2.value = class="img-rounded img-content"
+                # Rounded corners and responsive
+                3 = TEXT
+                3.value = class="img-rounded img-responsive img-content"
+                # Circle
+                4 = TEXT
+                4.value = class="img-circle img-content"
+                # Circle and responsive
+                5 = TEXT
+                5.value = class="img-circle img-responsive img-content"
+            }
+        }
+        addClassesCol.ifEmpty =
+        addClassesCol.override.cObject = COA
+        addClassesCol.override.cObject {
+            10 = CASE
+            10 {
+                key.field = imagecols
+                default = TEXT
+                default.value = col-md-12
+                2 < .default
+                2.value = col-md-6 col-sm-6
+                3 < .default
+                3.value = col-md-4 col-sm-4 col-xs-6
+                4 < .default
+                4.value = col-md-3 col-sm-4 col-xs-6
+                6 < .default
+                6.value = col-md-2 col-sm-3 col-xs-4
+            }
+        }
+        addClassesCol.override =
+        addClassesCol.override.if {
+            isGreaterThan.field = imagecols
+            value = 1
+        }
+        addClassesImage >
+        layout {
+            default.override >
+            default.value = <div class="img-center img-above###CLASSES###">###IMAGES######TEXT###</div>
+            1.override >
+            1.value = <div class="img-right img-above###CLASSES###">###IMAGES######TEXT###</div>
+            2.override >
+            2.value = <div class="img-left img-below###CLASSES###">###IMAGES######TEXT###</div>
+            8.override >
+            8.value = <div class="img-center img-below###CLASSES###">###TEXT######IMAGES###</div>
+            9.override >
+            9.value = <div class="img-right img-below###CLASSES###">###TEXT######IMAGES###</div>
+            10.override >
+            10.value = <div class="img-left img-below###CLASSES###">###TEXT######IMAGES###</div>
+            17.override >
+            17.value = <div class="img-intext-right img-intext###CLASSES###">###IMAGES######TEXT###</div>
+            18.override >
+            18.value = <div class="img-intext-left img-intext###CLASSES###">###IMAGES######TEXT###</div>
+            25.value = <div class="img-beside-right img-beside###CLASSES###">###IMAGES######TEXT###</div>
+            25.override >
+            25.override = <div class="img-header-{field:header_layout} img-beside-right img-beside###CLASSES###">###IMAGES######TEXT###</div>
+            25.override.if.isTrue.field = header
+            25.override.insertData = 1
+            26.value = <div class="img-beside-left img-beside###CLASSES###">###IMAGES######TEXT###</div>
+            26.override >
+            26.override = <div class="img-header-{field:header_layout} img-beside-left img-beside###CLASSES###">###IMAGES######TEXT###</div>
+            26.override.if.isTrue.field = header
+            26.override.insertData = 1
+        }
+        rendering {
+            singleNoCaption {
+                allStdWrap {
+                    dataWrap = <div class="img-wrap"> | </div>
+                    dataWrap.override >
+                    innerWrap.cObject.0.value = <div class="img-center-outer"><div class="img-center-inner"> | </div></div>
+                    innerWrap.cObject.8.value = <div class="img-center-outer"><div class="img-center-inner"> | </div></div>
+                }
+                singleStdWrap {
+                    wrap = <figure class="image###CLASSES###">|</figure>
+                    wrap {
+                        override = <figure class="image lightbox###CLASSES###">|</figure>
+                        override.if {
+                            value = 1
+                            equals.field = image_zoom
+                            equals.data >
+                        }
+                    }
+                }
+            }
+            noCaption {
+                allStdWrap {
+                    dataWrap = <div class="img-wrap"> | </div>
+                    dataWrap.override >
+                }
+                singleStdWrap {
+                    wrap = <figure class="image###CLASSES###">|</figure>
+                    wrap {
+                        override = <figure class="image lightbox###CLASSES###">|</figure>
+                        override.if {
+                            value = 1
+                            equals.field = image_zoom
+                            equals.data >
+                        }
+                    }
+                }
+                rowStdWrap.wrap = <div class="row row-images"> | </div>
+                noRowsStdWrap.wrap = <div class="row row-images"> | </div>
+                lastRowStdWrap.wrap = <div class="row row-images"> | </div>
+                columnStdWrap.wrap = <div class="col-image###CLASSES###"> | </div>
+            }
+            singleCaption {
+                singleStdWrap {
+                    wrap = <figure class="image###CLASSES###">|###CAPTION###</figure>
+                    wrap {
+                        override = <figure class="image lightbox###CLASSES###">|###CAPTION###</figure>
+                        override.if {
+                            value = 1
+                            equals.field = image_zoom
+                            equals.data >
+                        }
+                    }
+                }
+                caption {
+                    wrap = <figcaption class="caption"> | </figcaption>
+                    wrap.override >
+                }
+            }
+            splitCaption {
+                singleStdWrap {
+                    wrap = <figure class="image###CLASSES###">|###CAPTION###</figure>
+                    wrap {
+                        override = <figure class="image lightbox###CLASSES###">|###CAPTION###</figure>
+                        override.if {
+                            value = 1
+                            equals.field = image_zoom
+                            equals.data >
+                        }
+                    }
+                }
+                caption {
+                    wrap = <figcaption class="caption"> | </figcaption>
+                    wrap.override >
+                }
+                rowStdWrap.wrap = <div class="row row-images"> | </div>
+                noRowsStdWrap.wrap = <div class="row row-images"> | </div>
+                lastRowStdWrap.wrap = <div class="row row-images"> | </div>
+                columnStdWrap.wrap = <div class="col-image###CLASSES###"> | </div>
+            }
+            globalCaption {
+                allStdWrap {
+                    dataWrap = <figure class="img-wrap"> | ###CAPTION###</figure>
+                }
+                singleStdWrap {
+                    wrap = <div class="image###CLASSES###"> | </div>
+                    wrap {
+                        override = <div class="image lightbox###CLASSES###">|</div>
+                        override.if {
+                            value = 1
+                            equals.field = image_zoom
+                            equals.data >
+                        }
+                    }
+                }
+                caption.wrap = <figcaption class="caption"> | </figcaption>
+                rowStdWrap.wrap = <div class="row row-images"> | </div>
+                noRowsStdWrap.wrap = <div class="row row-images"> | </div>
+                lastRowStdWrap.wrap = <div class="row row-images"> | </div>
+                columnStdWrap.wrap = <div class="col-image###CLASSES###"> | </div>
+            }
+        }
+    }
+}
+
+
+tt_content.textpic {
+    20 {
+        text.wrap = <div class="text"> | </div>
+        text.10.10.stdWrap.dataWrap = |
+    }
+}
+
+tt_content.div {
+    #value = <hr>
+    wrap >
+    override >
+    override.cObject = CASE
+    override.cObject {
+        key.field = layout
+        default = TEXT
+        default.value = <hr>
+        1 = TEXT
+        1.value = <hr class="style2">
+        2 = TEXT
+        2.value = <hr class="style3">
+    }
+}
+
+tt_content.uploads {
+    20 {
+        renderObj {
+            15 {
+                file {
+                    import = typo3conf/ext/bootstrap_core/Resources/Public/Icons/fileicons/
+                    import.wrap = |.png
+                }
+            }
+
+            20 {
+                data = file:current:title
+                wrap = <span class="uploads-fileName">|</span>
+            }
+            30.wrap = <div class="uploads-description">|</div>
+            40.wrap = <span class="uploads-fileSize">|</span>
+            wrap.cObject {
+                10.elementClass = uploads-element uploads-element-{file:current:extension}
+                20.value = <li class="{register:oddEvenClass} {register:elementClass}">|</li>
+            }
+        }
+        stdWrap.dataWrap = <ul class="uploads uploads-{field:layout}">|</ul>
+    }
+}
+
+tt_content.table {
+    20.stdWrap.wrap = <div class="table-responsive">|</div>
+}
+
+tt_content.mailform {
+    20 {
+        layout {
+            form (
+                <form class="form-horizontal">
+                    <containerWrap />
+                </form>
+            )
+            containerWrap (
+                <div>
+                    <elements />
+                </div>
+            )
+            elementWrap (
+                <div class="">
+                    <element />
+                </div>
+            )
+            fieldset (
+                <fieldset><legend /><containerWrap /></fieldset>
+            )
+            legend (
+                <legend>
+                    <legendvalue />
+                    <mandatory />
+                    <error />
+                </legend>
+            )
+            label (
+                <label>
+                    <labelvalue />
+                    <mandatory />
+                </label>
+            )
+            error (
+                <span class="help-block text-danger"><errorvalue /></span>
+            )
+            textline (
+                <div class="form-group">
+                    <div class="col-sm-3 control-label">
+                        <label />
+                    </div>
+                    <div class="col-sm-9">
+                        <input class="form-control" />
+                        <error />
+                    </div>
+                </div>
+            )
+            textarea (
+                <div class="form-group">
+                    <div class="col-sm-3 control-label">
+                        <label />
+                    </div>
+                    <div class="col-sm-9">
+                        <textarea class="form-control" />
+                        <error />
+                    </div>
+                </div>
+            )
+            submit (
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <input class="btn btn-primary" />
+                    </div>
+                </div>
+            )
+            checkbox (
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <div class="checkbox">
+                            <input />
+                            <label />
+                        </div>
+                        <error />
+                    </div>
+                </div>
+            )
+            radio (
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <div class="radio">
+                            <input />
+                            <label />
+                        </div>
+                        <error />
+                    </div>
+                </div>
+            )
+            select (
+                <div class="form-group">
+                    <div class="col-sm-3 control-label">
+                        <label />
+                    </div>
+                    <div class="col-sm-9">
+                        <select class="form-control">
+			                <elements />
+                        </select>
+                        <error />
+                    </div>
+                </div>
+            )
+            radiogroup (
+                <div class="control-group">
+                        <legend />
+                    <div class="controls"><containerWrap /></div>
+                </div>
+            )
+        }
+        stdWrap.wrap = |
+    }
+}
+
+temp.menu {
+    defaultStdWrapOuterWrap < tt_content.menu.20.default.stdWrap.outerWrap
+    stdWrapWrap < tt_content.menu.20.stdWrap.wrap
+}
+tt_content.menu {
+    # Navs (Twitter Bootstrap)
+    20.default.stdWrap.outerWrap.cObject = CASE
+    20.default.stdWrap.outerWrap.cObject {
+        key.field = layout
+        # Nav Pillen
+        default = TEXT
+        default.value < temp.menu.defaultStdWrapOuterWrap
+        # Nav Pillen
+        1 = TEXT
+        1.value = <ul class="nav nav-pills">|</ul>
+        # Nav Pillen Stacked
+        2 = TEXT
+        2.value = <ul class="nav nav-pills nav-stacked">|</ul>
+        # Dropdown
+        3 = TEXT
+        3.value = <ul class="dropdown-menu" role="menu" style="position: static; display: block; margin-bottom: 5px;">|</ul>
+        # Button Dropdown
+        4 = TEXT
+        4.value = <ul class="dropdown-menu" role="menu">|</ul>
+    }
+
+    20.default.1.SPC = 1
+    20.default.1.SPC.doNotLinkIt = 1
+    20.default.1.SPC.doNotShowLink = 1
+    20.default.1.SPC.allWrap = <li class="divider"></li>
+
+    20.stdWrap {
+        wrap.if >
+        wrap.cObject >
+        wrap.cObject = CASE
+        wrap.cObject {
+            key.field = layout
+            default < temp.menu.stdWrapWrap
+
+            3 = TEXT
+            3.value = <div class="dropdown clearfix"><button class="btn dropdown-toggle sr-only" type="button" data-toggle="dropdown">Dropdown<span class="caret"></span></button>|</div>
+
+            # Use accessibility title as button text if set
+            4 = COA
+            4 {
+                10 = TEXT
+                10 {
+                    field = accessibility_title
+                    htmlSpecialChars = 1
+                    dataWrap = <div class="btn-group"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">| <span class="caret"></span></button>
+                    noTrimWrap = || |
+                }
+                20 = TEXT
+                20.value = |</div>
+            }
+        }
+    }
+
+    # Menu of subpages of selected pages
+    20.1.stdWrap.outerWrap.cObject < tt_content.menu.20.default.stdWrap.outerWrap.cObject
+    # Sitemap
+    #20.2.stdWrap.outerWrap.cObject < tt_content.menu.20.default.stdWrap.outerWrap.cObject
+    # Section index (page content marked for section menus)
+    20.3.stdWrap.outerWrap.cObject < tt_content.menu.20.default.stdWrap.outerWrap.cObject
+    # Menu of subpages of selected pages including abstracts
+    20.4.stdWrap.outerWrap.cObject < tt_content.menu.20.default.stdWrap.outerWrap.cObject
+    # Recently updated pages
+    20.5.stdWrap.outerWrap.cObject < tt_content.menu.20.default.stdWrap.outerWrap.cObject
+    # Related pages (based on keywords)
+    20.6.stdWrap.outerWrap.cObject < tt_content.menu.20.default.stdWrap.outerWrap.cObject
+    # Menu of subpages of selected pages including sections
+    20.7.stdWrap.outerWrap.cObject < tt_content.menu.20.default.stdWrap.outerWrap.cObject
+    # Sitemaps of selected pages
+    #20.8.stdWrap.outerWrap.cObject < tt_content.menu.20.default.stdWrap.outerWrap.cObject
+
+}
+temp.menu >
+
+
+/** -----------------------------------------
+ * For section frames
+ */
+tt_content.stdWrap {
+
+    # related to section_frame
+    innerWrap.cObject {
+
+        /**
+         * Special wraps for specific frames
+         */
+        default {
+            10 {
+                cObject {
+                    default.value = <div
+                    default.override = <div id="c{field:uid}"
+                    default.override.if {
+                        value = 1
+                        equals.field = sectionIndex
+                    }
+                    menu.value = <nav id="c{field:uid}"
+                    menu.override >
+                }
+            }
+            20.10.value >
+
+            # responsive visibility settings
+            20.15 = TEXT
+            20.15.value.field = tx_bootstrapcore_visibility
+            20.15.noTrimWrap = | ||
+            20.15.required = 1
+
+            30 {
+                cObject {
+                    menu.value = >|</nav>
+                    menu.override >
+
+                    default.value >
+                    default = CASE
+                    default {
+                        key.field = section_frame
+                        default = TEXT
+                        default.value = >|</div>
+
+                        /**
+                        * Add  close button for alert boxes
+                        */
+                        40 = TEXT
+                        40.value = ><button type="button" class="close" data-dismiss="alert">&times;</button>|</div>
+                        41 < .40
+                        42 < .40
+                        43 < .40
+                    }
+                }
+            }
+        }
+
+        # Ruler before
+        5 {
+            5 = TEXT
+            5.value = <hr>
+        }
+        # Ruler after
+        6 {
+            35 = TEXT
+            35.value = <hr>
+        }
+
+        # Indent
+        10 {
+            5 = TEXT
+            5.value = <div class="row">
+            20.10.value = col-xs-11 col-xs-push-1
+            35 = TEXT
+            35.value = </div>
+        }
+        # Indent 33/66
+        11 =< tt_content.stdWrap.innerWrap.cObject.10
+        11.20.10.value = col-xs-8 col-xs-push-4
+        # Indent 66/33
+        12 =< tt_content.stdWrap.innerWrap.cObject.10
+        12.20.10.value = frame col-xs-8
+
+        # Jumbotron
+        20.20.10.value = jumbotron
+        # Wells
+        21.20.10.value = well
+        22 =< tt_content.stdWrap.innerWrap.cObject.default
+        22.20.10.value = well well-sm
+        23 =< tt_content.stdWrap.innerWrap.cObject.default
+        23.20.10.value = well well-lg
+
+        # Alerts
+        40 =< tt_content.stdWrap.innerWrap.cObject.default
+        40.20.10.value = alert alert-info
+        41 =< tt_content.stdWrap.innerWrap.cObject.default
+        41.20.10.value = alert alert-success
+        42 =< tt_content.stdWrap.innerWrap.cObject.default
+        42.20.10.value = alert alert-warning
+        43 =< tt_content.stdWrap.innerWrap.cObject.default
+        43.20.10.value = alert alert-danger
+
+        # anchor only if sectionIndex is used
+        66.10 {
+            value =
+            override = <a id="c{field:uid}"></a>
+            override.if.value = 1
+            override.if.equals.field = sectionIndex
+        }
+
+    }
+}

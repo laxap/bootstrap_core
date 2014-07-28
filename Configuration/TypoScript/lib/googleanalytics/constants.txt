@@ -1,6 +1,0 @@
-
-plugin.tx_bootstrapcore.website.googleAnalytics {
-    enabled = 0
-    accountId = UA-999999-9
-}
-

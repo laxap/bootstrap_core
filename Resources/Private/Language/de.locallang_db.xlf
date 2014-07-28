@@ -1,34 +1,158 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2013-07-30T17:37:58Z" product-name="bootstrap_core">
-		<header/>
-		<body>
+    <file source-language="en" datatype="plaintext" original="messages" date="2014-01-01T18:00:00Z" product-name="bootstrap_core">
+        <header/>
+        <body>
 
-			<trans-unit id="tt_content.tx_bootstrapcore_icon" approved="yes">
-				<source>Icon</source> <target state="translated">Icon</target></trans-unit>
-			<trans-unit id="tt_content.tx_bootstrapcore_iconbeforeheader" approved="yes">
-				<source>Icon before header</source> <target state="translated">Icon vor Überschrift</target></trans-unit>
-			<trans-unit id="tt_content.tx_bootstrapcore_icon.I.0" approved="yes">
-				<source>none</source> <target state="translated">keine</target></trans-unit>
-			<trans-unit id="tt_content.tx_bootstrapcore_imageswidth" approved="yes">
-				<source>Width all image cols</source> <target state="translated">Bildbreite in Bezug auf Spalte</target></trans-unit>
-			<trans-unit id="tt_content.tx_bootstrapcore_imageswidth.I.0" approved="yes">
-				<source>not used (use Width)</source> <target state="translated">nicht verwendet (Breite verwenden)</target></trans-unit>
+            <trans-unit id="tt_content.tx_bootstrapcore_visibility">
+                <source>Show/hide based on screen size</source>
+            </trans-unit>
+            <trans-unit id="tt_content.visibility.notset">
+                <source>not set</source>
+            </trans-unit>
+            <trans-unit id="tt_content.visible.xs">
+                <source>Show on mobile (&lt;768px)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.visible.sm-xs">
+                <source>Show on mobile and tablet (&lt;992px)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.visible.md-lg">
+                <source>Show on desktop and bigger (&amp;ge;992px)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.visible.lg">
+                <source>Show on large screens (&amp;ge;1200px)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.hidden.xs">
+                <source>Hide on mobile (&lt;768px)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.hidden.sm-xs">
+                <source>Hide on mobile and tablet (&lt;992px)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.hidden.md-lg">
+                <source>Hide on desktop and bigger (&amp;ge;992px)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.hidden.lg">
+                <source>Hide on large screens (&amp;ge;1200px)</source>
+            </trans-unit>
 
+            <trans-unit id="tt_content.table.acctables_tableclass.I.0">
+                <source>Normal</source>
+            </trans-unit>
+            <trans-unit id="tt_content.table.acctables_tableclass.I.1">
+                <source>striped</source>
+            </trans-unit>
+            <trans-unit id="tt_content.table.acctables_tableclass.I.2">
+                <source>bordered</source>
+            </trans-unit>
+            <trans-unit id="tt_content.table.acctables_tableclass.I.3">
+                <source>hover</source>
+            </trans-unit>
+            <trans-unit id="tt_content.table.acctables_tableclass.I.4">
+                <source>condensed</source>
+            </trans-unit>
+            <trans-unit id="tt_content.table.acctables_tableclass.I.5">
+                <source>striped + hover + condensed</source>
+            </trans-unit>
+            <trans-unit id="tt_content.table.acctables_tableclass.I.6">
+                <source>bordered + hover</source>
+            </trans-unit>
 
-			<trans-unit id="tt_content.table.acctables_tableclass.I.0" approved="yes">
-				<source>Normal</source> <target state="translated">Standard</target></trans-unit>
-			<trans-unit id="tt_content.table.acctables_tableclass.I.1" approved="yes">
-				<source>striped</source> <target state="translated">gestreift</target></trans-unit>
-			<trans-unit id="tt_content.table.acctables_tableclass.I.2" approved="yes">
-				<source>bordered</source> <target state="translated">umrahmt</target></trans-unit>
-			<trans-unit id="tt_content.table.acctables_tableclass.I.3" approved="yes">
-				<source>hover</source> <target state="translated">überfahren</target></trans-unit>
-			<trans-unit id="tt_content.table.acctables_tableclass.I.4" approved="yes">
-				<source>condensed</source> <target state="translated">verdichtet</target></trans-unit>
-			<trans-unit id="tt_content.table.acctables_tableclass.I.5" approved="yes">
-				<source>striped, hover, condensed</source> <target state="translated">gestreift, überfahren, verdichtet</target></trans-unit>
-			
-		</body>
-	</file>
+            <trans-unit id="tceform.pages.layout.0" xml:space="preserve">
+				<source>Standard Layout</source>
+			</trans-unit>
+			<trans-unit id="tceform.pages.belayout.0" xml:space="preserve">
+				<source>(inherit from parent page)</source>
+			</trans-unit>
+			<trans-unit id="tceform.pages.belayoutnext.0" xml:space="preserve">
+				<source>(inherit from parent page)</source>
+			</trans-unit>
+
+			<trans-unit id="tceform.tt_content.layout.images.0" xml:space="preserve">
+				<source>Responsive</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.layout.images.1" xml:space="preserve">
+				<source>Normal</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.layout.images.2" xml:space="preserve">
+				<source>Rounded corners</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.layout.images.3" xml:space="preserve">
+				<source>Rounded corners (resp.)</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.layout.images.4" xml:space="preserve">
+				<source>Round/oval</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.layout.images.5" xml:space="preserve">
+				<source>Round/oval (resp.)</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.layout.images.6" xml:space="preserve">
+				<source>Border</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.layout.images.7" xml:space="preserve">
+				<source>Border (responsive)</source>
+			</trans-unit>
+
+			<trans-unit id="tceform.tt_content.layout.menu.0" xml:space="preserve">
+				<source>Normal</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.layout.menu.1" xml:space="preserve">
+				<source>Nav Pills</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.layout.menu.2" xml:space="preserve">
+				<source>Nav Pills Stacked</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.layout.menu.3" xml:space="preserve">
+				<source>Dropdown</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.layout.menu.4" xml:space="preserve">
+				<source>Button Dropdown</source>
+			</trans-unit>
+
+			<trans-unit id="tceform.tt_content.layout.uploads.1" xml:space="preserve">
+				<source>Show icon</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.layout.uploads.2" xml:space="preserve">
+				<source>Show Thumbnail (PDF)</source>
+			</trans-unit>
+
+			<trans-unit id="rte.classes.justifyleft" xml:space="preserve">
+				<source>Align left</source>
+			</trans-unit>
+			<trans-unit id="rte.classes.justifyright" xml:space="preserve">
+				<source>Align right</source>
+			</trans-unit>
+			<trans-unit id="rte.classes.justifycenter" xml:space="preserve">
+				<source>Align center</source>
+			</trans-unit>
+			<trans-unit id="rte.classes.justifyblock" xml:space="preserve">
+				<source>Align justified</source>
+			</trans-unit>
+
+			<trans-unit id="rte.classes.lead" xml:space="preserve">
+				<source>Lead</source>
+			</trans-unit>
+			<trans-unit id="rte.classes.warning" xml:space="preserve">
+				<source>Marker: Attention</source>
+			</trans-unit>
+			<trans-unit id="rte.classes.danger" xml:space="preserve">
+				<source>Marker: Alert</source>
+			</trans-unit>
+			<trans-unit id="rte.classes.info" xml:space="preserve">
+				<source>Marker: Info</source>
+			</trans-unit>
+			<trans-unit id="rte.classes.success" xml:space="preserve">
+				<source>Marker: Success</source>
+			</trans-unit>
+
+			<trans-unit id="rte.classes.badge" xml:space="preserve">
+				<source>Badge</source>
+			</trans-unit>
+			<trans-unit id="rte.classes.button" xml:space="preserve">
+				<source>Button</source>
+			</trans-unit>
+			<trans-unit id="rte.classes.lightbox" xml:space="preserve">
+				<source>Open in lightbox</source>
+			</trans-unit>
+        </body>
+    </file>
 </xliff>

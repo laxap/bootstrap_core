@@ -3,7 +3,6 @@
 #
 CREATE TABLE tt_content (
 
-  tx_bootstrapcore_icon varchar(255) DEFAULT '0' NOT NULL,
-  tx_bootstrapcore_imageswidth MEDIUMINT(11) unsigned DEFAULT '0'
+  tx_bootstrapcore_visibility varchar(255) DEFAULT '' NOT NULL,
 
 );

@@ -1,9 +1,0 @@
-
-plugin.tx_bootstrapcore {
-    theme {
-        css {
-            iconFontClassPrefix = icon-
-            iconFontClassAddon =
-        }
-    }
-}

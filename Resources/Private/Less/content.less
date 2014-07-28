@@ -1,0 +1,206 @@
+
+// Import bootstrap basic stuff
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+
+//
+// Images
+// --------------------------------------------------
+.image {
+  display: block;
+  margin-bottom: @line-height-computed;
+  line-height: @line-height-base;
+
+  > img,
+  a > img {
+    .img-responsive();
+    @media (max-width: @screen-xs-max) {
+      margin: 0 auto;
+    }
+  }
+
+  .caption {
+    padding: @thumbnail-caption-padding;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+}
+.col-image {
+  position: relative;
+  min-height: 1px;
+  padding-left:  (@grid-gutter-width / 2);
+  padding-right: (@grid-gutter-width / 2);
+  @media (min-width: @screen-md-min) {
+    // removed b/c of too big images in FF/IE
+    //float: left;
+  }
+}
+.img-wrap {
+  max-width: 100%;
+}
+.img-below {
+  .img-wrap {
+    margin-top: @line-height-computed;
+  }
+}
+
+.img-center-outer {
+  width: 100%;
+  position: relative;
+  float: right;
+  right: 50%;
+}
+.img-center-inner {
+  width: 100%;
+  position: relative;
+  float: right;
+  right: -50%;
+}
+
+.img-center-outer .img-center-inner {
+  figure.image img {
+    margin: 0px auto;
+  }
+}
+
+.img-left {
+  .img-wrap {
+    float: left;
+  }
+  .text {
+    clear: left;
+  }
+}
+.img-right {
+  .img-wrap {
+    float: right;
+  }
+  .text {
+    clear: right;
+  }
+}
+.img-wrap,
+.img-below,
+.img-above,
+.img-beside,
+.img-intext {
+  .clearfix();
+}
+.img-beside-left .img-wrap,
+.img-intext-left .img-wrap {
+  float: left;
+  margin-left: -1 * (@grid-gutter-width / 2);
+}
+.img-beside-right .img-wrap,
+.img-intext-right .img-wrap {
+  float: right;
+  margin-right: -1 * (@grid-gutter-width / 2);
+}
+.img-beside-left .img-wrap,
+.img-beside-right .img-wrap,
+.img-intext-left .img-wrap,
+.img-intext-right .img-wrap {
+  max-width: 50%;
+  padding-left:  (@grid-gutter-width / 2);
+  padding-right: (@grid-gutter-width / 2);
+}
+
+// same column width as 2-col image only CE
+.img-beside-left {
+  .img-wrap {
+    padding-right: 0px;
+  }
+  .text {
+    padding-left: 30px;
+  }
+}
+.img-beside-right {
+  .img-wrap {
+    padding-left: 30px;
+    max-width: ~"calc(50% + 30px)";
+  }
+}
+.img-intext-left {
+  .img-wrap {
+    padding-right: 30px;
+    max-width: ~"calc(50% + 30px)";
+  }
+}
+.img-intext-right {
+  .img-wrap {
+    max-width: ~"calc(50% + 30px)";
+    padding-left: 30px;
+  }
+}
+// end
+
+
+
+
+.img-beside-right,
+.img-beside-left {
+  overflow: hidden;
+  zoom: 1;
+  .text {
+    overflow: hidden;
+    zoom: 1;
+  }
+  @media (max-width: @screen-xs-max) {
+    .img-wrap {
+      margin-left: -1 * (@grid-gutter-width / 2);
+      margin-right: -1 * (@grid-gutter-width / 2);
+      max-width: none;
+      float: none;
+    }
+  }
+}
+.img-header-1,
+.img-header-2,
+.img-header-3  {
+  .img-wrap {
+    margin-top: @line-height-computed;
+  }
+}
+.img-header-4,
+.img-header-5,
+.img-header-6  {
+  .img-wrap {
+    margin-top: (@line-height-computed / 2);
+  }
+}
+
+
+.caption-center {
+  text-align: center;
+}
+.caption-right {
+  text-align: right;
+}
+
+
+// Uploads
+ul.uploads {
+  list-style-type: none;
+  margin-left: 0px;
+  padding-left: 0px;
+
+  li.uploads-element {
+    padding-left: 0px;
+    margin-left: 0px;
+
+    img {
+      margin-right: 1em;
+    }
+
+    span.uploads-fileSize {
+      margin-left: 10px;
+    }
+    div.uploads-description {
+      float: left;
+      display: inline;
+      margin-left: 45px;
+      margin-bottom: 1em;
+    }
+  }
+}
