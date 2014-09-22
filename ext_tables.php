@@ -13,6 +13,7 @@ if ( strlen($_EXTCONF) ) {
 //
 // Add static typoscript configurations
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Bootstrap Core');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Header', 'Subheader in header (Optional)');
 
 
 // Set custom flexform for tt_content ctype table

@@ -175,8 +175,6 @@ TCEFORM.tt_content {
 # Don't add 'Copy' to copied pages
 TCEMAIN.table {
   pages.disablePrependAtCopy = 1
-}
-TCEMAIN.table {
   tt_content.disablePrependAtCopy = 1
 }
 

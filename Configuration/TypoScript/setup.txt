@@ -133,40 +133,13 @@ lib.stdheader {
     3.headerClass.cObject.10.noTrimWrap = |text-| |
     # no non-html5 date
     5 >
-    # add subheader into <hx> with <small>
-    # copy code to .2 and change .1, if h1 should be handled differently
-    10 {
-        1 >
-        1 = COA
-        1 {
-            10 = TEXT
-            10.current = 1
-            20 = TEXT
-            20 {
-                field = subheader
-                stdWrap.noTrimWrap = | <small>|</small>|
-                stdWrap.required = 1
-            }
-            stdWrap.dataWrap = <h1{register:headerClass}>|</h1>
-            stdWrap.required = 1
-        }
-        2 < .1
-        2.stdWrap.dataWrap = <h2{register:headerClass}>|</h2>
-        3 < .1
-        3.stdWrap.dataWrap = <h3{register:headerClass}>|</h3>
-        4 < .1
-        4.stdWrap.dataWrap = <h4{register:headerClass}>|</h4>
-        5 < .1
-        5.stdWrap.dataWrap = <h5{register:headerClass}>|</h5>
 
-        # Add custom headline
-        /*
-        6 < .1
-        6.stdWrap.dataWrap = <h3 class="special"><span>|</span></h3>
-        */
-    }
-    # remove orig subheader handling (for html5)
-    20 >
+    # add subheader into <hx> with <small>
+    # moved to separate include file !
+    #10 {
+    #}
+    #20 >
+
     # date (html5)
     40 {
         stdWrap {
@@ -192,7 +165,7 @@ lib.stdheader {
  */
 tt_content.header {
     # remove default subheader
-    20 >
+    #20 >
 }
 
 tt_content.image {
@@ -436,7 +409,7 @@ tt_content.table {
 
 tt_content.mailform {
     20 {
-        layout {
+        form.layout {
             form (
                 <form class="form-horizontal">
                     <containerWrap />
