@@ -12,7 +12,33 @@ plugin.tx_bootstrapcore {
     theme {
         # cat=tx_bootstrapcore.theme/base/010; type=string; label=Theme base directory
         baseDir = fileadmin/bsdist/theme
-        # cat=tx_bootstrapcore.theme/base/010; type=string; label=Directory with external libs
+        # cat=tx_bootstrapcore.theme/base/020; type=string; label=Directory with external libs
         libDir = fileadmin/bsdist/lib
+
+        # cat=tx_bootstrapcore.theme/base/030; type=string; label=Bootstrap css file
+        bootstrapCssFile = https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css
+        # cat=tx_bootstrapcore.theme/base/032; type=string; label=Bootstrap js file
+        bootstrapJsFile = https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js
+        # cat=tx_bootstrapcore.theme/base/035; type=string; label=jQuery js file
+        jQueryJsFile = https://code.jquery.com/jquery-2.1.3.min.js
+
+        # cat=tx_bootstrapcore.theme/base/040; type=string; label=Lightbox css file:Default is prettyPhoto.
+        lightboxCssFile = https://raw.githubusercontent.com/scaron/prettyphoto/master/css/prettyPhoto.css
+        # cat=tx_bootstrapcore.theme/base/041; type=string; label=Lightbox js file:Default is prettyPhoto.
+        lightboxJsFile = https://raw.githubusercontent.com/scaron/prettyphoto/master/js/jquery.prettyPhoto.js
+
+        # cat=tx_bootstrapcore.theme/base/050; type=string; label=CSS file with definitions for modified content rendering:Used instead of css_style_content CSS definitions.
+        contentCssFile = typo3conf/ext/bootstrap_core/Resources/Public/Css/content.css
+        # cat=tx_bootstrapcore.theme/base/051; type=string; label=Directory with icons for downloads (filelink).
+        iconDir = typo3conf/ext/bootstrap_core/Resources/Public/Icons/fileicons/
+    }
+
+    website {
+        lang {
+            # cat=tx_bootstrapcore.website/language/010; type=string; label=Default locale: Locale key for default language. Default: en_EN.UTF-8
+            locale = en_EN.UTF-8
+            # cat=tx_bootstrapcore.website/language/011; type=string; label=Default locale, short: Locale 2-letter key for default language. Default: en
+            localeShort = en
+        }
     }
 }

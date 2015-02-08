@@ -10,25 +10,24 @@ config {
     removeDefaultJS = external
     inlineStyle2TempFile = 1
 
-    cache_period = 43200
-    sendCacheHeaders = 0
+    #cache_period = 43200
+    #sendCacheHeaders = 0
 
     absRefPrefix = /
     prefixLocalAnchors = all
     extTarget =
-    intTarget =
+    #intTarget =
 
     tx_realurl_enable = 1
-    simulateStaticDocuments = 0
+    #simulateStaticDocuments = 0
 
     noScaleUp = 1
+    spamProtectEmailAddresses = ascii
 
     sys_language_uid = 0
     language = {$plugin.tx_bootstrapcore.website.lang.localeShort}
     locale_all = {$plugin.tx_bootstrapcore.website.lang.locale}
     htmlTag_langKey < config.language
-
-    spamProtectEmailAddresses = ascii
 
     admPanel = 0
 }
@@ -66,9 +65,13 @@ page {
         description.data = field:description // field:abstract // levelfield :-1, description, slide // levelfield :-1, abstract, slide
     }
 
-    includeCSS {
-        bootstrap_core = typo3conf/ext/bootstrap_core/Resources/Public/Css/content.css
-    }
+    includeCSS.bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapCssFile}
+    includeCSS.bootstrap_core = {$plugin.tx_bootstrapcore.theme.contentCssFile}
+    includeCSS.lightbox = {$plugin.tx_bootstrapcore.theme.lightboxCssFile}
+
+    includeJSlibs.jquery = {$plugin.tx_bootstrapcore.theme.jQueryJsFile}
+    includeJSFooterlibs.bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapJsFile}
+    includeJSFooterlibs.lightbox = {$plugin.tx_bootstrapcore.theme.lightboxJsFile}
 }
 
 
@@ -94,22 +97,12 @@ plugin.tx_bootstrapcore {
 /** -----------------------------------------
  * RTE parsing settings
  */
-
 lib.parseFunc_RTE {
     nonTypoTagStdWrap.encapsLines {
         # remove class 'bodytext' from p-tags
         addAttributes.P.class >
-        #addAttributes.P.class.setOnly >
-
         encapsTagList := addToList(ul,ol)
     }
-
-    /*
-    # allow buttons
-    allowTags := addToList(button)
-    # no p-tag around buttons?
-    #externalBlocks := addToList(button)
-    */
 
     # still required/ok?
     externalBlocks {
@@ -118,9 +111,6 @@ lib.parseFunc_RTE {
             stdWrap.HTMLparser.tags.table.fixAttrib.class.list >
             # Default table tag class
             stdWrap.HTMLparser.tags.table.fixAttrib.class.default = table
-            # p-Tags in th/td entfernen
-            #HTMLtableCells.default >
-            #HTMLtableCells.default.stdWrap.parseFunc =< lib.parseFunc
         }
     }
 }
@@ -133,50 +123,31 @@ lib.stdheader {
     3.headerClass.cObject.10.noTrimWrap = |text-| |
     # no non-html5 date
     5 >
-
-    # add subheader into <hx> with <small>
-    # moved to separate include file !
-    #10 {
-    #}
-    #20 >
-
     # date (html5)
     40 {
-        stdWrap {
-            wrap = <p>|</p>
-        }
+        stdWrap.wrap = <p>|</p>
         # change format
         10.strftime = %Y-%m-%d
         # remove html5 check
         if.value >
         if.equals >
     }
-    # wrap around header
-    stdWrap {
-        # no wrap around headers
-        dataWrap = |
-        dataWrap.override >
-    }
+    # no wrap around headers
+    stdWrap.dataWrap = |
+    stdWrap.dataWrap.override >
 }
 
 
 /** -----------------------------------------
  * CTypes
  */
-tt_content.header {
-    # remove default subheader
-    #20 >
-}
-
 tt_content.image {
     20 {
-        caption.1.1.dataWrap = <p class="caption-{field : imagecaption_position}">|</p>
+        caption.1.1.dataWrap = <p class="caption-{field:imagecaption_position}">|</p>
         1 {
-
             # image styles (rounded, circle)
             params.cObject = CASE
             params.cObject {
-                # Define wrappers for each column position (colPos 0,1,2)
                 key.field = layout
                 # Default is responsive
                 default = TEXT
@@ -187,13 +158,11 @@ tt_content.image {
                 # Rounded corners
                 2 = TEXT
                 2.value = class="img-rounded img-content"
-                # Rounded corners and responsive
                 3 = TEXT
                 3.value = class="img-rounded img-responsive img-content"
                 # Circle
                 4 = TEXT
                 4.value = class="img-circle img-content"
-                # Circle and responsive
                 5 = TEXT
                 5.value = class="img-circle img-responsive img-content"
             }
@@ -354,7 +323,6 @@ tt_content.image {
     }
 }
 
-
 tt_content.textpic {
     20 {
         text.wrap = <div class="text"> | </div>
@@ -383,7 +351,7 @@ tt_content.uploads {
         renderObj {
             15 {
                 file {
-                    import = typo3conf/ext/bootstrap_core/Resources/Public/Icons/fileicons/
+                    import = {$plugin.tx_bootstrapcore.theme.iconDir}
                     import.wrap = |.png
                 }
             }
@@ -602,13 +570,9 @@ temp.menu >
  * For section frames
  */
 tt_content.stdWrap {
-
     # related to section_frame
     innerWrap.cObject {
-
-        /**
-         * Special wraps for specific frames
-         */
+        # Special wraps for specific frames
         default {
             10 {
                 cObject {
@@ -634,17 +598,13 @@ tt_content.stdWrap {
                 cObject {
                     menu.value = >|</nav>
                     menu.override >
-
                     default.value >
                     default = CASE
                     default {
                         key.field = section_frame
                         default = TEXT
                         default.value = >|</div>
-
-                        /**
-                        * Add  close button for alert boxes
-                        */
+                        # Add  close button for alert boxes
                         40 = TEXT
                         40.value = ><button type="button" class="close" data-dismiss="alert">&times;</button>|</div>
                         41 < .40
@@ -656,15 +616,12 @@ tt_content.stdWrap {
         }
 
         # Ruler before
-        5 {
-            5 = TEXT
-            5.value = <hr>
-        }
+        5.5 = TEXT
+        5.5.value = <hr>
+
         # Ruler after
-        6 {
-            35 = TEXT
-            35.value = <hr>
-        }
+        6.35 = TEXT
+        6.35.value = <hr>
 
         # Indent
         10 {
@@ -707,6 +664,5 @@ tt_content.stdWrap {
             override.if.value = 1
             override.if.equals.field = sectionIndex
         }
-
     }
 }
