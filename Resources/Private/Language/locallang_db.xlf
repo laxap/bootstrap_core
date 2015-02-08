@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-01-01T18:00:00Z" product-name="bootstrap_core">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-02-08T00:01:00Z" product-name="bootstrap_core">
 		<header/>
 		<body>
 
@@ -115,6 +115,31 @@
 				<source>Show Thumbnail (PDF)</source>
 			</trans-unit>
 
+			<trans-unit id="tceform.tt_content.sectionframe.20" xml:space="preserve">
+				<source>Jumbotron</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.sectionframe.21" xml:space="preserve">
+				<source>Well</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.sectionframe.22" xml:space="preserve">
+				<source>Well small</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.sectionframe.23" xml:space="preserve">
+				<source>Well large</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.sectionframe.40" xml:space="preserve">
+				<source>Info Box</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.sectionframe.41" xml:space="preserve">
+				<source>Success Box</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.sectionframe.42" xml:space="preserve">
+				<source>Caution Box</source>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.sectionframe.43" xml:space="preserve">
+				<source>Alert Box</source>
+			</trans-unit>
+
 			<trans-unit id="rte.classes.justifyleft" xml:space="preserve">
 				<source>Align left</source>
 			</trans-unit>
@@ -153,6 +178,8 @@
 			<trans-unit id="rte.classes.lightbox" xml:space="preserve">
 				<source>Open in lightbox</source>
 			</trans-unit>
+
+
         </body>
 	</file>
 </xliff>

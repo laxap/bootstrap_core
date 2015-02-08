@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-01-01T18:00:00Z" product-name="bootstrap_core">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-02-08T00:01:00Z" product-name="bootstrap_core">
 		<header/>
 		<body>
 
@@ -97,6 +97,25 @@
 			<trans-unit id="tceform.tt_content.layout.uploads.2" xml:space="preserve" approved="yes">
 				<source>Show Thumbnail (PDF)</source>
 			<target state="translated">Thumbnail anzeigen (PDF)</target></trans-unit>
+
+			<trans-unit id="tceform.tt_content.sectionframe.22" xml:space="preserve" approved="yes">
+				<source>Well small</source><target state="translated">Well klein</target>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.sectionframe.23" xml:space="preserve" approved="yes">
+				<source>Well large</source><target state="translated">Well gross</target>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.sectionframe.40" xml:space="preserve" approved="yes">
+				<source>Info Box</source><target state="translated">Info Box</target>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.sectionframe.41" xml:space="preserve" approved="yes">
+				<source>Success Box</source><target state="translated">Ok Box</target>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.sectionframe.42" xml:space="preserve" approved="yes">
+				<source>Caution Box</source><target state="translated">Warnung Box</target>
+			</trans-unit>
+			<trans-unit id="tceform.tt_content.sectionframe.43" xml:space="preserve" approved="yes">
+				<source>Alert Box</source><target state="translated">Achtung Box</target>
+			</trans-unit>
 
 			<trans-unit id="rte.classes.justifyleft" xml:space="preserve" approved="yes">
 				<source>Align left</source>
