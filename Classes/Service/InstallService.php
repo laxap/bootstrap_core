@@ -42,12 +42,14 @@ class InstallService {
 	public function generateConfigFiles($extension = NULL){
 		if($extension == $this->extKey) {
 			$this->createHtaccessFile();
-			$this->createRealUrlConfig();
+			// seems to work without it now.
+			// realurl_autoconf.php will be created automatically. But only if realurl_conf.php does not exist.
+			//$this->createRealUrlConfig();
 		}
 	}
 
 	/**
-	 *
+	 * Create realurl_conf.php file. Not needed.
 	 */
 	public function createRealUrlConfig() {
 		$realUrlConfigFile = GeneralUtility::getFileAbsFileName("typo3conf/realurl_conf.php");
@@ -74,14 +76,13 @@ class InstallService {
 	}
 
 	/**
-	 *
+	 * Create .htaccess file.
 	 */
 	public function createHtaccessFile() {
 		$htAccessFile = GeneralUtility::getFileAbsFileName(".htaccess");
 		if ( file_exists($htAccessFile) ) {
 			$message = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Messaging\\FlashMessage',
-				'There is already a file .htaccess in the root directory.<br>'
-				. 'An example configuration is located at: <strong>typo3conf/ext/bootstrap_core/Configuration/RealUrl/.htaccess</strong>',
+				'There is already a file .htaccess in the root directory.<br>An example configuration is located at: <strong>typo3conf/ext/bootstrap_core/Configuration/RealUrl/.htaccess</strong>',
 				'File .htaccess already exists',
 				FlashMessage::NOTICE, true
 			);
