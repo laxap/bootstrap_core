@@ -14,10 +14,10 @@ if ( strlen($_EXTCONF) ) {
 
 
 /* --------------------------------------
- * RealURL Config
+ * .htaccess (for realurl)
  */
 if (TYPO3_MODE === 'BE') {
-	// Provides an example realurl_conf.php file.
+	// Creates a .htaccess file
 	$signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\SignalSlot\\Dispatcher');
 	$signalSlotDispatcher->connect(
 		'TYPO3\\CMS\\Extensionmanager\\Service\\ExtensionManagementService',
