@@ -1,0 +1,7 @@
+
+# cat=basic; type=boolean; label=Add differnt header/subheader rendering option.:Adds another static template. You have to include it if you want to use the differnt rendering.
+enableHeaderRenderingOption = 0
+
+
+
+
