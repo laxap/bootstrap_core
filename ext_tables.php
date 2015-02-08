@@ -13,8 +13,11 @@ if ( strlen($_EXTCONF) ) {
 //
 // Add static typoscript configurations
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Bootstrap Core');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Header', 'Subheader in header (Optional)');
 
+// Only if enables in ext conf
+if ( isset($extConf['enableHeaderRenderingOption']) && $extConf['enableHeaderRenderingOption'] ) {
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Header', 'Headers rendering option');
+}
 
 // Set custom flexform for tt_content ctype table
 $GLOBALS['TCA']['tt_content']['columns']['pi_flexform']['config']['ds']['*,table'] = 'FILE:EXT:bootstrap_core/Configuration/FlexForm/flexform_table.xml';
@@ -24,8 +27,7 @@ $GLOBALS['TCA']['tt_content']['columns']['pi_flexform']['config']['ds']['*,table
 // Additional fields
 //
 
-
-// define field
+// Define field
 $tempColumn = array(
 	'tx_bootstrapcore_visibility' => array (
 		'exclude' => 0,
@@ -35,14 +37,14 @@ $tempColumn = array(
 			'type' => 'select',
 			'items' => array(
 				array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.visibility.notset',  ''),
-				array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.visible.xs',  'visible-xs'),
-				array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.visible.sm-xs',  'visible-xs visible-sm'),
-				array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.visible.md-lg',  'visible-md visible-lg'),
+				array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.visible.xs',	'visible-xs'),
+				array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.visible.sm-xs','visible-xs visible-sm'),
+				array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.visible.md-lg','visible-md visible-lg'),
 				array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.visible.lg',   'visible-lg'),
-				array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.hidden.xs', 'hidden-xs'),
+				array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.hidden.xs', 	'hidden-xs'),
 				array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.hidden.sm-xs', 'hidden-xs hidden-sm'),
 				array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.hidden.md-lg', 'hidden-md hidden-lg'),
-				array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.hidden.lg', 'hidden-lg')
+				array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.hidden.lg', 	'hidden-lg')
 			),
 			'size' => 1,
 			'maxitems' => 1,
@@ -53,8 +55,7 @@ $tempColumn = array(
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumn, 1);
 
 // Add to forms
-// visiblity next to frames
-$TCA['tt_content']['palettes']['frames']['showitem'] .= ',--linebreak--, tx_bootstrapcore_visibility;LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrapcore_visibility';
-
+// visiblity below frames
+$GLOBALS['TCA']['tt_content']['palettes']['frames']['showitem'] .= ',--linebreak--, tx_bootstrapcore_visibility;LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrapcore_visibility';
 
 ?>
