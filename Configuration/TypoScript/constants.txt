@@ -3,11 +3,6 @@
  * bootstrap default config and page constants
  */
 plugin.tx_bootstrapcore {
-    view {
-        templateRootPath = EXT:bootstrap_core/Resources/Private/Templates/
-        partialRootPath = EXT:bootstrap_core/Resources/Private/Partials/
-        layoutRootPath = EXT:bootstrap_core/Resources/Private/Layouts/
-    }
 
     theme {
         # cat=tx_bootstrapcore.theme/base/010; type=string; label=Theme base directory

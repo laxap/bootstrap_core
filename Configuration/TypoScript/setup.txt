@@ -82,17 +82,6 @@ plugin.tx_cssstyledcontent._CSS_DEFAULT_STYLE >
 plugin.tx_form._CSS_DEFAULT_STYLE >
 
 
-/** -----------------------------------------
- * Bootstrap Core config
- */
-plugin.tx_bootstrapcore {
-    view {
-        templateRootPath = {$plugin.tx_bootstrapcore.view.templateRootPath}
-        partialRootPath = {$plugin.tx_bootstrapcore.view.partialRootPath}
-        layoutRootPath = {$plugin.tx_bootstrapcore.view.layoutRootPath}
-    }
-}
-
 
 /** -----------------------------------------
  * RTE parsing settings
