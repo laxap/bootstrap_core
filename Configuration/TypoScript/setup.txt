@@ -366,6 +366,9 @@ tt_content.table {
 
 tt_content.mailform {
     20 {
+        stdWrap.wrap = |
+
+        # form view
         form.layout {
             form (
                 <form class="form-horizontal">
@@ -399,7 +402,7 @@ tt_content.mailform {
                 </label>
             )
             error (
-                <span class="help-block text-danger"><errorvalue /></span>
+                <span class="text-danger"><errorvalue /></span>
             )
             textline (
                 <div class="form-group">
@@ -467,12 +470,43 @@ tt_content.mailform {
             )
             radiogroup (
                 <div class="control-group">
-                        <legend />
+                    <legend />
                     <div class="controls"><containerWrap /></div>
                 </div>
             )
         }
-        stdWrap.wrap = |
+
+        # confirmation view
+        confirmation.layout {
+            containerWrap (
+                <div class="formview">
+                    <elements />
+                </div>
+            )
+            elementWrap (
+                <div>
+                    <element />
+                </div>
+            )
+            select (
+                <div class="choice">
+                    <label />
+                    <ul>
+                        <elements />
+                    </ul>
+                </div>
+            )
+            option (
+                <li>
+                    <inputvalue />
+                </li>
+            )
+        }
+
+        # mail view
+        #mail {
+        #
+        #}
     }
 }
 

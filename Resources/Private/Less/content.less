@@ -139,9 +139,6 @@
 }
 // end
 
-
-
-
 .img-beside-right,
 .img-beside-left {
   overflow: hidden;
@@ -184,6 +181,7 @@
 
 
 // Uploads
+// --------------------------------------------------
 ul.uploads {
   list-style-type: none;
   margin-left: 0px;
@@ -205,6 +203,60 @@ ul.uploads {
       display: inline;
       margin-left: 45px;
       margin-bottom: 1em;
+    }
+  }
+}
+
+
+// Mailform (new FORM object)
+// --------------------------------------------------
+
+// --- confirmation ---
+.formview {
+  // space to next fieldset
+  .csc-form-element-fieldset {
+    margin-bottom: 20px;
+  }
+  .csc-form-element {
+    label {
+      width: 10em;
+    }
+  }
+  // textarea
+  .csc-form-element-textarea {
+    label {
+      width: 100%;
+    }
+  }
+  // works at least with one (short) option
+  .csc-form-element-select {
+    .choice {
+      label {
+        float: left;
+      }
+      ul {
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+// confirm & back buttons
+form.csc-form-confirmation {
+  fieldset {
+    margin-top: 20px;
+    ol {
+      list-style-type: none;
+      padding-left: 0;
+      margin-left: 0;
+      li {
+        float: left;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 10px;
+      }
     }
   }
 }
