@@ -71,20 +71,6 @@ class InstallService {
 	}
 
 	/**
-	 * Create realurl_conf.php file. Not needed.
-	 */
-	public function createRealUrlConfig() {
-		$realUrlConfigFile = GeneralUtility::getFileAbsFileName("typo3conf/realurl_conf.php");
-		if ( file_exists($realUrlConfigFile) ) {
-            $this->addMessage(FlashMessage::NOTICE, 'realurl_config.php not created', 'File realurl_conf.php exists already in directory typo3conf/');
-			return;
-		}
-		$realUrlConfigContent = GeneralUtility::getUrl(ExtensionManagementUtility::extPath($this->extKey).'/Configuration/RealUrl/realurl_conf.php');
-		GeneralUtility::writeFile($realUrlConfigFile, $realUrlConfigContent, TRUE);
-        $this->addMessage(FlashMessage::OK,  'realurl configuration created', 'File realurl_conf.php was created in directory typo3conf/.');
-	}
-
-	/**
 	 * Create .htaccess file.
 	 */
 	public function createHtaccessFile() {
@@ -93,7 +79,7 @@ class InstallService {
             $this->addMessage(FlashMessage::NOTICE, '.htaccess not created', ' File .htaccess exists already in the root directory.');
 			return;
 		}
-		$htAccessContent = GeneralUtility::getUrl(ExtensionManagementUtility::extPath($this->extKey).'/Configuration/RealUrl/.htaccess');
+		$htAccessContent = GeneralUtility::getUrl(PATH_site .'typo3_src/_.htaccess');
 		GeneralUtility::writeFile($htAccessFile, $htAccessContent, TRUE);
         $this->addMessage(FlashMessage::OK,  '.htaccess file created', 'File .htaccess was created in the root directory.');
 	}
