@@ -24,8 +24,8 @@ $EM_CONF[$_EXTKEY] = array(
 	'lockType' => '',
 	'constraints' => array(
 		'depends' => array(
-			'typo3' => '6.2.0-7.1.99',
-			'realurl' => '1.12.0-0.0.0',
+			'typo3' => '6.2.0-7.2.99',
+			//'realurl' => '1.12.0-0.0.0',
 		),
 		'conflicts' => array(
 			'bootstrap_package' => '',
