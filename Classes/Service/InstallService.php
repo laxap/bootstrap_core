@@ -29,22 +29,44 @@ namespace Simplicity\BootstrapCore\Service;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 use TYPO3\CMS\Core\Messaging\FlashMessage;
-use TYPO3\CMS\Core\Messaging\FlashMessageQueue;
 
 class InstallService {
 
+    /**
+     * @var string
+     */
 	protected $extKey = 'bootstrap_core';
+
+    /**
+     * @var \TYPO3\CMS\Extbase\Object\ObjectManager
+     */
+    protected $objManager = null;
+
+    /**
+     * @var \TYPO3\CMS\Core\Messaging\FlashMessageQueue
+     */
+    protected $flashMsgQueue = null;
 
 	/**
 	 * @param string $extension
 	 */
 	public function generateConfigFiles($extension = NULL){
 		if($extension == $this->extKey) {
+            // create object manager and msg queue
+            $this->objManager = GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
+
+            /** @var \TYPO3\CMS\Core\Messaging\FlashMessageService $flashMsgService  */
+            $flashMsgService = $this->objManager->get('TYPO3\\CMS\\Core\\Messaging\\FlashMessageService');
+            if ( VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version ) >= 7000000 ) {
+                $this->flashMsgQueue = $flashMsgService->getMessageQueueByIdentifier('extbase.flashmessages.tx_extensionmanager_tools_extensionmanagerextensionmanager');
+            } else {
+                $this->flashMsgQueue = $flashMsgService->getMessageQueueByIdentifier('core.template.flashMessages');
+            }
+
+            // create file(s)
 			$this->createHtaccessFile();
-			// seems to work without it now.
-			// realurl_autoconf.php will be created automatically. But only if realurl_conf.php does not exist.
-			//$this->createRealUrlConfig();
 		}
 	}
 
@@ -54,51 +76,39 @@ class InstallService {
 	public function createRealUrlConfig() {
 		$realUrlConfigFile = GeneralUtility::getFileAbsFileName("typo3conf/realurl_conf.php");
 		if ( file_exists($realUrlConfigFile) ) {
-			$message = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Messaging\\FlashMessage',
-				'There is already a file typo3conf/realurl_conf.php.<br>'
-				. 'An example configuration is located at: <strong>typo3conf/ext/bootstrap_core/Configuration/RealUrl/realurl_conf.php</strong>',
-				'File realurl_config.php already exists',
-				FlashMessage::NOTICE, true
-			);
-			FlashMessageQueue::addMessage($message);
+            $this->addMessage(FlashMessage::NOTICE, 'realurl_config.php not created', 'File realurl_conf.php exists already in directory typo3conf/');
 			return;
 		}
-
 		$realUrlConfigContent = GeneralUtility::getUrl(ExtensionManagementUtility::extPath($this->extKey).'/Configuration/RealUrl/realurl_conf.php');
 		GeneralUtility::writeFile($realUrlConfigFile, $realUrlConfigContent, TRUE);
-
-		$message = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Messaging\\FlashMessage',
-			'For RealURL a file realurl_conf.php was created in directory typo3conf/.',
-			'RealURL Configuration File created.',
-			FlashMessage::OK, true
-		);
-		FlashMessageQueue::addMessage($message);
+        $this->addMessage(FlashMessage::OK,  'realurl configuration created', 'File realurl_conf.php was created in directory typo3conf/.');
 	}
 
 	/**
 	 * Create .htaccess file.
 	 */
 	public function createHtaccessFile() {
-		$htAccessFile = GeneralUtility::getFileAbsFileName(".htaccess");
+        $htAccessFile = GeneralUtility::getFileAbsFileName(".htaccess");
 		if ( file_exists($htAccessFile) ) {
-			$message = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Messaging\\FlashMessage',
-				'There is already a file .htaccess in the root directory.<br>An example configuration is located at: <strong>typo3conf/ext/bootstrap_core/Configuration/RealUrl/.htaccess</strong>',
-				'File .htaccess already exists',
-				FlashMessage::NOTICE, true
-			);
-			FlashMessageQueue::addMessage($message);
+            $this->addMessage(FlashMessage::NOTICE, '.htaccess not created', ' File .htaccess exists already in the root directory.');
 			return;
 		}
-
 		$htAccessContent = GeneralUtility::getUrl(ExtensionManagementUtility::extPath($this->extKey).'/Configuration/RealUrl/.htaccess');
 		GeneralUtility::writeFile($htAccessFile, $htAccessContent, TRUE);
-
-		$message = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Messaging\\FlashMessage',
-			'For RealURL a file .htaccess was created in the root directory.',
-			'.htaccess file created.',
-			FlashMessage::OK, true
-		);
-		FlashMessageQueue::addMessage($message);
+        $this->addMessage(FlashMessage::OK,  '.htaccess file created', 'File .htaccess was created in the root directory.');
 	}
+
+
+    /**
+     * @param int $type
+     * @param string $title
+     * @param string$text
+     */
+    protected function addMessage($type, $title, $text) {
+        /** @var \TYPO3\CMS\Core\Messaging\FlashMessage $message */
+        $message = $this->objManager->get('TYPO3\\CMS\\Core\\Messaging\\FlashMessage', $text, $title, $type, true );
+        $this->flashMsgQueue->addMessage($message);
+
+    }
 
 }
