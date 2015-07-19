@@ -51,6 +51,37 @@ $tempColumn = array(
 		)
 	),
 );
+
+// re-add removed field in 7.2
+if ( TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version) >= 7002000 ) {
+	// labels still available in 7.3.1
+	$tempColumn['imagecaption_position'] = array(
+		'label' => 'LLL:EXT:cms/locallang_ttc.xlf:imagecaption_position',
+		'config' => array(
+			'type' => 'select',
+			'items' => array(
+				array(
+					'LLL:EXT:lang/locallang_general.xlf:LGL.default_value',
+					''
+				),
+				array(
+					'LLL:EXT:cms/locallang_ttc.xlf:imagecaption_position.I.1',
+					'center'
+				),
+				array(
+					'LLL:EXT:cms/locallang_ttc.xlf:imagecaption_position.I.2',
+					'right'
+				),
+				array(
+					'LLL:EXT:cms/locallang_ttc.xlf:imagecaption_position.I.3',
+					'left'
+				)
+			),
+			'default' => ''
+		)
+	);
+}
+
 // Add field to tt_content
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumn, 1);
 

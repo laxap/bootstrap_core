@@ -614,7 +614,7 @@ tt_content.stdWrap {
             # responsive visibility settings
             20.15 = TEXT
             20.15.value.field = tx_bootstrapcore_visibility
-            20.15.noTrimWrap = | ||
+            20.15.noTrimWrap = | | |
             20.15.required = 1
 
             30 {
