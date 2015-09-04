@@ -22,7 +22,7 @@ if (TYPO3_MODE === 'BE') {
 	$signalSlotDispatcher->connect(
 		'TYPO3\\CMS\\Extensionmanager\\Service\\ExtensionManagementService',
 		'hasInstalledExtensions',
-		'Simplicity\\BootstrapCore\\Service\\InstallService',
+		'Laxap\\BootstrapCore\\Service\\InstallService',
 		'generateConfigFiles'
 	);
 }
