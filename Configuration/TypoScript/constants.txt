@@ -11,11 +11,11 @@ plugin.tx_bootstrapcore {
         libDir = fileadmin/bsdist/lib
 
         # cat=tx_bootstrapcore.theme/base/030; type=string; label=Bootstrap css file
-        bootstrapCssFile = https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css
+        bootstrapCssFile = https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css
         # cat=tx_bootstrapcore.theme/base/032; type=string; label=Bootstrap js file
-        bootstrapJsFile = https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js
+        bootstrapJsFile = https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js
         # cat=tx_bootstrapcore.theme/base/035; type=string; label=jQuery js file
-        jQueryJsFile = https://code.jquery.com/jquery-2.1.3.min.js
+        jQueryJsFile = https://code.jquery.com/jquery-2.1.4.min.js
 
         # cat=tx_bootstrapcore.theme/base/040; type=string; label=Lightbox css file:Default is prettyPhoto.
         lightboxCssFile = https://raw.githubusercontent.com/scaron/prettyphoto/master/css/prettyPhoto.css
