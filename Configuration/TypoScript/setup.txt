@@ -3,23 +3,16 @@
  */
 config {
     doctype = html5
-    renderCharset = utf-8
-    metaCharset = utf-8
 
     disablePrefixComment = 1
     removeDefaultJS = external
     inlineStyle2TempFile = 1
 
-    #cache_period = 43200
-    #sendCacheHeaders = 0
-
     absRefPrefix = /
     prefixLocalAnchors = all
     extTarget =
-    #intTarget =
 
     tx_realurl_enable = 1
-    #simulateStaticDocuments = 0
 
     noScaleUp = 1
     spamProtectEmailAddresses = ascii
@@ -65,13 +58,20 @@ page {
         description.data = field:description // field:abstract // levelfield :-1, description, slide // levelfield :-1, abstract, slide
     }
 
-    includeCSS.bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapCssFile}
-    includeCSS.bootstrap_core = {$plugin.tx_bootstrapcore.theme.contentCssFile}
-    includeCSS.lightbox = {$plugin.tx_bootstrapcore.theme.lightboxCssFile}
+    includeCSS {
+		bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapCssFile}
+		bootstrap_core = {$plugin.tx_bootstrapcore.theme.contentCssFile}
+		lightbox = {$plugin.tx_bootstrapcore.theme.lightboxCssFile}
+	}
 
-    includeJSlibs.jquery = {$plugin.tx_bootstrapcore.theme.jQueryJsFile}
-    includeJSFooterlibs.bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapJsFile}
-    includeJSFooterlibs.lightbox = {$plugin.tx_bootstrapcore.theme.lightboxJsFile}
+    includeJSlibs{
+		jquery = {$plugin.tx_bootstrapcore.theme.jQueryJsFile}
+	}
+    includeJSFooterlibs {
+		bootstrap = {$plugin.tx_bootstrapcore.theme.bootstrapJsFile}
+		lightbox = {$plugin.tx_bootstrapcore.theme.lightboxJsFile}
+	}
+
 }
 
 

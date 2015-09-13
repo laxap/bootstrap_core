@@ -7,7 +7,6 @@ TCEFORM.pages {
   }
 
   backend_layout {
-    # not working in 6.2.2 (always all shown)
     # storagepage of backend layouts
     PAGE_TSCONFIG_ID = 2
     # hide no backend layout label
@@ -17,7 +16,6 @@ TCEFORM.pages {
   }
 
   backend_layout_next_level {
-    # not working in 6.2.2 (always all shown)
     PAGE_TSCONFIG_ID = 2
     removeItems = -1
     altLabels.0 = LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tceform.pages.belayoutnext.0
@@ -125,6 +123,6 @@ TCEFORM.tt_content {
 # --------------------
 # Don't add 'Copy' to copied pages
 TCEMAIN.table {
-  pages.disablePrependAtCopy = 1
+  #pages.disablePrependAtCopy = 1
   tt_content.disablePrependAtCopy = 1
 }
