@@ -31,7 +31,7 @@ TCEFORM.pages {
 TCEFORM.tt_content {
     header_layout {
         # 1 = 0, 100 is hide
-        removeItems = 0,100
+        removeItems = 0
     }
 
     section_frame {
