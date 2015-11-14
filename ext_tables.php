@@ -35,6 +35,7 @@ $tempColumn = array(
 		'label' => 'LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_bootstrapcore_visibility',
 		'config' => array (
 			'type' => 'select',
+			'renderType' => 'selectSingle',
 			'items' => array(
 				array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.visibility.notset',  ''),
 				array('LLL:EXT:bootstrap_core/Resources/Private/Language/locallang_db.xlf:tt_content.visible.xs',	'visible-xs'),
@@ -59,6 +60,7 @@ if ( TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(
 		'label' => 'LLL:EXT:cms/locallang_ttc.xlf:imagecaption_position',
 		'config' => array(
 			'type' => 'select',
+			'renderType' => 'selectSingle',
 			'items' => array(
 				array(
 					'LLL:EXT:lang/locallang_general.xlf:LGL.default_value',
