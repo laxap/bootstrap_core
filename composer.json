@@ -1,9 +1,16 @@
 {
   "name": "laxap/bootstrap-core",
   "type": "typo3-cms-extension",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Bootstrap specific changes for the frontend rendering of content elements. Adds sectionframe options and layout options for images and menus.",
   "keywords": ["typo3", "TYPO3 CMS", "bootstrap", "bsdist"],
   "homepage": "http://www.bsdist.ch",
-  "license": ["GPL-2.0"]
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Pascal Mayer",
+      "email": "typo3@bsdist.ch",
+      "role": "Developer"
+    }
+  ]
 }
