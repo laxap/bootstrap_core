@@ -1,7 +1,7 @@
 .image {
   display: block;
   margin-bottom: 20px;
-  line-height: 1.428571429;
+  line-height: 1.42857143;
 }
 .image > img,
 .image a > img {
@@ -26,9 +26,6 @@
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-}
-@media (min-width: 992px) {
-  
 }
 .img-wrap {
   max-width: 100%;
