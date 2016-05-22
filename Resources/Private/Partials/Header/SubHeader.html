@@ -1,25 +1,26 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:switch expression="{layout}">
 	<f:case value="1">
-		<h2>{subheader}</h2>
+		<h2{f:if(condition:position,then:' class="text-{position}"')}>{subheader}</h2>
 	</f:case>
 	<f:case value="2">
-		<h3>{subheader}</h3>
+		<h3{f:if(condition:position,then:' class="text-{position}"')}>{subheader}</h3>
 	</f:case>
 	<f:case value="3">
-		<h4>{subheader}</h4>
+		<h4{f:if(condition:position,then:' class="text-{position}"')}>{subheader}</h4>
 	</f:case>
 	<f:case value="4">
-		<h5>{subheader}</h5>
+		<h5{f:if(condition:position,then:' class="text-{position}"')}>{subheader}</h5>
 	</f:case>
 	<f:case value="5">
-		<h6>{subheader}</h6>
+		<h6{f:if(condition:position,then:' class="text-{position}"')}>{subheader}</h6>
 	</f:case>
 	<f:case default="true">
 		<f:if condition="{default}">
 			<f:render partial="Header/SubHeader" arguments="{
 				subheader: subheader,
-				layout: default}" />
+				layout: default,
+				position: position}" />
 		</f:if>
 	</f:case>
 </f:switch>
