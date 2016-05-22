@@ -20,7 +20,7 @@ if ( isset($extConf['enableHeaderRenderingOption']) && $extConf['enableHeaderRen
 }
 
 // Set custom flexform for tt_content ctype table
-$GLOBALS['TCA']['tt_content']['columns']['pi_flexform']['config']['ds']['*,table'] = 'FILE:EXT:bootstrap_core/Configuration/FlexForm/flexform_table.xml';
+//$GLOBALS['TCA']['tt_content']['columns']['pi_flexform']['config']['ds']['*,table'] = 'FILE:EXT:bootstrap_core/Configuration/FlexForm/flexform_table.xml';
 
 
 // --------------------------------------------------------------------
