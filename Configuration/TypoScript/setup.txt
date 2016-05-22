@@ -104,6 +104,102 @@ lib.parseFunc_RTE {
     }
 }
 
+
+/** -----------------------------------------
+* Fluid Content Rendering
+*/
+lib.fluidContent {
+    // additional template paths
+    templateRootPaths.20 = EXT:bootstrap_core/Resources/Private/Templates/
+    layoutRootPaths.20 = EXT:bootstrap_core/Resources/Private/Layouts/
+    partialRootPaths.20 = EXT:bootstrap_core/Resources/Private/Partials/
+
+    // config
+    settings.bootstrap_core {
+        # use on own risk, removes whitespace
+        reduceOutput = 1
+
+        # --- global settings ---
+        #
+        general {
+            # no div-wrap if section_frame = No Frame
+            nowrap {
+                section_frame = 66
+            }
+
+            useSectionFrameOnlyIfNoLayoutSet = 1
+            class {
+                section_frame {
+                    10 = col-xs-11 col-xs-push-1
+                    11 = col-xs-8 col-xs-push-4
+                    12 = frame col-xs-8
+
+                    20 = jumbotron
+                    21 = well
+                    22 = well well-sm
+                    23 = well well-lg
+                }
+            }
+            outerWrap {
+                section_frame {
+                    10 = <div class="row">|</div>
+                    11 = <div class="row">|</div>
+                    12 = <div class="row">|</div>
+                }
+            }
+
+            # visibility enabled
+            tx_bootstrapcore_visibility {
+                enabled = 1
+            }
+        }
+
+        # --- ctype specific settings ---
+        #
+        # table
+        table {
+            defaultClass = table-responsive
+        }
+
+        # textmedia
+        textmedia {
+            class {
+                layout {
+                    1 = jumbotron alert alert-info
+                    2 = well alert alert-danger
+                    3 = well text-center
+                }
+                section_frame {
+                    23 = well well-lg super-cooooooool
+                    40 = alert alert-info
+                    41 = alert alert-success
+                    42 = alert alert-warning
+                    43 = alert alert-danger
+                }
+            }
+            innerWrap {
+                section_frame {
+                    40 = <button type="button" class="close" data-dismiss="alert">&times;</button>|
+                    41 = <button type="button" class="close" data-dismiss="alert">&times;</button>|
+                    42 = <button type="button" class="close" data-dismiss="alert">&times;</button>|
+                    43 = <button type="button" class="close" data-dismiss="alert">&times;</button>|
+                }
+            }
+        }
+
+        #bullets {}
+        #div {}
+        header < .textmedia
+        #html {}
+        #list {}
+        #menu {}
+        #uploads {}
+    }
+}
+
+
+
+
 /** -----------------------------------------
  * Header and subheader
  */
